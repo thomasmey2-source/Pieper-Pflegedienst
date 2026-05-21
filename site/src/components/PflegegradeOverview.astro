@@ -1,0 +1,359 @@
+---
+const grades = [
+  {
+    num: 1,
+    label: 'Geringe Beeinträchtigung der Selbstständigkeit',
+    color: '#15803d',
+    bg: '#f0fdf4',
+    border: '#86efac',
+    punkte: '12,5 – < 27 Punkte',
+    pflegegeld: null,
+    sachleistungen: null,
+    entlastung: '125 € / Monat',
+    beschreibung:
+      'Pflegegrad 1 betrifft Menschen, die noch weitgehend selbstständig sind, aber gelegentlich Unterstützung im Alltag benötigen. Es liegt eine geringe Beeinträchtigung der Selbstständigkeit vor.',
+    leistungen: [
+      'Entlastungsbetrag 125 €/Monat',
+      'Pflegeberatung nach § 7a SGB XI',
+      'Wohnraumanpassung bis 4.000 €',
+      'Pflegehilfsmittel bis 40 €/Monat',
+      'Beratungseinsätze nach § 37 Abs. 3 SGB XI',
+    ],
+  },
+  {
+    num: 2,
+    label: 'Erhebliche Beeinträchtigung der Selbstständigkeit',
+    color: '#b45309',
+    bg: '#fffbeb',
+    border: '#fcd34d',
+    punkte: '27 – < 47,5 Punkte',
+    pflegegeld: '332 € / Monat',
+    sachleistungen: '761 € / Monat',
+    entlastung: '125 € / Monat',
+    beschreibung:
+      'Pflegegrad 2 liegt vor, wenn erhebliche Beeinträchtigungen der Selbstständigkeit bestehen. Die Person benötigt bei vielen alltäglichen Verrichtungen regelmäßige Unterstützung.',
+    leistungen: [
+      'Pflegegeld 332 €/Monat',
+      'Pflegesachleistungen 761 €/Monat',
+      'Entlastungsbetrag 125 €/Monat',
+      'Verhinderungspflege bis 1.612 €/Jahr',
+      'Kurzzeitpflege bis 1.774 €/Jahr',
+      'Tagespflege möglich',
+    ],
+  },
+  {
+    num: 3,
+    label: 'Schwere Beeinträchtigung der Selbstständigkeit',
+    color: '#c2410c',
+    bg: '#fff7ed',
+    border: '#fdba74',
+    punkte: '47,5 – < 70 Punkte',
+    pflegegeld: '573 € / Monat',
+    sachleistungen: '1.432 € / Monat',
+    entlastung: '125 € / Monat',
+    beschreibung:
+      'Ab Pflegegrad 3 ist die Selbstständigkeit schwer eingeschränkt. Die Person ist bei der Mehrheit der Alltagsverrichtungen auf umfangreiche Hilfe angewiesen.',
+    leistungen: [
+      'Pflegegeld 573 €/Monat',
+      'Pflegesachleistungen 1.432 €/Monat',
+      'Entlastungsbetrag 125 €/Monat',
+      'Verhinderungspflege bis 1.612 €/Jahr',
+      'Kurzzeitpflege bis 1.774 €/Jahr',
+      'Häusliche Krankenpflege (Behandlungspflege)',
+    ],
+  },
+  {
+    num: 4,
+    label: 'Schwerste Beeinträchtigung der Selbstständigkeit',
+    color: '#334155',
+    bg: '#f8fafc',
+    border: '#cbd5e1',
+    punkte: '70 – < 90 Punkte',
+    pflegegeld: '764 € / Monat',
+    sachleistungen: '1.778 € / Monat',
+    entlastung: '125 € / Monat',
+    beschreibung:
+      'Pflegegrad 4 bedeutet schwerste Einschränkungen. Die Person ist bei nahezu allen Aktivitäten des täglichen Lebens auf fremde Hilfe angewiesen und kann kaum noch selbstständig handeln.',
+    leistungen: [
+      'Pflegegeld 764 €/Monat',
+      'Pflegesachleistungen 1.778 €/Monat',
+      'Entlastungsbetrag 125 €/Monat',
+      'Verhinderungspflege bis 1.612 €/Jahr',
+      'Kurzzeitpflege bis 1.774 €/Jahr',
+      '24-Stunden-Versorgung möglich',
+    ],
+  },
+  {
+    num: 5,
+    label: 'Schwerste Beeinträchtigung mit besonderen Anforderungen',
+    color: '#021e64',
+    bg: '#eef2ff',
+    border: '#93c5fd',
+    punkte: '90 – 100 Punkte',
+    pflegegeld: '947 € / Monat',
+    sachleistungen: '2.200 € / Monat',
+    entlastung: '125 € / Monat',
+    beschreibung:
+      'Pflegegrad 5 ist der höchste Pflegegrad. Er gilt bei schwerster Beeinträchtigung der Selbstständigkeit, die mit einem besonders hohen Versorgungsaufwand verbunden ist — z. B. bei Menschen mit Wachkoma oder schwerer Demenz.',
+    leistungen: [
+      'Pflegegeld 947 €/Monat',
+      'Pflegesachleistungen 2.200 €/Monat',
+      'Entlastungsbetrag 125 €/Monat',
+      'Verhinderungspflege bis 1.612 €/Jahr',
+      'Kurzzeitpflege bis 1.774 €/Jahr',
+      '24-Stunden-Pflege & Palliativversorgung',
+    ],
+  },
+];
+
+// SVG icon inner markup (viewBox="0 0 40 40", stroke-based)
+const icons = [
+  // PG1: Single person standing upright
+  `<circle cx="20" cy="9" r="5" fill="none" stroke-width="2.5"/>
+   <line x1="20" y1="14" x2="20" y2="27" stroke-width="2.5" stroke-linecap="round"/>
+   <line x1="12" y1="19" x2="28" y2="19" stroke-width="2.5" stroke-linecap="round"/>
+   <line x1="20" y1="27" x2="14" y2="37" stroke-width="2.5" stroke-linecap="round"/>
+   <line x1="20" y1="27" x2="26" y2="37" stroke-width="2.5" stroke-linecap="round"/>`,
+
+  // PG2: Two people standing
+  `<circle cx="13" cy="9" r="3.5" fill="none" stroke-width="2.5"/>
+   <line x1="13" y1="12.5" x2="13" y2="23" stroke-width="2.5" stroke-linecap="round"/>
+   <line x1="7"  y1="17"   x2="19" y2="17" stroke-width="2.5" stroke-linecap="round"/>
+   <line x1="13" y1="23"   x2="8.5" y2="33" stroke-width="2.5" stroke-linecap="round"/>
+   <line x1="13" y1="23"   x2="17.5" y2="33" stroke-width="2.5" stroke-linecap="round"/>
+   <circle cx="27" cy="9" r="3.5" fill="none" stroke-width="2.5"/>
+   <line x1="27" y1="12.5" x2="27" y2="23" stroke-width="2.5" stroke-linecap="round"/>
+   <line x1="21" y1="17"   x2="33" y2="17" stroke-width="2.5" stroke-linecap="round"/>
+   <line x1="27" y1="23"   x2="22.5" y2="33" stroke-width="2.5" stroke-linecap="round"/>
+   <line x1="27" y1="23"   x2="31.5" y2="33" stroke-width="2.5" stroke-linecap="round"/>`,
+
+  // PG3: Person + clearly recognizable walking cane (J-shape: curved handle + straight shaft)
+  `<circle cx="15" cy="9" r="4.5" fill="none" stroke-width="2.5"/>
+   <line x1="15" y1="13.5" x2="15" y2="26" stroke-width="2.5" stroke-linecap="round"/>
+   <line x1="8"  y1="18"   x2="22" y2="18" stroke-width="2.5" stroke-linecap="round"/>
+   <line x1="15" y1="26"   x2="10" y2="36" stroke-width="2.5" stroke-linecap="round"/>
+   <line x1="15" y1="26"   x2="20" y2="33" stroke-width="2.5" stroke-linecap="round"/>
+   <line x1="29" y1="16"   x2="29" y2="37" stroke-width="2.8" stroke-linecap="round"/>
+   <path d="M29 16 Q29 9 23 9" fill="none" stroke-width="2.8" stroke-linecap="round"/>`,
+
+  // PG4: Wheelchair
+  `<circle cx="21" cy="7" r="4" fill="none" stroke-width="2.5"/>
+   <path d="M21 11 L18 22 L27 22" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+   <circle cx="16" cy="31" r="6" fill="none" stroke-width="2.5"/>
+   <path d="M27 22 L30 31" fill="none" stroke-width="2.5" stroke-linecap="round"/>
+   <line x1="18" y1="22" x2="15" y2="26" stroke-width="2.5" stroke-linecap="round"/>`,
+
+  // PG5: Person in bed
+  `<circle cx="11" cy="13" r="4" fill="none" stroke-width="2.5"/>
+   <path d="M5 28 L5 22 Q5 18 9 18 L30 18 Q35 18 35 22 L35 28" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+   <line x1="4"  y1="28" x2="36" y2="28" stroke-width="2.5" stroke-linecap="round"/>
+   <line x1="4"  y1="33" x2="36" y2="33" stroke-width="2.5" stroke-linecap="round"/>`,
+];
+---
+
+<!-- Karten-Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+  {grades.map((g, i) => (
+    <button
+      type="button"
+      class="rounded-xl border-2 p-4 flex flex-col items-center text-center gap-3 cursor-pointer transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+      style={`background:${g.bg};border-color:${g.border};--focus-color:${g.color};`}
+      data-grade={i}
+      aria-label={`Mehr zu Pflegegrad ${g.num}`}
+    >
+      <div class="w-10 h-10" style={`color:${g.color};`} aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <Fragment set:html={icons[i]} />
+        </svg>
+      </div>
+      <p class="text-sm font-bold leading-tight" style={`color:${g.color};`}>Pflegegrad {g.num}</p>
+      <p class="text-xs text-ink-muted leading-snug">{g.label}</p>
+      <span class="text-[10px] font-semibold mt-auto" style={`color:${g.color};opacity:0.7`}>Details →</span>
+    </button>
+  ))}
+</div>
+
+<!-- Modal-Overlay -->
+<div
+  id="pg-modal-backdrop"
+  class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 hidden"
+  aria-modal="true"
+  role="dialog"
+  aria-labelledby="pg-modal-title"
+>
+  <div id="pg-modal" class="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+    <!-- Modal-Header -->
+    <div id="pg-modal-header" class="flex items-center justify-between px-6 pt-6 pb-4 border-b border-line">
+      <div class="flex items-center gap-3">
+        <div id="pg-modal-icon" class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+          <svg id="pg-modal-svg" viewBox="0 0 40 40" fill="none" stroke="currentColor" class="w-7 h-7"></svg>
+        </div>
+        <div>
+          <p id="pg-modal-eyebrow" class="text-xs font-bold uppercase tracking-wider"></p>
+          <h2 id="pg-modal-title" class="text-h3 font-heading text-ink leading-tight"></h2>
+        </div>
+      </div>
+      <button
+        type="button"
+        id="pg-modal-close"
+        class="w-9 h-9 rounded-full bg-surface-alt hover:bg-line flex items-center justify-center text-ink-muted hover:text-ink transition-colors flex-shrink-0"
+        aria-label="Schließen"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Modal-Body -->
+    <div class="px-6 py-5 space-y-5">
+      <div>
+        <p class="text-xs-label uppercase tracking-wider text-ink-muted mb-1">NBA-Punkte</p>
+        <p id="pg-modal-punkte" class="text-body font-semibold text-ink"></p>
+      </div>
+
+      <p id="pg-modal-beschreibung" class="text-body text-ink-muted leading-relaxed"></p>
+
+      <!-- Leistungsbeträge -->
+      <div id="pg-modal-betraege" class="grid grid-cols-2 gap-3"></div>
+
+      <!-- Leistungen-Liste -->
+      <div>
+        <p class="text-xs-label uppercase tracking-wider text-ink-muted mb-3">Leistungen im Überblick</p>
+        <ul id="pg-modal-leistungen" class="space-y-2"></ul>
+      </div>
+
+      <!-- Footer-CTA -->
+      <div class="pt-2 border-t border-line">
+        <p class="text-small text-ink-muted mb-3">Wir helfen Ihnen beim Antrag und bereiten Sie auf die Begutachtung vor.</p>
+        <a href="/kontakt/" class="btn-primary btn-md w-full text-center block">Kostenlose Beratung anfragen</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Daten als JSON ins Script einbetten
+  const grades = [
+    {
+      num: 1, color: '#15803d', bg: '#f0fdf4', border: '#86efac',
+      punkte: '12,5 – < 27 Punkte',
+      pflegegeld: null, sachleistungen: null, entlastung: '125 € / Monat',
+      beschreibung: 'Pflegegrad 1 betrifft Menschen, die noch weitgehend selbstständig sind, aber gelegentlich Unterstützung im Alltag benötigen. Es liegt eine geringe Beeinträchtigung der Selbstständigkeit vor.',
+      leistungen: ['Entlastungsbetrag 125 €/Monat', 'Pflegeberatung nach § 7a SGB XI', 'Wohnraumanpassung bis 4.000 €', 'Pflegehilfsmittel bis 40 €/Monat', 'Beratungseinsätze nach § 37 Abs. 3 SGB XI'],
+    },
+    {
+      num: 2, color: '#b45309', bg: '#fffbeb', border: '#fcd34d',
+      punkte: '27 – < 47,5 Punkte',
+      pflegegeld: '332 € / Monat', sachleistungen: '761 € / Monat', entlastung: '125 € / Monat',
+      beschreibung: 'Pflegegrad 2 liegt vor, wenn erhebliche Beeinträchtigungen der Selbstständigkeit bestehen. Die Person benötigt bei vielen alltäglichen Verrichtungen regelmäßige Unterstützung.',
+      leistungen: ['Pflegegeld 332 €/Monat', 'Pflegesachleistungen 761 €/Monat', 'Entlastungsbetrag 125 €/Monat', 'Verhinderungspflege bis 1.612 €/Jahr', 'Kurzzeitpflege bis 1.774 €/Jahr', 'Tagespflege möglich'],
+    },
+    {
+      num: 3, color: '#c2410c', bg: '#fff7ed', border: '#fdba74',
+      punkte: '47,5 – < 70 Punkte',
+      pflegegeld: '573 € / Monat', sachleistungen: '1.432 € / Monat', entlastung: '125 € / Monat',
+      beschreibung: 'Ab Pflegegrad 3 ist die Selbstständigkeit schwer eingeschränkt. Die Person ist bei der Mehrheit der Alltagsverrichtungen auf umfangreiche Hilfe angewiesen.',
+      leistungen: ['Pflegegeld 573 €/Monat', 'Pflegesachleistungen 1.432 €/Monat', 'Entlastungsbetrag 125 €/Monat', 'Verhinderungspflege bis 1.612 €/Jahr', 'Kurzzeitpflege bis 1.774 €/Jahr', 'Häusliche Krankenpflege (Behandlungspflege)'],
+    },
+    {
+      num: 4, color: '#334155', bg: '#f8fafc', border: '#cbd5e1',
+      punkte: '70 – < 90 Punkte',
+      pflegegeld: '764 € / Monat', sachleistungen: '1.778 € / Monat', entlastung: '125 € / Monat',
+      beschreibung: 'Pflegegrad 4 bedeutet schwerste Einschränkungen. Die Person ist bei nahezu allen Aktivitäten des täglichen Lebens auf fremde Hilfe angewiesen.',
+      leistungen: ['Pflegegeld 764 €/Monat', 'Pflegesachleistungen 1.778 €/Monat', 'Entlastungsbetrag 125 €/Monat', 'Verhinderungspflege bis 1.612 €/Jahr', 'Kurzzeitpflege bis 1.774 €/Jahr', '24-Stunden-Versorgung möglich'],
+    },
+    {
+      num: 5, color: '#021e64', bg: '#eef2ff', border: '#93c5fd',
+      punkte: '90 – 100 Punkte',
+      pflegegeld: '947 € / Monat', sachleistungen: '2.200 € / Monat', entlastung: '125 € / Monat',
+      beschreibung: 'Pflegegrad 5 gilt bei schwerster Beeinträchtigung mit besonders hohem Versorgungsaufwand — z. B. bei Menschen mit Wachkoma oder schwerer Demenz.',
+      leistungen: ['Pflegegeld 947 €/Monat', 'Pflegesachleistungen 2.200 €/Monat', 'Entlastungsbetrag 125 €/Monat', 'Verhinderungspflege bis 1.612 €/Jahr', 'Kurzzeitpflege bis 1.774 €/Jahr', '24-Stunden-Pflege & Palliativversorgung'],
+    },
+  ];
+
+  const iconPaths = [
+    `<circle cx="20" cy="9" r="5" fill="none" stroke-width="2.5"/><line x1="20" y1="14" x2="20" y2="27" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="19" x2="28" y2="19" stroke-width="2.5" stroke-linecap="round"/><line x1="20" y1="27" x2="14" y2="37" stroke-width="2.5" stroke-linecap="round"/><line x1="20" y1="27" x2="26" y2="37" stroke-width="2.5" stroke-linecap="round"/>`,
+    `<circle cx="13" cy="9" r="3.5" fill="none" stroke-width="2.5"/><line x1="13" y1="12.5" x2="13" y2="23" stroke-width="2.5" stroke-linecap="round"/><line x1="7" y1="17" x2="19" y2="17" stroke-width="2.5" stroke-linecap="round"/><line x1="13" y1="23" x2="8.5" y2="33" stroke-width="2.5" stroke-linecap="round"/><line x1="13" y1="23" x2="17.5" y2="33" stroke-width="2.5" stroke-linecap="round"/><circle cx="27" cy="9" r="3.5" fill="none" stroke-width="2.5"/><line x1="27" y1="12.5" x2="27" y2="23" stroke-width="2.5" stroke-linecap="round"/><line x1="21" y1="17" x2="33" y2="17" stroke-width="2.5" stroke-linecap="round"/><line x1="27" y1="23" x2="22.5" y2="33" stroke-width="2.5" stroke-linecap="round"/><line x1="27" y1="23" x2="31.5" y2="33" stroke-width="2.5" stroke-linecap="round"/>`,
+    `<circle cx="15" cy="9" r="4.5" fill="none" stroke-width="2.5"/><line x1="15" y1="13.5" x2="15" y2="26" stroke-width="2.5" stroke-linecap="round"/><line x1="8" y1="18" x2="22" y2="18" stroke-width="2.5" stroke-linecap="round"/><line x1="15" y1="26" x2="10" y2="36" stroke-width="2.5" stroke-linecap="round"/><line x1="15" y1="26" x2="20" y2="33" stroke-width="2.5" stroke-linecap="round"/><line x1="29" y1="16" x2="29" y2="37" stroke-width="2.8" stroke-linecap="round"/><path d="M29 16 Q29 9 23 9" fill="none" stroke-width="2.8" stroke-linecap="round"/>`,
+    `<circle cx="21" cy="7" r="4" fill="none" stroke-width="2.5"/><path d="M21 11 L18 22 L27 22" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="31" r="6" fill="none" stroke-width="2.5"/><path d="M27 22 L30 31" fill="none" stroke-width="2.5" stroke-linecap="round"/><line x1="18" y1="22" x2="15" y2="26" stroke-width="2.5" stroke-linecap="round"/>`,
+    `<circle cx="11" cy="13" r="4" fill="none" stroke-width="2.5"/><path d="M5 28 L5 22 Q5 18 9 18 L30 18 Q35 18 35 22 L35 28" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="4" y1="28" x2="36" y2="28" stroke-width="2.5" stroke-linecap="round"/><line x1="4" y1="33" x2="36" y2="33" stroke-width="2.5" stroke-linecap="round"/>`,
+  ];
+
+  const backdrop = document.getElementById('pg-modal-backdrop');
+  const modal    = document.getElementById('pg-modal');
+  const closeBtn = document.getElementById('pg-modal-close');
+
+  function openModal(idx: number) {
+    const g = grades[idx];
+
+    // Header
+    const iconEl = document.getElementById('pg-modal-svg') as SVGElement | null;
+    if (iconEl) {
+      iconEl.innerHTML = iconPaths[idx];
+      iconEl.style.color = g.color;
+    }
+    const iconBg = document.getElementById('pg-modal-icon');
+    if (iconBg) iconBg.style.backgroundColor = g.bg;
+
+    const eyebrow = document.getElementById('pg-modal-eyebrow');
+    if (eyebrow) { eyebrow.textContent = `Pflegegrad ${g.num}`; eyebrow.style.color = g.color; }
+
+    const title = document.getElementById('pg-modal-title');
+    if (title) title.textContent = `${g.leistungen[0].split(' ')[0]} — ${['Geringe','Erhebliche','Schwere','Schwerste','Schwerste'][idx]} Beeinträchtigung`;
+
+    // Punkte
+    const punkteEl = document.getElementById('pg-modal-punkte');
+    if (punkteEl) punkteEl.textContent = g.punkte;
+
+    // Beschreibung
+    const beschEl = document.getElementById('pg-modal-beschreibung');
+    if (beschEl) beschEl.textContent = g.beschreibung;
+
+    // Beträge
+    const betraegeEl = document.getElementById('pg-modal-betraege');
+    if (betraegeEl) {
+      const items = [];
+      if (g.pflegegeld) items.push({ label: 'Pflegegeld', value: g.pflegegeld });
+      if (g.sachleistungen) items.push({ label: 'Sachleistungen', value: g.sachleistungen });
+      items.push({ label: 'Entlastungsbetrag', value: g.entlastung });
+      betraegeEl.innerHTML = items.map(item => `
+        <div style="background:${g.bg};border:1.5px solid ${g.border}" class="rounded-lg p-3 text-center">
+          <p class="text-xs text-ink-muted mb-1">${item.label}</p>
+          <p class="text-base font-bold" style="color:${g.color}">${item.value}</p>
+        </div>
+      `).join('');
+    }
+
+    // Leistungen
+    const listEl = document.getElementById('pg-modal-leistungen');
+    if (listEl) {
+      listEl.innerHTML = g.leistungen.map(l => `
+        <li class="flex items-start gap-2 text-small text-ink">
+          <svg class="w-4 h-4 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="${g.color}" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          ${l}
+        </li>
+      `).join('');
+    }
+
+    // Modal anzeigen
+    backdrop?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    closeBtn?.focus();
+  }
+
+  function closeModal() {
+    backdrop?.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  // Karten-Klick
+  document.querySelectorAll<HTMLButtonElement>('[data-grade]').forEach((btn) => {
+    btn.addEventListener('click', () => openModal(Number(btn.dataset.grade)));
+  });
+
+  // Schließen
+  closeBtn?.addEventListener('click', closeModal);
+  backdrop?.addEventListener('click', (e) => { if (e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+</script>

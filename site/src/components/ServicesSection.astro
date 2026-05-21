@@ -1,0 +1,277 @@
+---
+import { site } from '@/config/site';
+import { services } from '@/config/services';
+---
+
+<section class="bg-[#F0F4FB] pt-6 md:pt-10 pb-8 md:pb-12">
+  <div class="container-content">
+    <!-- Header-Zeile: Titel/CTA links, Trust-Badges rechts -->
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-0">
+      <!-- Linke Spalte: Titel + Beschreibung + CTAs -->
+      <div class="lg:col-span-7">
+        <p class="eyebrow mb-3 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          Unsere Leistungen
+        </p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-ink mb-4 leading-tight">
+          Von der Grundpflege bis zur Behandlungspflege<span class="text-primary"> — wir sind für Sie da.</span>
+        </h2>
+        <p class="text-lead text-ink-muted mb-6 max-w-prose-comfort">
+          Wir betreuen Sie nach Ihren individuellen Bedürfnissen — kompetent,
+          herzlich und abgerechnet mit allen gesetzlichen Pflegekassen.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/kontakt/" class="btn-primary btn-md inline-flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Beratung anfragen
+          </a>
+          <a href="/leistungen/" class="btn-secondary btn-md inline-flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+            Alle Leistungen ansehen
+          </a>
+        </div>
+      </div>
+
+      <!-- Rechte Spalte: Trust-Badges -->
+      <div class="lg:col-span-5">
+        <div class="bg-white rounded-2xl shadow-md p-6 md:p-7 space-y-5">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary-soft text-primary flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <path d="M9 13l2 2 4-4"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-ink leading-tight">Abrechnung mit allen</p>
+              <p class="text-small text-ink-muted">gesetzlichen Pflegekassen</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary-soft text-primary flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-ink leading-tight">Persönlich & zuverlässig</p>
+              <p class="text-small text-ink-muted">Mit Herz für Ihre Gesundheit</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary-soft text-primary flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-bold text-ink leading-tight">Erfahrenes Team</p>
+              <p class="text-small text-ink-muted">Qualifiziert, einfühlsam, nah</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service-Grid auf weißem Hintergrund -->
+<section class="bg-white pt-10 pb-12 md:pt-12 md:pb-16">
+  <div class="container-content">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+      {services.map((service, i) => (
+        <button
+          type="button"
+          data-service={i}
+          class="text-left bg-white rounded-2xl border border-line/60 shadow-sm hover:shadow-lg hover:-translate-y-0.5 hover:border-primary/30 transition-all duration-200 p-6 flex flex-col h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+        >
+          <div class="w-12 h-12 rounded-full bg-primary-soft text-primary flex items-center justify-center mb-5 flex-shrink-0">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={service.iconPath} />
+          </div>
+          <h3 class="text-h4 font-heading text-ink mb-2">
+            {service.title}
+          </h3>
+          <p class="text-small text-ink-muted leading-relaxed flex-grow">
+            {service.short}
+          </p>
+          <span class="mt-5 text-primary font-semibold text-small inline-flex items-center gap-1">
+            Mehr erfahren
+            <span aria-hidden="true">→</span>
+          </span>
+        </button>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- CTA-Leiste -->
+<section class="bg-primary py-6">
+  <div class="container-content">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-white/90 text-body text-center sm:text-left">
+        Unsicher, welche Leistung zu Ihnen passt? <span class="text-white font-semibold">Wir beraten Sie kostenlos.</span>
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+        <a href="/kontakt/" class="btn btn-md bg-white text-primary font-bold hover:bg-white/90 shadow-sm whitespace-nowrap">
+          Erstberatung anfragen
+        </a>
+        <a href="/pflegegradrechner/" class="btn btn-md bg-white/10 text-white border border-white/30 hover:bg-white/20 whitespace-nowrap">
+          Pflegegrad berechnen
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service-Modal -->
+<div
+  id="svc-modal-backdrop"
+  class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 hidden"
+  aria-modal="true"
+  role="dialog"
+  aria-labelledby="svc-modal-title"
+>
+  <div id="svc-modal" class="bg-white rounded-2xl shadow-2xl w-full max-w-xl max-h-[90vh] overflow-y-auto">
+    <!-- Modal-Header -->
+    <div class="flex items-center justify-between px-6 pt-6 pb-4 border-b border-line">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-primary-soft text-primary flex items-center justify-center flex-shrink-0">
+          <svg id="svc-modal-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg>
+        </div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-primary">Pflegeleistung</p>
+          <h2 id="svc-modal-title" class="text-h3 font-heading text-ink leading-tight"></h2>
+        </div>
+      </div>
+      <button
+        type="button"
+        id="svc-modal-close"
+        class="w-9 h-9 rounded-full bg-surface-alt hover:bg-line flex items-center justify-center text-ink-muted hover:text-ink transition-colors flex-shrink-0"
+        aria-label="Schließen"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Modal-Body -->
+    <div class="px-6 py-5 space-y-5">
+      <p id="svc-modal-desc" class="text-body text-ink leading-relaxed"></p>
+
+      <!-- Info-Kacheln: Kostenträger + Zielgruppe -->
+      <div class="grid sm:grid-cols-2 gap-3">
+        <div class="rounded-lg bg-primary-soft p-4">
+          <p class="text-xs-label uppercase tracking-wider text-primary font-bold mb-1">Kostenträger</p>
+          <p id="svc-modal-paid" class="text-small text-ink font-semibold leading-snug"></p>
+        </div>
+        <div class="rounded-lg bg-care-soft p-4">
+          <p class="text-xs-label uppercase tracking-wider text-care font-bold mb-1">Für wen</p>
+          <p id="svc-modal-for" class="text-small text-ink font-semibold leading-snug"></p>
+        </div>
+      </div>
+
+      <!-- Was beinhaltet die Leistung -->
+      <div>
+        <p class="text-xs-label uppercase tracking-wider text-ink-muted mb-3 font-bold">Was wir konkret übernehmen</p>
+        <ul id="svc-modal-list" class="space-y-2"></ul>
+      </div>
+
+      <!-- Footer-CTA -->
+      <div class="pt-3 border-t border-line flex flex-col sm:flex-row gap-3">
+        <a id="svc-modal-detail" href="#" class="btn-secondary btn-md flex-1 text-center">Vollständige Detailseite</a>
+        <a href="/kontakt/" class="btn-primary btn-md flex-1 text-center">Kostenlose Beratung</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  type Svc = {
+    slug: string;
+    title: string;
+    iconPath: string;
+    description: string;
+    includes: string[];
+    paidBy: string;
+    forWhom: string;
+  };
+
+  const servicesData: Svc[] = [
+    { slug: 'grundpflege', title: 'Grundpflege', iconPath: '<path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/>', description: 'Die Grundpflege umfasst alle Hilfen bei den täglichen Verrichtungen der Körperpflege, Ernährung und Mobilität. Wir kommen so oft, wie es nötig ist — meist ein- bis dreimal täglich, immer mit festen Bezugspersonen.', includes: ['Waschen, Duschen, Baden','An- und Auskleiden','Hilfe beim Essen und Trinken','Mobilisation und Lagerung','Hilfe beim Toilettengang & Inkontinenzversorgung','Hautpflege und Vorbeugung von Druckstellen'], paidBy: 'Pflegekasse (SGB XI) — abhängig vom Pflegegrad', forWhom: 'Menschen mit anerkanntem Pflegegrad (PG 2 – 5)' },
+    { slug: 'behandlungspflege', title: 'Behandlungspflege', iconPath: '<path d="M9 12h6m-3-3v6"/><circle cx="12" cy="12" r="9"/>', description: 'Behandlungspflege erfolgt auf ärztliche Verordnung. Examinierte Pflegefachkräfte führen alle medizinisch notwendigen Maßnahmen genau so durch, wie die Ärztin sie verordnet — sorgfältig dokumentiert und mit der Krankenkasse abgerechnet.', includes: ['Medikamentengabe & -richten','Injektionen (s. c., i. m.)','Verbandwechsel & Wundversorgung','Blutdruck-, Blutzucker- und Vitalzeichenkontrolle','Kompressionsverbände, Stoma- und Katheterpflege','Inhalationen und spezielle Pflegetechniken'], paidBy: 'Krankenkasse (SGB V) — auf ärztliche Verordnung', forWhom: 'Alle gesetzlich Versicherten mit ärztlicher Verordnung' },
+    { slug: 'verhinderungspflege', title: 'Verhinderungspflege', iconPath: '<path d="M8 7V3m8 4V3M3 11h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/>', description: 'Pflegende Angehörige brauchen Pausen — wir springen ein. Stundenweise oder mehrere Wochen am Stück. Bis zu 1.612 € pro Jahr übernimmt die Pflegekasse, ohne dass Sie nachweisen müssen, wofür das Geld ausgegeben wird.', includes: ['Stundenweise Entlastung (ab 1 Stunde)','Tage- oder wochenweise Komplettübernahme','Urlaubsvertretung für pflegende Angehörige','Vertretung bei Krankheit oder eigenem Arzttermin','Wir kennen Ihre Routine — kein Pflegebruch'], paidBy: 'Pflegekasse — bis 1.612 €/Jahr (ab PG 2)', forWhom: 'Pflegebedürftige ab PG 2, die zu Hause gepflegt werden' },
+    { slug: '24h-pflege', title: '24h-Pflege', iconPath: '<circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/>', description: '24-Stunden-Bereitschaft heißt: Wir sind erreichbar, auch nachts und am Wochenende. Im Team verteilt — niemand muss allein Dauerdienst leisten, und Sie haben immer eine bekannte Stimme am Telefon.', includes: ['Tägliche Pflegeeinsätze nach Bedarf','Abend- und Nachtdienste','Telefonische 24h-Bereitschaft für unsere Patienten','Schnelle Hilfe bei Notfällen','Koordination mit Hausärzten und Notdienst'], paidBy: 'Kombination aus Pflegekasse, Krankenkasse & Selbstzahler', forWhom: 'Schwerstpflegebedürftige (meist PG 4 – 5)' },
+    { slug: 'palliativpflege', title: 'Palliativpflege', iconPath: '<path d="M12 2v6m0 4v10M5 12h14M7 7l10 10M17 7L7 17"/>', description: 'Sterben gehört zum Leben — und für viele Menschen ist es ein Wunsch, zu Hause zu sterben. Wir begleiten Sie und Ihre Angehörigen in der letzten Lebensphase: schmerzlindernd, würdevoll, ohne Eile.', includes: ['Spezialisierte ambulante Palliativversorgung (SAPV)','Schmerz- und Symptommanagement nach ärztlicher Anordnung','Psychische Begleitung von Patient & Angehörigen','Zusammenarbeit mit Hausarzt, Hospiz und Schmerztherapeuten','Beratung zu Patientenverfügung und Vorsorgevollmacht'], paidBy: 'Krankenkasse (SAPV) & Pflegekasse', forWhom: 'Menschen in der letzten Lebensphase, mit ärztlicher Verordnung' },
+    { slug: 'betreuung', title: 'Betreuung', iconPath: '<circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.85"/>', description: 'Manchmal braucht es keine Pflege im engen Sinn, sondern jemanden, der da ist — vorliest, spazieren geht, gemeinsam kocht. Betreuungsleistungen sind über den Entlastungsbetrag (125 €/Monat ab PG 1) abrechenbar.', includes: ['Spaziergänge und Begleitung außer Haus','Vorlesen, Spiele, Gespräche','Demenz-Betreuung mit aktivierenden Angeboten','Begleitung zum Friseur, Einkauf, Café','Entlastung pflegender Angehöriger'], paidBy: 'Entlastungsbetrag 125 €/Monat (ab PG 1) — Pflegekasse', forWhom: 'Alle mit Pflegegrad (ab PG 1) — auch Demenz ohne PG' },
+    { slug: 'arztbegleitung', title: 'Arztbegleitung', iconPath: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M9 16h.01"/><path d="M13 16h2"/>', description: 'Allein zum Arzt fahren ist nicht immer einfach — wir holen Sie ab, begleiten Sie ins Sprechzimmer, hören mit zu und bringen Sie sicher nach Hause. Auch zu Therapien, zur Dialyse oder ins Krankenhaus.', includes: ['Begleitung zu Hausarzt, Facharzt, Therapeut','Mitschreiben und Erinnern an wichtige Informationen','Hilfe bei Anmeldung, Versichertenkarte, Rezepten','Transport- und Aufzugshilfe bei Mobilitätseinschränkungen','Begleitung zur ambulanten Operation und Nachsorge'], paidBy: 'Entlastungsbetrag oder Selbstzahler', forWhom: 'Mobilitätseingeschränkte oder unsichere Patienten' },
+    { slug: 'hauswirtschaftliche-versorgung', title: 'Hauswirtschaft', iconPath: '<path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/>', description: 'Ein gepflegter Haushalt ist Lebensqualität. Wenn das Bügeln zu schwer und der Einkauf zu weit wird, übernehmen wir — regelmäßig oder vertretungsweise. Auch das ist über die Pflegekasse abrechenbar.', includes: ['Einkaufen und Besorgungen','Kochen oder Aufwärmen einer warmen Mahlzeit','Wäsche waschen, bügeln, in den Schrank räumen','Wohnungsreinigung (Staubsaugen, Wischen, Bad)','Müll rausbringen, Blumen gießen'], paidBy: 'Pflegesachleistung oder Entlastungsbetrag (Pflegekasse)', forWhom: 'Pflegebedürftige (ab PG 1)' },
+  ];
+
+  const backdrop = document.getElementById('svc-modal-backdrop');
+  const closeBtn = document.getElementById('svc-modal-close');
+
+  function openSvcModal(idx: number) {
+    const s = servicesData[idx];
+
+    const iconEl = document.getElementById('svc-modal-icon');
+    if (iconEl) iconEl.innerHTML = s.iconPath;
+
+    const titleEl = document.getElementById('svc-modal-title');
+    if (titleEl) titleEl.textContent = s.title;
+
+    const descEl = document.getElementById('svc-modal-desc');
+    if (descEl) descEl.textContent = s.description;
+
+    const paidEl = document.getElementById('svc-modal-paid');
+    if (paidEl) paidEl.textContent = s.paidBy;
+
+    const forEl = document.getElementById('svc-modal-for');
+    if (forEl) forEl.textContent = s.forWhom;
+
+    const listEl = document.getElementById('svc-modal-list');
+    if (listEl) {
+      listEl.innerHTML = s.includes.map(item => `
+        <li class="flex items-start gap-2 text-small text-ink">
+          <svg class="w-4 h-4 mt-0.5 flex-shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          ${item}
+        </li>
+      `).join('');
+    }
+
+    const detailEl = document.getElementById('svc-modal-detail') as HTMLAnchorElement | null;
+    if (detailEl) detailEl.href = `/leistungen/${s.slug}/`;
+
+    backdrop?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    closeBtn?.focus();
+  }
+
+  function closeSvcModal() {
+    backdrop?.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('[data-service]').forEach((btn) => {
+    btn.addEventListener('click', () => openSvcModal(Number(btn.dataset.service)));
+  });
+
+  closeBtn?.addEventListener('click', closeSvcModal);
+  backdrop?.addEventListener('click', (e) => { if (e.target === backdrop) closeSvcModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSvcModal(); });
+</script>

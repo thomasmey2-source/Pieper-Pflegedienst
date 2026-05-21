@@ -1,0 +1,241 @@
+---
+import Base from '@/layouts/Base.astro';
+import { site } from '@/config/site';
+
+const description = `Karriere in der häuslichen Pflege in Wuppertal-Cronenberg: Faire Vergütung in Anlehnung an TVöD-Pflege, planbare Schichten, familiäres Team. Offene Stellen ansehen.`;
+
+const benefits = [
+  {
+    title: 'Faire Vergütung',
+    text: 'Angelehnt an TVöD-Pflege — auch für Hilfskräfte und Wochenend-Aushilfen. Plus Zuschläge für Wochenend-, Feiertags- und Nachtdienste.',
+    icon: 'M12 1l3.22 6.93L23 9.24l-5.61 5.36L18.78 22 12 18.27 5.22 22l1.39-7.4L1 9.24l7.78-1.31z',
+  },
+  {
+    title: 'Planbare Schichten',
+    text: 'Klare Schichtmodelle: Früh 06:30–13:00 oder Spät 16:30–21:00. Dienstpläne im Voraus, Wünsche werden gehört, Tausch ist möglich.',
+    icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z',
+  },
+  {
+    title: 'Familiäres Team',
+    text: 'Sie sind hier kein Personalsatz. Wir kennen uns mit Namen, wir trinken zusammen Kaffee. Niemand verschwindet in der Masse.',
+    icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
+  },
+  {
+    title: 'Fortbildungen',
+    text: 'Wundversorgung, Demenz, Palliativ — wir investieren in Ihre Qualifikation und finanzieren regelmäßige Weiterbildungen.',
+    icon: 'M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z',
+  },
+  {
+    title: '24h-Bereitschaft im Team',
+    text: 'Niemand ist nachts allein. Die Rufbereitschaft rotiert im Team — Sie haben immer Rückendeckung, wenn ein Notfall ansteht.',
+    icon: 'M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6V9c0-3.07-1.64-5.64-4.5-6.32V2c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 3.36 6 5.92 6 9v7l-2 2v1h16v-1l-2-2z',
+  },
+  {
+    title: 'Praktika & Quereinstieg',
+    text: 'Schulkooperationen für angehende Pflegekräfte und faire Einstiegswege für Quereinsteiger mit oder ohne Pflegebasiskurs.',
+    icon: 'M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z',
+  },
+];
+
+const jobs = [
+  {
+    title: 'Pflegefachkraft',
+    type: 'Voll-/Teilzeit',
+    shift: 'Früh 06:30–13:00 oder Spät 16:30–21:00',
+    desc: 'Examinierte Altenpflege oder Gesundheits-/Krankenpflege. Sie übernehmen Grund- und Behandlungspflege, dokumentieren digital und sind feste Bezugsperson für Ihre Patienten.',
+  },
+  {
+    title: 'Hilfskraft (m/w/d)',
+    type: 'Voll-/Teilzeit',
+    shift: 'Früh oder Spät',
+    desc: 'Mit oder ohne Pflegebasiskurs. Sie unterstützen unsere Fachkräfte bei der Grundpflege und Betreuung. Quereinsteiger willkommen — wir qualifizieren Sie weiter.',
+  },
+  {
+    title: 'Wundtherapeut(in)',
+    type: 'Voll-/Teilzeit',
+    shift: 'Tagdienst, flexibel planbar',
+    desc: 'Spezialisierte Versorgung chronischer und akuter Wunden. Enge Abstimmung mit Hausärzten und Fachärzten. Fortbildung ICW oder vergleichbar von Vorteil.',
+  },
+  {
+    title: 'Betreuungs- und Hauswirtschaftshilfe',
+    type: 'Teilzeit',
+    shift: 'Flexible Tageszeiten',
+    desc: 'Hilfen im Haushalt, Begleitung zu Terminen, einfache Betreuungsangebote nach §45a SGB XI. Geduld und Empathie sind hier wichtiger als Vorerfahrung.',
+  },
+  {
+    title: 'Wochenendaushilfe',
+    type: 'Minijob / Teilzeit',
+    shift: 'Samstag & Sonntag, Früh oder Spät',
+    desc: 'Ideal für Studierende und Berufstätige mit Pflegeerfahrung, die am Wochenende einspringen möchten. Faire Wochenendzuschläge inklusive.',
+  },
+  {
+    title: 'Praktikumsstelle',
+    type: 'Praktikum',
+    shift: 'Nach Absprache mit Ihrer Schule',
+    desc: 'Für Schülerinnen und Schüler, die in den Pflegeberuf hineinschnuppern möchten. Wir kooperieren mit Schulen aus Wuppertal und Umgebung.',
+  },
+];
+
+const mailtoBewerbung = `mailto:${site.contact.email}?subject=Bewerbung%20bei%20Pieper%20Pflegedienst`;
+---
+
+<Base title="Karriere" description={description}>
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-10" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="dots-k" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="white" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#dots-k)" />
+      </svg>
+    </div>
+    <div class="container-content relative py-16 md:py-24">
+      <p class="eyebrow text-care-soft mb-4">Karriere bei Pieper</p>
+      <h1 class="text-h1-mobile md:text-h1 font-heading text-white mb-5 max-w-3xl">
+        Pflege mit Sinn — arbeiten Sie bei Pieper.
+      </h1>
+      <p class="text-lead text-white/90 max-w-prose-comfort">
+        Familiäres Team, faire Bezahlung, planbare Schichten. Wir suchen Menschen,
+        die Pflege als Beziehung verstehen — und denen Sicherheit im Job
+        genauso wichtig ist wie Sinn.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-0">
+    <div class="container-content">
+      <div class="aspect-[21/9] rounded-card overflow-hidden shadow-lg -mt-10 relative z-10">
+        <img
+          src="/images/mitarbeiterakquise.png"
+          alt="Team von Pieper Häusliche Krankenpflege — wir suchen Verstärkung"
+          class="w-full h-full object-cover"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-content">
+      <div class="max-w-prose-comfort mb-10 md:mb-14">
+        <p class="eyebrow mb-3">Warum bei uns?</p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-ink mb-4">
+          Sechs Gründe, warum unser Team bleibt.
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        {benefits.map((b) => (
+          <div class="card-hover">
+            <div class="w-12 h-12 rounded-btn bg-care-soft text-care flex items-center justify-center mb-4" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d={b.icon} />
+              </svg>
+            </div>
+            <h3 class="text-h3 font-heading text-ink mb-2">{b.title}</h3>
+            <p class="text-body text-ink-muted">{b.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-surface">
+    <div class="container-content">
+      <div class="max-w-prose-comfort mb-10 md:mb-14">
+        <p class="eyebrow mb-3">Offene Stellen</p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-ink mb-4">
+          Aktuell suchen wir Verstärkung.
+        </h2>
+        <p class="text-lead text-ink-muted">
+          Sie finden Ihre Stelle nicht? Schreiben Sie uns trotzdem — wir suchen
+          fast immer gute Leute.
+        </p>
+      </div>
+
+      <div class="space-y-4 md:space-y-5">
+        {jobs.map((j) => (
+          <article class="bg-surface rounded-card shadow-sm p-6 md:p-8 grid md:grid-cols-12 gap-4 md:gap-6 items-start">
+            <div class="md:col-span-8">
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                <h3 class="text-h3 font-heading text-ink">{j.title}</h3>
+                <span class="px-3 py-1 rounded-full bg-primary-soft text-primary text-xs-label font-semibold">
+                  {j.type}
+                </span>
+              </div>
+              <p class="text-small text-ink-muted mb-3">
+                <span class="font-semibold text-ink">Schicht:</span> {j.shift}
+              </p>
+              <p class="text-body text-ink-muted">{j.desc}</p>
+            </div>
+            <div class="md:col-span-4 flex md:justify-end">
+              <a href={mailtoBewerbung} class="btn-primary btn-md w-full md:w-auto">
+                Jetzt bewerben
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-content grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+      <div>
+        <p class="eyebrow mb-3">Initiativbewerbung</p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-ink mb-4">
+          Keine passende Stelle? Schreiben Sie uns trotzdem.
+        </h2>
+        <p class="text-body text-ink-muted mb-4">
+          Gute Pflegekräfte sind selten — wir nehmen uns Zeit für Initiativ-
+          bewerbungen. Senden Sie uns einfach eine kurze E-Mail mit Ihrem
+          Lebenslauf und Ihrer Vorstellung von der nächsten Stelle.
+        </p>
+        <p class="text-body text-ink-muted mb-6">
+          Ein Anschreiben ist nicht zwingend nötig. Wichtiger ist uns ein
+          ehrlicher Satz darüber, warum Sie in der Pflege arbeiten.
+        </p>
+        <a href={mailtoBewerbung} class="btn-primary btn-md">
+          Initiativbewerbung senden
+        </a>
+      </div>
+
+      <div>
+        <p class="eyebrow mb-3">Praktika & Ausbildung</p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-ink mb-4">
+          Reinschnuppern statt raten.
+        </h2>
+        <p class="text-body text-ink-muted mb-4">
+          Wir kooperieren mit Schulen in Wuppertal und Umgebung und bieten
+          Schülerpraktika, Sozialpraktika und längere Pflichtpraktika für
+          angehende Pflegekräfte an.
+        </p>
+        <p class="text-body text-ink-muted">
+          Bei Interesse melden Sie sich gern telefonisch oder per E-Mail —
+          gemeinsam finden wir einen Zeitraum, der zu Ihrer Schule passt.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-care text-white">
+    <div class="container-content text-center max-w-prose-comfort mx-auto">
+      <h2 class="text-h2-mobile md:text-h2 font-heading text-white mb-4">
+        Anrufen oder Mail schreiben — wir freuen uns auf Sie.
+      </h2>
+      <p class="text-lead text-white/90 mb-8">
+        Persönlicher Kontakt ist uns auch im Bewerbungsverfahren wichtig.
+        Wir antworten in der Regel innerhalb von zwei Werktagen.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href={site.contact.phoneHref} class="btn btn-lg bg-white text-care hover:bg-white/95 shadow-md">
+          {site.contact.phone}
+        </a>
+        <a href={mailtoBewerbung} class="btn btn-lg bg-white/15 text-white border-2 border-white/40 hover:bg-white/25 backdrop-blur">
+          Bewerbung per E-Mail
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

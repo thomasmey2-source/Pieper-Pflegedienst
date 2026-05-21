@@ -1,0 +1,202 @@
+---
+import Base from '@/layouts/Base.astro';
+import { site } from '@/config/site';
+
+const description = `Datenschutzerklärung des Pflegedienst Pieper in Wuppertal-Cronenberg gemäß DSGVO. Wir hosten Schriften lokal und verwenden keine Tracking-Cookies.`;
+
+const lastUpdated = '14. Mai 2026';
+---
+
+<Base title="Datenschutzerklärung" description={description}>
+  <section class="bg-surface-alt py-12 md:py-16 border-b border-line">
+    <div class="container-content">
+      <p class="eyebrow mb-3">Datenschutz</p>
+      <h1 class="text-h1-mobile md:text-h2 font-heading text-ink">Datenschutzerklärung</h1>
+      <p class="text-small text-ink-muted mt-3">Stand: {lastUpdated}</p>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="container-content">
+      <div class="prose-legal">
+        <p>
+          Wir freuen uns über Ihr Interesse an unserem Pflegedienst. Datenschutz
+          hat einen besonders hohen Stellenwert für uns. Mit dieser Erklärung
+          informieren wir Sie nach Art. 13 und 14 DSGVO darüber, welche
+          personenbezogenen Daten wir auf dieser Website verarbeiten und welche
+          Rechte Ihnen zustehen.
+        </p>
+
+        <h2>1. Verantwortlicher</h2>
+        <p>
+          Verantwortlich für die Datenverarbeitung auf dieser Website ist:
+        </p>
+        <p>
+          <strong>{site.legalName} – {site.legalSuffix}</strong><br />
+          {site.address.street}<br />
+          {site.address.zip} {site.address.city}-{site.address.district}<br />
+          Telefon: [TODO: Telefonnummer]<br />
+          E-Mail: {site.contact.email}<br />
+          Vertretungsberechtigt: Armin Pieper, Timo Pieper
+        </p>
+
+        <h2>2. Erhebung allgemeiner Informationen beim Besuch der Website</h2>
+        <p>
+          Beim Aufruf unserer Website werden durch unseren Hosting-Anbieter
+          automatisch Informationen in Server-Logfiles gespeichert, die Ihr
+          Browser übermittelt:
+        </p>
+        <ul>
+          <li>IP-Adresse (gekürzt / anonymisiert)</li>
+          <li>Datum und Uhrzeit des Zugriffs</li>
+          <li>aufgerufene Seite und übertragene Datenmenge</li>
+          <li>verwendeter Browser und Betriebssystem (User-Agent)</li>
+          <li>Referrer-URL (zuvor besuchte Seite)</li>
+        </ul>
+        <p>
+          <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO
+          (berechtigtes Interesse an einem sicheren und stabilen Betrieb der Website).
+          <strong>Speicherdauer:</strong> Server-Logs werden nach maximal 14 Tagen gelöscht.
+        </p>
+        <p>
+          Wir setzen <strong>keine Tracking-Cookies, kein Webanalyse-Tool und kein
+          Re-Targeting</strong> ein. Technisch notwendige Speicher (z. B. zur Wahrung
+          Ihrer Eingaben im Kontaktformular während einer Sitzung) werden auf
+          Grundlage von Art. 6 Abs. 1 lit. f DSGVO verwendet.
+        </p>
+
+        <h2>3. Kontaktformular und Kontaktaufnahme per E-Mail</h2>
+        <p>
+          Wenn Sie uns über das Kontaktformular oder per E-Mail eine Nachricht
+          senden, verarbeiten wir die von Ihnen angegebenen Daten (Name,
+          Telefon, E-Mail, Anliegen, Nachrichtentext) ausschließlich zur
+          Bearbeitung Ihrer Anfrage und für die Anschlusskommunikation.
+        </p>
+        <p>
+          <strong>Rechtsgrundlage:</strong>
+        </p>
+        <ul>
+          <li>Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage auf den Abschluss oder die Anbahnung eines Vertrags gerichtet ist.</li>
+          <li>Art. 6 Abs. 1 lit. f DSGVO im Übrigen — berechtigtes Interesse an der Beantwortung von Anfragen.</li>
+          <li>Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) durch Anhaken der Einwilligungs-Checkbox im Kontaktformular.</li>
+        </ul>
+        <p>
+          <strong>Speicherdauer:</strong> Wir speichern Ihre Daten so lange, wie es
+          für die Bearbeitung Ihres Anliegens erforderlich ist. Bei Anbahnung
+          eines Vertrags gelten gesetzliche Aufbewahrungspflichten (handels-
+          und steuerrechtlich bis zu 10 Jahre).
+        </p>
+
+        <h2>4. Hinweise zur Kommunikation per WhatsApp</h2>
+        <p>
+          Wir bieten Ihnen die Möglichkeit, uns über den Messenger-Dienst
+          <strong>WhatsApp</strong> zu kontaktieren. Betreiber ist die WhatsApp Ireland
+          Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland
+          (Teil des Meta-Konzerns).
+        </p>
+        <p>
+          Wenn Sie auf den WhatsApp-Button auf unserer Seite klicken, werden
+          Sie zur WhatsApp-Anwendung weitergeleitet. WhatsApp verarbeitet dabei
+          Daten nach eigenen Datenschutzbestimmungen, auf die wir keinen
+          Einfluss haben. Insbesondere kann es zu einem Datentransfer in
+          Drittländer (USA) kommen.
+        </p>
+        <p>
+          <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO — Sie willigen
+          durch die aktive Nutzung des WhatsApp-Buttons in die Datenübermittlung
+          an WhatsApp ein. Weitere Informationen:
+          <a href="https://www.whatsapp.com/legal/privacy-policy-eea" rel="noopener noreferrer">WhatsApp-Datenschutzrichtlinie</a>.
+        </p>
+        <p>
+          Wenn Sie diese Datenverarbeitung vermeiden möchten, nutzen Sie bitte
+          den Telefon-, E-Mail- oder Postweg.
+        </p>
+
+        <h2>5. Besondere Hinweise zur Verarbeitung von Gesundheitsdaten</h2>
+        <p>
+          Als Pflegedienst verarbeiten wir im Rahmen der konkreten Pflege-
+          beziehung in erheblichem Umfang besondere Kategorien personen-
+          bezogener Daten im Sinne von Art. 9 DSGVO — insbesondere
+          <strong>Gesundheitsdaten</strong>.
+        </p>
+        <p>
+          Bitte beachten Sie: <strong>Übermitteln Sie über das Kontaktformular oder
+          per E-Mail keine sensiblen Gesundheitsdaten</strong>, sofern es nicht
+          unbedingt nötig ist. Details zu Diagnosen, Pflegegraden oder
+          medizinischen Befunden besprechen wir mit Ihnen gern persönlich am
+          Telefon oder im Erstgespräch bei Ihnen zu Hause.
+        </p>
+        <p>
+          Sollten Sie freiwillig Gesundheitsdaten im Kontaktformular angeben,
+          verarbeiten wir diese auf Grundlage Ihrer ausdrücklichen Einwilligung
+          gemäß Art. 9 Abs. 2 lit. a DSGVO sowie zur Geltendmachung,
+          Ausübung oder Verteidigung von Rechtsansprüchen im Rahmen der
+          Pflegeversorgung gemäß Art. 9 Abs. 2 lit. h DSGVO in Verbindung mit
+          §22 BDSG.
+        </p>
+        <p>
+          Die Datenverarbeitung im Rahmen der laufenden Pflegeversorgung
+          unserer Patientinnen und Patienten ist nicht Gegenstand dieser
+          Online-Datenschutzerklärung — hierfür erhalten Sie zum Vertrags-
+          beginn gesonderte schriftliche Datenschutzinformationen.
+        </p>
+
+        <h2>6. Ihre Rechte als betroffene Person</h2>
+        <p>Ihnen stehen folgende Rechte zu:</p>
+        <ul>
+          <li><strong>Auskunft</strong> (Art. 15 DSGVO) — Sie können jederzeit Auskunft über die zu Ihrer Person gespeicherten Daten verlangen.</li>
+          <li><strong>Berichtigung</strong> (Art. 16 DSGVO) — Sie können die Berichtigung unrichtiger Daten verlangen.</li>
+          <li><strong>Löschung</strong> (Art. 17 DSGVO) — Sie können die Löschung Ihrer Daten verlangen, sofern keine Aufbewahrungspflichten entgegenstehen.</li>
+          <li><strong>Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO).</li>
+          <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO) — Sie können Ihre Daten in einem strukturierten, gängigen Format erhalten.</li>
+          <li><strong>Widerspruch</strong> (Art. 21 DSGVO) — gegen Verarbeitungen, die auf Art. 6 Abs. 1 lit. f DSGVO beruhen.</li>
+          <li><strong>Widerruf</strong> erteilter Einwilligungen (Art. 7 Abs. 3 DSGVO) mit Wirkung für die Zukunft.</li>
+          <li><strong>Beschwerde</strong> bei einer Aufsichtsbehörde (Art. 77 DSGVO).</li>
+        </ul>
+        <p>
+          Zur Ausübung Ihrer Rechte genügt eine formlose Nachricht an
+          {site.contact.email} oder eine telefonische Mitteilung.
+        </p>
+
+        <h2>7. Zuständige Aufsichtsbehörde</h2>
+        <p>
+          <strong>Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen</strong><br />
+          Kavalleriestraße 2–4<br />
+          40213 Düsseldorf<br />
+          Telefon: 0211 / 38424-0<br />
+          E-Mail: poststelle@ldi.nrw.de<br />
+          Web: <a href="https://www.ldi.nrw.de" rel="noopener noreferrer">www.ldi.nrw.de</a>
+        </p>
+
+        <h2>8. Schriften (Fonts)</h2>
+        <p>
+          Diese Website verwendet die Schriftarten <strong>Inter</strong> und
+          <strong>Manrope</strong>. Die Schriftdateien werden ausschließlich vom
+          eigenen Server ausgeliefert — es findet <strong>kein Aufruf der Google-
+          Fonts-Server</strong> (fonts.googleapis.com / fonts.gstatic.com) und damit
+          keine Übermittlung Ihrer IP-Adresse an Google statt.
+        </p>
+
+        <h2>9. Hosting</h2>
+        <p>
+          Diese Website wird statisch ausgeliefert. Der Hosting-Anbieter
+          verarbeitet die in Abschnitt 2 genannten technischen Daten zur
+          Erfüllung des Vertrags und im berechtigten Interesse an einem
+          sicheren Betrieb.
+        </p>
+        <p>
+          <strong>Hosting-Anbieter:</strong> [TODO: Hoster eintragen — z. B. Netlify, Inc. (San Francisco, USA) mit EU-Datenverarbeitung, oder Hetzner Online GmbH (Gunzenhausen, Deutschland)]
+        </p>
+
+        <h2>10. Stand und Anpassung dieser Datenschutzerklärung</h2>
+        <p>
+          Diese Datenschutzerklärung hat den Stand vom <strong>{lastUpdated}</strong>.
+          Durch die Weiterentwicklung der Website oder geänderte gesetzliche
+          bzw. behördliche Vorgaben kann es notwendig werden, diese
+          Datenschutzerklärung anzupassen. Die jeweils aktuelle Fassung ist
+          unter <a href={`${site.url}/datenschutz/`}>{site.url}/datenschutz/</a> abrufbar.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

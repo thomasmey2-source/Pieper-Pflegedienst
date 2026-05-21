@@ -1,0 +1,78 @@
+/*
+ * Lokales DSGVO-konformes Font-Hosting
+ * ------------------------------------
+ * Bitte folgende Font-Dateien in diesen Ordner ablegen (public/fonts/):
+ *
+ *   inter-400.woff2
+ *   inter-500.woff2
+ *   inter-600.woff2
+ *   inter-700.woff2
+ *   manrope-600.woff2
+ *   manrope-700.woff2
+ *   manrope-800.woff2
+ *
+ * Empfohlene Quelle: https://gwfh.mranftl.com/fonts (Google Webfonts Helper)
+ * oder die woff2-Dateien aus den NPM-Paketen @fontsource/inter und
+ * @fontsource/manrope (latin-Subset, woff2).
+ *
+ * Sobald die Dateien hier liegen, lädt die Site die Schriften ohne externen
+ * Request an Google-Server (kein fonts.googleapis.com, kein fonts.gstatic.com).
+ */
+
+/* --------- Inter (Body) --------- */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inter-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/inter-700.woff2') format('woff2');
+}
+
+/* --------- Manrope (Headings) --------- */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/manrope-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/manrope-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/manrope-800.woff2') format('woff2');
+}

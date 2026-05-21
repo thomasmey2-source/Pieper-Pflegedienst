@@ -1,0 +1,21 @@
+---
+const items = [
+  { label: 'Alle gesetzlichen Pflegekassen' },
+  { label: '24h erreichbar' },
+  { label: 'Examiniertes Team' },
+  { label: 'Persönliche Ansprechpartner' },
+];
+---
+
+<div class="bg-surface border-y border-line">
+  <div class="container-content py-5 grid grid-cols-2 md:grid-cols-4 gap-4">
+    {items.map(({ label }) => (
+      <div class="flex items-center gap-2 text-small text-ink">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-care shrink-0" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+        <span>{label}</span>
+      </div>
+    ))}
+  </div>
+</div>

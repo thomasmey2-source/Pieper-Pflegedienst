@@ -1,0 +1,324 @@
+---
+import Base from '@/layouts/Base.astro';
+import { site } from '@/config/site';
+
+const description = `Kontakt zum Pflegedienst Pieper in Wuppertal-Cronenberg: Telefon, WhatsApp, E-Mail oder Kontaktformular. 24-Stunden-Bereitschaft, persönliche Erstberatung kostenlos.`;
+
+// Obfuskierte E-Mail-Anzeige
+const email = site.contact.email;
+const whatsappHref = `https://wa.me/${site.contact.whatsapp.replace(/[^0-9]/g, '')}`;
+---
+
+<Base title="Kontakt" description={description}>
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-10" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="dots-k2" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="white" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#dots-k2)" />
+      </svg>
+    </div>
+    <div class="container-content relative py-14 md:py-20">
+      <p class="eyebrow text-care-soft mb-4">Kontakt</p>
+      <h1 class="text-h1-mobile md:text-h1 font-heading text-white mb-5 max-w-3xl">
+        So erreichen Sie uns.
+      </h1>
+      <p class="text-lead text-white/90 max-w-prose-comfort">
+        Rufen Sie an, schreiben Sie uns auf WhatsApp oder per E-Mail —
+        oder nutzen Sie das Formular. Wir melden uns in der Regel
+        am selben Werktag zurück.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-content grid lg:grid-cols-12 gap-10 md:gap-12">
+      <!-- Linke Spalte: Kontaktmethoden -->
+      <div class="lg:col-span-5 flex flex-col gap-5">
+        <a href={site.contact.phoneHref} class="card-hover flex items-center gap-5 group flex-1">
+          <div class="w-16 h-16 rounded-btn bg-primary-soft text-primary flex items-center justify-center flex-shrink-0" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.34 12 19.79 19.79 0 0 1 1.27 3.35 2 2 0 0 1 3.26 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.36-.68a2 2 0 0 1 2.11.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 18v.92z"/>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="eyebrow mb-1 text-small">Telefon (am schnellsten)</p>
+            <p class="text-h3 font-heading text-ink group-hover:text-primary-hover transition-colors">{site.contact.phone}</p>
+            <p class="text-body text-ink-muted mt-1">{site.officeHours.weekdays} · {site.officeHours.note}</p>
+          </div>
+        </a>
+
+        <a href={whatsappHref} class="card-hover flex items-center gap-5 group flex-1">
+          <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0" aria-hidden="true">
+            <img src="/images/whatsapp-logo.png" alt="" class="w-full h-full object-cover" />
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="eyebrow mb-1 text-small">WhatsApp</p>
+            <p class="text-h3 font-heading text-ink group-hover:text-[#25D366] transition-colors">Chat starten</p>
+            <p class="text-body text-ink-muted mt-1">Praktisch für kurze Rückfragen oder Foto-Senden</p>
+          </div>
+        </a>
+
+        <a href={`mailto:${email}`} class="card-hover flex items-center gap-5 group flex-1">
+          <div class="w-16 h-16 rounded-btn bg-primary-soft text-primary flex items-center justify-center flex-shrink-0" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="eyebrow mb-1 text-small">E-Mail</p>
+            <p class="text-h4 font-heading text-ink group-hover:text-primary-hover transition-colors truncate">{email}</p>
+            <p class="text-body text-ink-muted mt-1">Antwort meist innerhalb eines Werktags</p>
+          </div>
+        </a>
+
+        <div class="card flex items-center gap-5 flex-1">
+          <div class="w-16 h-16 rounded-btn bg-accent-soft text-accent flex items-center justify-center flex-shrink-0" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <p class="eyebrow mb-1 text-small">Adresse</p>
+            <p class="text-h4 font-heading text-ink leading-snug">
+              {site.address.street}<br />
+              {site.address.zip} {site.address.city}-{site.address.district}
+            </p>
+            <a href="#anfahrt" class="text-body text-primary font-semibold mt-1 inline-block hover:text-primary-hover">Karte und Anfahrt unten ↓</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rechte Spalte: Kontaktformular -->
+      <div class="lg:col-span-7 flex">
+        <div class="bg-surface rounded-card shadow-md p-6 md:p-10 w-full flex flex-col">
+          <p class="eyebrow mb-3">Kontaktformular</p>
+          <h2 class="text-h2-mobile md:text-h3 font-heading text-ink mb-2">
+            Schreiben Sie uns.
+          </h2>
+          <p class="text-body text-ink-muted mb-8">
+            Pflichtfelder sind mit <span class="form-required">*</span> markiert.
+          </p>
+
+          <form action="/api/kontakt" method="POST" class="space-y-5" novalidate>
+            <!-- Honeypot (Bot-Schutz) -->
+            <div aria-hidden="true" class="absolute opacity-0 pointer-events-none" style="left:-9999px;height:0;overflow:hidden;">
+              <label for="website">Website (bitte leer lassen)</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label class="form-label" for="name">Name <span class="form-required">*</span></label>
+                <input class="form-input" type="text" id="name" name="name" required autocomplete="name" />
+              </div>
+              <div>
+                <label class="form-label" for="phone">Telefon</label>
+                <input class="form-input" type="tel" id="phone" name="phone" autocomplete="tel" />
+              </div>
+            </div>
+
+            <div>
+              <label class="form-label" for="email">E-Mail <span class="form-required">*</span></label>
+              <input class="form-input" type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+
+            <div>
+              <label class="form-label" for="topic">Anliegen <span class="form-required">*</span></label>
+              <select class="form-select" id="topic" name="topic" required>
+                <option value="">Bitte wählen</option>
+                <option value="erstberatung">Kostenlose Erstberatung</option>
+                <option value="pflegegrad">Pflegegrad & Antrag</option>
+                <option value="karriere">Karriere / Bewerbung</option>
+                <option value="sonstiges">Sonstiges</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="form-label" for="message">Nachricht <span class="form-required">*</span></label>
+              <textarea class="form-textarea" id="message" name="message" required placeholder="Was können wir für Sie tun?"></textarea>
+              <p class="form-hint">
+                Bitte übermitteln Sie hier keine sensiblen Gesundheitsdaten.
+                Details besprechen wir gern persönlich am Telefon.
+              </p>
+            </div>
+
+            <div class="flex items-start gap-3 pt-2">
+              <input type="checkbox" id="consent" name="consent" required class="mt-1 w-5 h-5 rounded border-2 border-line text-primary focus:ring-primary" />
+              <label for="consent" class="text-small text-ink-muted">
+                Ich habe die <a href="/datenschutz/" class="text-primary underline underline-offset-2">Datenschutzerklärung</a>
+                gelesen und willige in die Verarbeitung meiner Daten zur Bearbeitung dieser Anfrage ein. <span class="form-required">*</span>
+              </label>
+            </div>
+
+            <div class="pt-2">
+              <button type="submit" class="btn-primary btn-lg w-full sm:w-auto">
+                Nachricht senden
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Erreichbarkeit -->
+  <section class="py-section-mobile md:py-12 bg-surface">
+    <div class="container-content">
+      <div class="max-w-prose-comfort mb-8 md:mb-10">
+        <p class="eyebrow mb-3">Erreichbarkeit</p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-ink mb-3">
+          Wann Sie uns erreichen.
+        </h2>
+        <p class="text-lead text-ink-muted">
+          Für Anfragen, Beratung und akute Pflegesituationen — wir sind für Sie da.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 md:gap-6">
+        <div class="card flex flex-col gap-3">
+          <div class="w-14 h-14 rounded-btn bg-primary-soft text-primary flex items-center justify-center" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>
+            </svg>
+          </div>
+          <h3 class="text-h4 font-heading text-ink">Büro</h3>
+          <p class="text-body text-ink-muted leading-relaxed">
+            <strong class="text-ink">{site.officeHours.weekdays}</strong><br />
+            {site.officeHours.note}
+          </p>
+        </div>
+
+        <div class="card flex flex-col gap-3">
+          <div class="w-14 h-14 rounded-btn bg-care-soft text-care flex items-center justify-center" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3 class="text-h4 font-heading text-ink">Pflegedienst</h3>
+          <p class="text-body text-ink-muted leading-relaxed">
+            <strong class="text-ink">Täglich 06:00–21:30</strong><br />
+            Mo–So inkl. Sonn- und Feiertage
+          </p>
+        </div>
+
+        <div class="card flex flex-col gap-3 bg-care/5 border border-care/20">
+          <div class="w-14 h-14 rounded-btn bg-care text-white flex items-center justify-center" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.34 12 19.79 19.79 0 0 1 1.27 3.35 2 2 0 0 1 3.26 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6.06 6.06l1.36-.68a2 2 0 0 1 2.11.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 18v.92z"/>
+              <path d="M14.05 2a9 9 0 0 1 8 7.94"/>
+              <path d="M14.05 6A5 5 0 0 1 18 10"/>
+            </svg>
+          </div>
+          <h3 class="text-h4 font-heading text-ink">24-Stunden-Bereitschaft</h3>
+          <p class="text-body text-ink-muted leading-relaxed">
+            <strong class="text-care">Rund um die Uhr für alle erreichbar</strong> — auch spontan, wenn es dringend ist.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="anfahrt" class="section bg-surface">
+    <div class="container-content">
+      <div class="max-w-prose-comfort mb-8">
+        <p class="eyebrow mb-3">Anfahrt</p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-ink mb-4">
+          Mitten in Cronenberg.
+        </h2>
+        <p class="text-lead text-ink-muted">
+          {site.address.street}, {site.address.zip} {site.address.city}-{site.address.district}
+        </p>
+      </div>
+
+      <!-- Google Maps mit DSGVO-Consent (Zwei-Klick-Lösung) -->
+      <div id="map-container" class="rounded-card overflow-hidden border border-line aspect-[16/9] mb-8 relative bg-primary-soft" data-map>
+        <!-- Platzhalter (vor Einwilligung) -->
+        <div data-map-placeholder class="absolute inset-0 flex items-center justify-center bg-primary-soft p-6 text-center">
+          <div class="max-w-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="text-primary/50 mx-auto mb-4">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <h3 class="text-h4 font-heading text-ink mb-2">Karte aktivieren</h3>
+            <p class="text-body text-ink-muted mb-5">
+              Beim Laden werden Daten an <strong>Google Maps</strong> übertragen.
+              Mit dem Klick stimmen Sie der Übertragung gemäß unserer
+              <a href="/datenschutz/" class="text-primary underline underline-offset-2">Datenschutzerklärung</a> zu.
+            </p>
+            <button type="button" data-map-activate class="btn-primary btn-md">
+              Karte laden
+            </button>
+          </div>
+        </div>
+        <!-- Iframe wird per JS injiziert nach Consent -->
+        <div data-map-frame class="absolute inset-0 hidden"></div>
+      </div>
+
+      <script is:inline>
+        (function () {
+          const container = document.querySelector('[data-map]');
+          if (!container) return;
+          const placeholder = container.querySelector('[data-map-placeholder]');
+          const frameContainer = container.querySelector('[data-map-frame]');
+          const activateBtn = container.querySelector('[data-map-activate]');
+
+          const MAP_SRC = 'https://www.google.com/maps?q=Cronenberger+Straße+383,+42349+Wuppertal&output=embed';
+
+          function loadMap() {
+            const iframe = document.createElement('iframe');
+            iframe.src = MAP_SRC;
+            iframe.title = 'Standort Pflegedienst Pieper – Cronenberger Straße 383, Wuppertal';
+            iframe.loading = 'lazy';
+            iframe.referrerPolicy = 'no-referrer-when-downgrade';
+            iframe.style.cssText = 'width:100%;height:100%;border:0;';
+            iframe.setAttribute('allowfullscreen', '');
+            frameContainer.appendChild(iframe);
+            placeholder.classList.add('hidden');
+            frameContainer.classList.remove('hidden');
+          }
+
+          // Auto-load, wenn bereits Consent vorhanden
+          try {
+            const consent = JSON.parse(localStorage.getItem('cookie-consent') || '{}');
+            if (consent.maps === true) loadMap();
+          } catch (e) {}
+
+          activateBtn?.addEventListener('click', () => {
+            try {
+              const consent = JSON.parse(localStorage.getItem('cookie-consent') || '{}');
+              consent.maps = true;
+              consent.timestamp = Date.now();
+              localStorage.setItem('cookie-consent', JSON.stringify(consent));
+            } catch (e) {}
+            loadMap();
+          });
+        })();
+      </script>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card">
+          <h3 class="text-h4 font-heading text-ink mb-3">ÖPNV</h3>
+          <p class="text-body text-ink-muted">
+            Mit den Buslinien <strong>CE64</strong> und <strong>CE65</strong>
+            erreichen Sie Cronenberg-Mitte direkt vom Wuppertaler Hauptbahnhof.
+            Anschluss an die Schwebebahn besteht ab Hauptbahnhof Vohwinkel.
+          </p>
+        </div>
+        <div class="card">
+          <h3 class="text-h4 font-heading text-ink mb-3">Parken</h3>
+          <p class="text-body text-ink-muted">
+            Kurzzeit-Parkplätze entlang der Cronenberger Straße, ein größerer
+            Parkplatz am Rathaus Cronenberg in fußläufiger Entfernung.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

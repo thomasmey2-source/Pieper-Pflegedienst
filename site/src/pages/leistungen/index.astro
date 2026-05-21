@@ -1,0 +1,96 @@
+---
+import Base from '@/layouts/Base.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+import { site } from '@/config/site';
+import { getCollection } from 'astro:content';
+
+const entries = (await getCollection('leistungen')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const description = `Alle Pflegeleistungen von Pieper Pflegedienst auf einen Blick: Grundpflege, Behandlungspflege, Verhinderungspflege, 24h-Pflege, Palliativpflege, Betreuung, Arztbegleitung und hauswirtschaftliche Versorgung in Wuppertal-${site.address.district}.`;
+---
+
+<Base title="Unsere Pflegeleistungen" description={description}>
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-10" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="dots-leistungen" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="white" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#dots-leistungen)" />
+      </svg>
+    </div>
+
+    <div class="container-content relative py-14 md:py-20">
+      <nav aria-label="Brotkrümel" class="mb-5 text-small text-white/70">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="/" class="text-white/80 hover:text-white">Startseite</a></li>
+          <li aria-hidden="true">›</li>
+          <li class="text-white" aria-current="page">Leistungen</li>
+        </ol>
+      </nav>
+
+      <p class="eyebrow text-care-soft mb-4">Was wir für Sie tun</p>
+      <h1 class="text-h1-mobile md:text-h1 font-heading text-white mb-5 max-w-prose-comfort">
+        Unsere Pflegeleistungen — verständlich erklärt.
+      </h1>
+      <p class="text-lead text-white/90 max-w-prose-comfort">
+        Von der Grundpflege bis zur Palliativbegleitung. Hier finden Sie eine Übersicht
+        über alles, was wir anbieten — inklusive Hinweisen, wer die Kosten trägt.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-content">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        {entries.map((entry) => (
+          <div>
+            <ServiceCard
+              title={entry.data.title}
+              description={entry.data.excerpt}
+              href={`/leistungen/${entry.slug}/`}
+              iconPath={entry.data.iconPath}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-surface">
+    <div class="container-content">
+      <div class="card max-w-3xl mx-auto text-center">
+        <p class="eyebrow mb-3">Unsicher, was passt?</p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-ink mb-4">
+          Sie wissen nicht, welche Leistung Sie brauchen?
+        </h2>
+        <p class="text-lead text-ink-muted mb-7 max-w-prose-comfort mx-auto">
+          Das ist völlig normal — Pflege ist ein großes Thema. Wir helfen Ihnen,
+          den richtigen Weg zu finden: anonym über unseren Pflegegradrechner
+          oder im persönlichen Gespräch.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/pflegegradrechner/" class="btn-primary btn-lg">
+            Pflegegrad berechnen
+          </a>
+          <a href="/kontakt/" class="btn-secondary btn-lg">
+            Kostenlos beraten lassen
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Startseite', item: 'https://pflegedienst-pieper.de/' },
+      { '@type': 'ListItem', position: 2, name: 'Leistungen', item: 'https://pflegedienst-pieper.de/leistungen/' },
+    ],
+  })} />
+</Base>

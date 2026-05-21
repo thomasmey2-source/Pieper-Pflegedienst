@@ -1,0 +1,295 @@
+---
+import Base from '@/layouts/Base.astro';
+import { site } from '@/config/site';
+
+const description = `Familienbetrieb in zweiter Generation: Seit ${site.foundedYear} häusliche Pflege in Wuppertal-Cronenberg. Lernen Sie unser Team kennen.`;
+
+const values = [
+  {
+    title: 'Vertrauen',
+    text: 'Pflege ist eine Vertrauenssache. Wir kommen in Ihr Zuhause, in Ihren Alltag. Deshalb pflegen wir feste Bezugspersonen — Sie wissen, wer klingelt.',
+    icon: 'M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z',
+  },
+  {
+    title: 'Fachlichkeit',
+    text: 'Examinierte Pflegefachkräfte, regelmäßige Fortbildungen, klare Pflegeplanung. Behandlungspflege machen wir so, wie die Ärztin sie verordnet — sorgfältig und dokumentiert.',
+    icon: 'M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-8 14H7v-2h4v2zm6-4H7v-2h10v2zm0-4H7V7h10v2z',
+  },
+  {
+    title: 'Empathie',
+    text: 'Wir hören zu, nehmen uns Zeit, sehen den Menschen — nicht nur die Diagnose. Pflegende Angehörige stützen wir genauso wie die Pflegebedürftigen selbst.',
+    icon: 'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z',
+  },
+  {
+    title: 'Verlässlichkeit',
+    text: 'Wenn wir sagen, wir kommen um halb sieben, dann sind wir um halb sieben da. 24-Stunden-Bereitschaft im Team — auch nachts und am Wochenende erreichbar.',
+    icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',
+  },
+];
+
+const team = [
+  { name: 'Armin Pieper', role: 'Inhaber & Gründer', lead: true, image: '/images/armin-pieper.png' },
+  { name: 'Timo Pieper', role: 'Inhaber & Geschäftsführung', lead: true, image: '/images/timo-pieper.png' },
+  { name: '[TODO: Name]', role: 'Pflegedienstleitung (PDL)', lead: false },
+  { name: 'Sabine M.', role: 'Examinierte Pflegefachkraft', lead: false },
+  { name: 'Markus K.', role: 'Examinierter Altenpfleger', lead: false },
+  { name: 'Elena R.', role: 'Wundtherapeutin', lead: false },
+  { name: 'Andrea L.', role: 'Pflegehilfskraft', lead: false },
+];
+
+const trustItems = [
+  'Versorgungsvertrag nach §72 SGB XI mit allen gesetzlichen Pflegekassen',
+  'MDK-Pflegenote: [TODO: aktuelle Note]',
+  'Examinierte Pflegefachkräfte und qualifizierte Hilfskräfte',
+  'Regelmäßige Fortbildungen — Wundversorgung, Demenz, Palliativ-Begleitung',
+  '24-Stunden-Bereitschaft, im Team verteilt',
+  'Persönliche Bezugspflege — feste Ansprechpartner für Sie',
+];
+---
+
+<Base title="Über uns" description={description}>
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-10" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="dots-uu" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="white" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#dots-uu)" />
+      </svg>
+    </div>
+    <div class="container-content relative py-16 md:py-24">
+      <p class="eyebrow text-care-soft mb-4">Über uns</p>
+      <h1 class="text-h1-mobile md:text-h1 font-heading text-white mb-5 max-w-3xl">
+        Menschen, die sich kümmern.
+      </h1>
+      <p class="text-lead text-white/90 max-w-prose-comfort">
+        Ein Familienbetrieb in Cronenberg, in zweiter Generation. Vater und
+        Sohn, ein Team — und ein Versprechen: persönlich pflegen, verlässlich
+        bleiben, ehrlich kommunizieren.
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-surface">
+    <div class="container-content">
+      <!-- Heading über dem Grid -->
+      <div class="mb-8 md:mb-10">
+        <p class="eyebrow mb-3">Unsere Geschichte</p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-ink">
+          Seit {site.foundedYear} in Cronenberg.
+        </h2>
+      </div>
+      <!-- Bild links, Text rechts — beide auf gleicher Höhe -->
+      <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
+        <div class="md:col-span-5">
+          <div class="hidden md:block rounded-card overflow-hidden shadow-md">
+            <img
+              src="/images/vater-und-sohn.png"
+              alt="Armin und Timo Pieper — Inhaber Pflegedienst Pieper Wuppertal-Cronenberg"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="md:col-span-7 prose-legal">
+          <p>
+            Im September 1985 gründete <strong>Petra Wagner</strong> als eine der
+            ersten in Wuppertal einen privaten Pflegedienst — damals noch in
+            kleinem Rahmen, mit dem klaren Anspruch, Menschen in ihrer eigenen
+            Wohnung zu pflegen, statt sie in Einrichtungen abzugeben.
+          </p>
+          <p>
+            1998 schlossen sich Petra Wagner und <strong>Armin Pieper</strong>
+            zu einer GbR zusammen. Was folgte, waren fast drei Jahrzehnte
+            gemeinsamen Wachstums: ein festes Team, rund 130 Patienten im
+            Bereich Cronenberg und der oberen Südstadt — und die Adresse
+            Cronenberger Straße 383, die bis heute gilt.
+          </p>
+          <p>
+            Sohn <strong>Timo Pieper</strong> ist schon lange mit dabei:
+            zunächst als Pflegedienstleiter, heute als gleichberechtigter
+            Mitinhaber. Seit diesem Jahr führen Armin und Timo den Betrieb
+            als <strong>Armin & Timo Pieper GbR — Häusliche Krankenpflege</strong>
+            weiter.
+          </p>
+          <p>
+            Was sich in fast 40 Jahren nicht geändert hat: Wir sind kein Konzern,
+            kein anonymer Dienstleister. Wir sind die Pflegekräfte, die Ihre
+            Nachbarin seit Jahren kennt — und die auch morgen noch da sind.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team-Foto-Banner -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="container-content">
+      <figure>
+        <div class="aspect-[4/3] sm:aspect-[16/9] rounded-card overflow-hidden shadow-lg">
+          <img
+            src="/images/mitarbeiter.png"
+            alt="Das Team von Pflegedienst Pieper vor dem Büro an der Cronenberger Straße 383"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <figcaption class="text-center text-small text-ink-muted mt-4">
+          Unser Team — vor dem Büro an der Cronenberger Straße 383
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-content">
+      <div class="max-w-prose-comfort mb-10 md:mb-14">
+        <p class="eyebrow mb-3">Unsere Werte</p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-ink mb-4">
+          Vier Grundsätze, an denen wir gemessen werden wollen.
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+        {values.map((v) => (
+          <div class="card">
+            <div class="w-12 h-12 rounded-btn bg-primary-soft text-primary flex items-center justify-center mb-4" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d={v.icon} />
+              </svg>
+            </div>
+            <h3 class="text-h3 font-heading text-ink mb-2">{v.title}</h3>
+            <p class="text-body text-ink-muted">{v.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-surface">
+    <div class="container-content">
+      <div class="max-w-prose-comfort mb-10 md:mb-14">
+        <p class="eyebrow mb-3">Unser Team</p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-ink mb-4">
+          Gesichter, die Sie wiedersehen.
+        </h2>
+        <p class="text-lead text-ink-muted">
+          Bezugspflege ist uns wichtig. Wir versuchen, möglichst feste Teams
+          zu Ihnen zu schicken — damit Pflege Beziehung bleibt.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-8">
+        {team.filter((t) => t.lead).map((t) => (
+          <div class="card-hover">
+            <div class="aspect-[4/5] rounded-btn overflow-hidden mb-4">
+              <img
+                src={t.image}
+                alt={t.name}
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="text-h3 font-heading text-ink mb-1">{t.name}</h3>
+            <p class="text-small text-primary font-semibold">{t.role}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+        {team.filter((t) => !t.lead).map((t) => (
+          <div class="card">
+            <div aria-hidden="true" class="aspect-square rounded-full bg-surface-alt mb-3 flex items-center justify-center mx-auto w-24 h-24">
+              <span class="text-ink-muted/40 text-xs-label">Foto</span>
+            </div>
+            <h3 class="text-h4 font-heading text-ink text-center mb-1">{t.name}</h3>
+            <p class="text-small text-ink-muted text-center">{t.role}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-content grid md:grid-cols-12 gap-10 items-start">
+      <div class="md:col-span-5">
+        <p class="eyebrow mb-3">Qualität & Vertrauen</p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-ink mb-4">
+          Wofür wir geradestehen.
+        </h2>
+        <p class="text-lead text-ink-muted">
+          Pflege ist reguliert, geprüft, dokumentiert — und das ist auch gut so.
+          Hier sehen Sie, was Sie von uns erwarten dürfen.
+        </p>
+      </div>
+      <ul class="md:col-span-7 space-y-3">
+        {trustItems.map((item) => (
+          <li class="flex items-start gap-3 bg-surface rounded-card p-4 md:p-5 shadow-sm">
+            <svg class="w-6 h-6 text-care flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+            </svg>
+            <span class="text-body text-ink">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section bg-surface">
+    <div class="container-content">
+      <div class="bg-white rounded-card shadow-sm p-6 md:p-8 max-w-3xl flex flex-col sm:flex-row items-start gap-5">
+        <div class="w-20 h-20 rounded-btn overflow-hidden flex-shrink-0 bg-white border border-line/40 shadow-sm flex items-center justify-center p-1">
+          <img
+            src="/images/die-freien-logo.png"
+            alt="DIE FREIEN Wuppertal — Verband freier ambulanter Pflegedienste"
+            class="w-full h-full object-contain"
+          />
+        </div>
+        <div>
+          <p class="eyebrow mb-2">Verbandsmitgliedschaft</p>
+          <h3 class="text-h3 font-heading text-ink mb-3">Mitglied bei DIE FREIEN Wuppertal</h3>
+          <p class="text-body text-ink-muted mb-4">
+            Pieper ist Mitglied im ältesten Wuppertaler Berufsverband freiberuflicher ambulanter
+            Pflegeeinrichtungen — und damit Teil eines Netzwerks, das seit den 1980er Jahren für
+            Pflegequalität, stabile Arbeitsbedingungen und die Interessen Pflegebedürftiger in
+            Wuppertal eintritt. Der Verband ist außerdem Mitglied im
+            <strong>Landesverband Freie Ambulante Krankenpflege NRW e.&nbsp;V.</strong> — dem
+            größten Landesverband für ambulante Krankenpflege in NRW.
+          </p>
+          <a
+            href="https://pflegedienste-wuppertal.de"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-small font-semibold text-primary hover:text-primary-hover transition-colors"
+          >
+            Mehr über DIE FREIEN Wuppertal
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-primary text-white">
+    <div class="container-content text-center max-w-prose-comfort mx-auto">
+      <h2 class="text-h2-mobile md:text-h2 font-heading text-white mb-4">
+        Lernen Sie uns persönlich kennen.
+      </h2>
+      <p class="text-lead text-white/90 mb-8">
+        Ein kurzes Gespräch sagt oft mehr als jede Webseite. Rufen Sie uns an
+        oder vereinbaren Sie ein unverbindliches Erstgespräch bei Ihnen zu Hause.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/kontakt/" class="btn-care btn-lg">Erstberatung anfragen</a>
+        <a href={site.contact.phoneHref} class="btn btn-lg bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 backdrop-blur">
+          {site.contact.phone}
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

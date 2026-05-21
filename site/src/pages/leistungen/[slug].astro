@@ -1,0 +1,194 @@
+---
+import Base from '@/layouts/Base.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+import { site } from '@/config/site';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('leistungen');
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'leistungen'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const all = (await getCollection('leistungen')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const related = all.filter((e) => e.slug !== entry.slug).slice(0, 3);
+
+const seoTitle = entry.data.seoTitle ?? entry.data.title;
+---
+
+<Base title={seoTitle} description={entry.data.seoDescription}>
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-10" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id={`dots-${entry.slug}`} x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="white" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill={`url(#dots-${entry.slug})`} />
+      </svg>
+    </div>
+
+    <div class="container-content relative py-12 md:py-16">
+      <nav aria-label="Brotkrümel" class="mb-5 text-small text-white/70">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="/" class="text-white/80 hover:text-white">Startseite</a></li>
+          <li aria-hidden="true">›</li>
+          <li><a href="/leistungen/" class="text-white/80 hover:text-white">Leistungen</a></li>
+          <li aria-hidden="true">›</li>
+          <li class="text-white" aria-current="page">{entry.data.title}</li>
+        </ol>
+      </nav>
+
+      <div class="flex flex-col md:flex-row md:items-center gap-6">
+        <div class="w-20 h-20 rounded-card bg-white/15 backdrop-blur border border-white/20 text-white flex items-center justify-center flex-shrink-0">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={entry.data.iconPath} />
+        </div>
+        <div>
+          <h1 class="text-h1-mobile md:text-h1 font-heading text-white mb-3">
+            {entry.data.title}
+          </h1>
+          <p class="text-lead text-white/90 max-w-prose-comfort">
+            {entry.data.excerpt}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-content grid lg:grid-cols-3 gap-10 lg:gap-12">
+      <article class="lg:col-span-2 prose-content">
+        <Content />
+      </article>
+
+      <aside class="lg:col-span-1">
+        <div class="card sticky top-24">
+          <p class="eyebrow mb-3">Kosten & Anspruch</p>
+          <h2 class="text-h3 font-heading text-ink mb-4">
+            So werden die Leistungen finanziert
+          </h2>
+
+          <div class="mb-5">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-care-soft text-care font-semibold text-small">
+              {entry.data.pflegekasse.sgb}
+            </span>
+            {entry.data.pflegekasse.note && (
+              <p class="text-small text-ink-muted mt-3 leading-relaxed">
+                {entry.data.pflegekasse.note}
+              </p>
+            )}
+          </div>
+
+          <h3 class="text-h4 font-heading text-ink mb-3">Das ist enthalten</h3>
+          <ul class="space-y-2 mb-6">
+            {entry.data.included.map((item) => (
+              <li class="flex gap-2 text-small text-ink">
+                <span class="text-care font-bold mt-px" aria-hidden="true">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <h3 class="text-h4 font-heading text-ink mb-3">Für wen?</h3>
+          <p class="text-small text-ink-muted leading-relaxed mb-6">
+            {entry.data.forWhom}
+          </p>
+
+          <a href="/kontakt/" class="btn-primary btn-md w-full">
+            Wir beraten Sie kostenlos
+          </a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section bg-surface">
+    <div class="container-content">
+      <div class="max-w-prose-comfort mb-8 md:mb-10">
+        <p class="eyebrow mb-3">Verwandte Leistungen</p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-ink mb-3">
+          Das könnte ebenfalls zu Ihrer Situation passen
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        {related.map((rel) => (
+          <ServiceCard
+            title={rel.data.title}
+            description={rel.data.excerpt}
+            href={`/leistungen/${rel.slug}/`}
+            iconPath={rel.data.iconPath}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-content">
+      <div class="bg-care rounded-card overflow-hidden shadow-md p-8 md:p-12 lg:p-16 text-white text-center">
+        <p class="eyebrow text-white/80 mb-3">Persönlich. Verlässlich. Vor Ort.</p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-white mb-4 max-w-prose-comfort mx-auto">
+          Lassen Sie uns reden — kostenlos und unverbindlich.
+        </h2>
+        <p class="text-lead text-white/90 mb-7 max-w-prose-comfort mx-auto">
+          Wir nehmen uns Zeit für Sie, kommen auf Wunsch zu Ihnen nach Hause
+          und besprechen in Ruhe, was Sie brauchen.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href={site.contact.phoneHref} class="btn btn-lg bg-white text-care hover:bg-white/95 shadow-md">
+            {site.contact.phone}
+          </a>
+          <a href="/kontakt/" class="btn btn-lg bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 backdrop-blur">
+            Termin vereinbaren
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Startseite', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Leistungen', item: `${site.url}/leistungen/` },
+      { '@type': 'ListItem', position: 3, name: entry.data.title, item: `${site.url}/leistungen/${entry.slug}/` },
+    ],
+  })} />
+</Base>
+
+<style>
+  .prose-content :global(h2) {
+    @apply text-h2-mobile md:text-h2 font-heading text-ink mt-10 mb-4 first:mt-0;
+  }
+  .prose-content :global(h3) {
+    @apply text-h3 font-heading text-ink mt-8 mb-3;
+  }
+  .prose-content :global(p) {
+    @apply text-body text-ink-muted leading-relaxed mb-4 max-w-prose-comfort;
+  }
+  .prose-content :global(ul) {
+    @apply list-disc pl-6 mb-4 space-y-2 text-body text-ink-muted max-w-prose-comfort;
+  }
+  .prose-content :global(ol) {
+    @apply list-decimal pl-6 mb-4 space-y-2 text-body text-ink-muted max-w-prose-comfort;
+  }
+  .prose-content :global(strong) {
+    @apply text-ink font-semibold;
+  }
+  .prose-content :global(a) {
+    @apply text-primary underline underline-offset-2 hover:text-primary-hover;
+  }
+</style>

@@ -1,0 +1,238 @@
+---
+import Base from '@/layouts/Base.astro';
+import { site } from '@/config/site';
+
+const title = 'Pflegegrad beantragen — Schritt für Schritt';
+const description = 'Pflegegrad beantragen in Wuppertal: Vom ersten Anruf bei der Pflegekasse bis zum Begutachtungstermin. Verständlich erklärt von Pflegedienst Pieper aus Wuppertal-Cronenberg.';
+const published = '2026-05-12';
+const publishedDisplay = '12. Mai 2026';
+---
+
+<Base title={title} description={description}>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    datePublished: published,
+    author: { '@type': 'Organization', name: `${site.legalName} – ${site.legalSuffix}` },
+    publisher: { '@type': 'Organization', name: site.legalName, url: site.url },
+    mainEntityOfPage: `${site.url}/ratgeber/pflegegrad-beantragen/`,
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Startseite', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Ratgeber', item: `${site.url}/ratgeber/` },
+      { '@type': 'ListItem', position: 3, name: title, item: `${site.url}/ratgeber/pflegegrad-beantragen/` },
+    ],
+  })} />
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-10" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="dots-pgb" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="white" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#dots-pgb)" />
+      </svg>
+    </div>
+    <div class="container-content relative py-14 md:py-20">
+      <nav aria-label="Brotkrümel" class="mb-5 text-small text-white/70">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="/" class="hover:text-white">Startseite</a></li>
+          <li aria-hidden="true">›</li>
+          <li><a href="/ratgeber/" class="hover:text-white">Ratgeber</a></li>
+          <li aria-hidden="true">›</li>
+          <li class="text-white" aria-current="page">Pflegegrad beantragen</li>
+        </ol>
+      </nav>
+      <p class="eyebrow text-care-soft mb-4">Ratgeber · Pflegegrade</p>
+      <h1 class="text-h1-mobile md:text-h1 font-heading text-white mb-5 max-w-3xl">
+        Pflegegrad beantragen — Schritt für Schritt.
+      </h1>
+      <p class="text-lead text-white/90 max-w-prose-comfort">
+        Vom ersten Anruf bei der Pflegekasse bis zum Begutachtungstermin: Wir erklären,
+        was Sie in Wuppertal-Cronenberg und Umgebung wissen müssen — ohne Behördendeutsch.
+      </p>
+      <p class="mt-4 text-small text-white/60">Veröffentlicht am {publishedDisplay} · Pflegedienst Pieper, Wuppertal-Cronenberg</p>
+    </div>
+  </section>
+
+  <!-- Artikel -->
+  <section class="section">
+    <div class="container-content grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+
+      <!-- Haupttext -->
+      <article class="lg:col-span-8 prose-legal">
+
+        <h2>Was ist ein Pflegegrad — und wer braucht ihn?</h2>
+        <p>
+          Ein Pflegegrad legt fest, wie stark jemand in seiner Selbstständigkeit eingeschränkt ist und
+          welche Leistungen die Pflegekasse übernimmt. Es gibt fünf Pflegegrade: Pflegegrad 1 (geringe
+          Beeinträchtigung) bis Pflegegrad 5 (schwerste Beeinträchtigung mit besonderem Pflegebedarf).
+        </p>
+        <p>
+          Einen Pflegegrad braucht jeder, der dauerhaft — also voraussichtlich für mindestens sechs Monate —
+          Hilfe bei alltäglichen Verrichtungen benötigt. Das gilt für ältere Menschen genauso wie für
+          jüngere Personen mit Behinderung oder chronischer Erkrankung. Auch Demenzkranke haben häufig
+          Anspruch auf einen höheren Pflegegrad, selbst wenn körperlich noch wenig Einschränkung besteht.
+        </p>
+
+        <h2>Schritt 1: Antrag bei der Pflegekasse stellen</h2>
+        <p>
+          Der Antrag ist der erste und wichtigste Schritt — denn Leistungen der Pflegekasse werden
+          <strong>frühestens ab dem Monat des Antrags</strong> gewährt, nicht rückwirkend.
+          Deshalb gilt: Antrag stellen, sobald absehbar ist, dass Pflege dauerhaft nötig sein wird —
+          auch wenn noch keine genaue Diagnose vorliegt.
+        </p>
+        <p>
+          Den Antrag stellen Sie formlos per Telefon, Brief oder Online-Formular bei der
+          <strong>Pflegekasse Ihrer Krankenkasse</strong>. Ein einfacher Satz genügt:
+          <em>„Ich beantrage die Feststellung meiner Pflegebedürftigkeit."</em>
+          Die Pflegekasse schickt dann einen Fragebogen und koordiniert die Begutachtung.
+        </p>
+
+        <h2>Schritt 2: Pflegetagebuch führen</h2>
+        <p>
+          Zwischen Antrag und Begutachtungstermin — der Medizinische Dienst (MD) muss innerhalb von
+          25 Arbeitstagen einen Termin anbieten — sollten Sie ein <strong>Pflegetagebuch</strong> führen.
+          Notieren Sie täglich, welche Hilfen wie lange benötigt werden: Waschen, Anziehen, Medikamente,
+          Mahlzeiten, Toilettengänge, Wegorientierung.
+        </p>
+        <p>
+          Das Tagebuch ist kein Pflichtdokument, aber beim Begutachtungsgespräch äußerst wertvoll:
+          Es belegt konkret, was der betroffene Mensch alleine nicht mehr schafft.
+          Wir vom Pflegedienst Pieper helfen Ihnen gerne dabei, das Tagebuch korrekt zu führen.
+        </p>
+
+        <h2>Schritt 3: Den Begutachtungstermin vorbereiten</h2>
+        <p>
+          Der Gutachter des MD besucht die pflegebedürftige Person zu Hause und führt ein strukturiertes
+          Gespräch — das sogenannte <strong>Neue Begutachtungs-Assessment (NBA)</strong>. Bewertet werden
+          sechs Lebensbereiche: Mobilität, kognitive Fähigkeiten, Verhaltensweisen, Selbstversorgung,
+          krankheitsbedingte Anforderungen sowie Alltagsgestaltung und soziale Kontakte.
+        </p>
+        <p>
+          Wichtige Tipps für den Termin:
+        </p>
+        <ul>
+          <li>Lassen Sie die pflegebedürftige Person <strong>nicht besser darstellen</strong>, als sie ist — zeigen Sie den schlechten Tag, nicht den guten.</li>
+          <li>Eine Vertrauensperson (Angehöriger, Pflegekraft) darf dabei sein und ergänzen.</li>
+          <li>Medikamentenliste, Diagnosen, Arztberichte und das Pflegetagebuch bereitlegen.</li>
+          <li>Zeigen Sie, was <em>nicht mehr</em> geht — nicht, was noch irgendwie klappt.</li>
+        </ul>
+
+        <h2>Schritt 4: Bescheid abwarten und prüfen</h2>
+        <p>
+          Nach der Begutachtung erstellt der MD ein Gutachten. Die Pflegekasse verschickt dann den
+          <strong>Pflegegrad-Bescheid</strong> — in der Regel innerhalb von 25 Arbeitstagen nach
+          Antragstellung. Prüfen Sie den Bescheid sorgfältig: Stimmt der zuerkannte Pflegegrad mit
+          dem überein, was Sie erwartet haben?
+        </p>
+
+        <h2>Schritt 5: Widerspruch einlegen bei falscher Einstufung</h2>
+        <p>
+          Wenn der Pflegegrad zu niedrig erscheint, haben Sie <strong>einen Monat</strong> Zeit,
+          schriftlich Widerspruch einzulegen. Begründen Sie ihn konkret: Welche Einschränkungen wurden
+          nicht oder zu gering bewertet? Lassen Sie sich dabei helfen — von uns, dem VdK, oder einem
+          Pflegestützpunkt.
+        </p>
+        <p>
+          In Wuppertal ist der <strong>Pflegestützpunkt Wuppertal</strong> eine kostenfreie Anlaufstelle
+          für Beratung und Widerspruchsunterstützung.
+        </p>
+
+        <h2>Wie Pflegedienst Pieper Sie unterstützt</h2>
+        <p>
+          Als ambulanter Pflegedienst in Wuppertal-Cronenberg begleiten wir Familien nicht nur bei der
+          täglichen Pflege, sondern auch auf dem Weg zum Pflegegrad. Wir kennen das Verfahren,
+          helfen beim Pflegetagebuch, bereiten Sie auf den MD-Termin vor — und sind auf Wunsch
+          beim Begutachtungsgespräch dabei.
+        </p>
+        <p>
+          Unsere Beratung ist <strong>kostenlos und unverbindlich</strong>. Rufen Sie einfach an oder
+          schreiben Sie uns — wir melden uns noch am selben Werktag.
+        </p>
+
+      </article>
+
+      <!-- Seitenleiste -->
+      <aside class="lg:col-span-4 space-y-5">
+
+        <!-- CTA-Karte -->
+        <div class="bg-primary rounded-card p-6 text-white">
+          <h3 class="text-h4 font-heading text-white mb-3">Kostenlose Beratung</h3>
+          <p class="text-small text-white/90 mb-5">
+            Wir bereiten Sie auf den MD-Termin vor — persönlich, kostenlos und direkt bei Ihnen zu Hause in Cronenberg und Umgebung.
+          </p>
+          <a href="/kontakt/" class="btn btn-md bg-white text-primary font-bold hover:bg-white/90 w-full text-center block">
+            Termin vereinbaren
+          </a>
+          <a href={site.contact.phoneHref} class="mt-3 text-small text-white/80 hover:text-white text-center block">
+            {site.contact.phone}
+          </a>
+        </div>
+
+        <!-- Auf einen Blick -->
+        <div class="bg-surface rounded-card p-6">
+          <h3 class="text-h4 font-heading text-ink mb-4">Auf einen Blick</h3>
+          <ul class="space-y-3 text-small text-ink-muted">
+            {[
+              'Antrag sofort stellen — Leistungen gelten ab Antragsmonat',
+              'Pflegetagebuch 2–3 Wochen vor Begutachtung führen',
+              'Begutachtung durch MD (25 Werktage Frist)',
+              'Vertrauensperson darf beim Termin dabei sein',
+              'Widerspruch: 1 Monat Frist nach Bescheid',
+            ].map((item) => (
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-care flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Pflegegradrechner -->
+        <div class="bg-care-soft rounded-card p-6 border border-care/20">
+          <h3 class="text-h4 font-heading text-ink mb-2">Welcher Pflegegrad?</h3>
+          <p class="text-small text-ink-muted mb-4">
+            Unser kostenloser Rechner gibt eine erste Orientierung — in wenigen Minuten.
+          </p>
+          <a href="/pflegegradrechner/" class="btn-care btn-md w-full text-center block">
+            Pflegegrad berechnen
+          </a>
+        </div>
+
+      </aside>
+    </div>
+  </section>
+
+  <!-- Weitere Artikel -->
+  <section class="section bg-surface">
+    <div class="container-content">
+      <h2 class="text-h3 font-heading text-ink mb-6">Weitere Ratgeber-Themen</h2>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <a href="/ratgeber/verhinderungspflege-erklaert/" class="card-hover block">
+          <p class="eyebrow mb-2">Verhinderungspflege</p>
+          <h3 class="text-h4 font-heading text-ink mb-2">Verhinderungspflege einfach erklärt</h3>
+          <p class="text-small text-ink-muted">Bis zu 1.612 Euro pro Jahr — wann und wie Sie die Leistung nutzen können.</p>
+        </a>
+        <a href="/ratgeber/entlastungsbetrag/" class="card-hover block">
+          <p class="eyebrow mb-2">Entlastungsbetrag</p>
+          <h3 class="text-h4 font-heading text-ink mb-2">Entlastungsbetrag richtig nutzen</h3>
+          <p class="text-small text-ink-muted">125 Euro monatlich — viele lassen das Geld liegen. So nicht.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Base>

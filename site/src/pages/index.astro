@@ -1,0 +1,265 @@
+---
+import Base from '@/layouts/Base.astro';
+import TrustStrip from '@/components/TrustStrip.astro';
+import ServicesSection from '@/components/ServicesSection.astro';
+import PflegegradeOverview from '@/components/PflegegradeOverview.astro';
+import { site } from '@/config/site';
+
+const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${site.foundedYear}. Für pflegende Angehörige und Pflegebedürftige in Cronenberg, Küllenhahn, Ronsdorf und Umgebung: Grundpflege, Behandlungspflege, 24h-Versorgung — alle Pflegekassen, familiärer Betrieb.`;
+---
+
+<Base title="Häusliche Krankenpflege in Wuppertal-Cronenberg" description={description}>
+  <section class="relative overflow-hidden h-[720px] sm:h-[860px] md:h-[980px] lg:h-[1080px] bg-primary">
+    <!-- Bild-Container: 16:9-Format — Höhe × 16/9 = natürliche Maximalbreite -->
+    <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full max-w-[1280px] sm:max-w-[1530px] md:max-w-[1742px] lg:max-w-[1920px]">
+      <!-- Endbild (Cronenberger Marktplatz) — startet unsichtbar, faded ein wenn das Video endet -->
+      <img
+        src="/images/hero.svg"
+        alt="Cronenberger Marktplatz mit Fachwerkhaus und Reformierter Kirche"
+        class="absolute inset-0 w-full h-full object-cover object-right opacity-0 transition-opacity duration-[1500ms] ease-out"
+        style="filter: blur(1.5px); transform: scale(1.02); transform-origin: right center;"
+        id="hero-end-image"
+      />
+      <video
+        src="/images/hero.mp4"
+        poster="/images/hero.png"
+        class="relative w-full h-full object-cover object-right transition-opacity duration-[1500ms] ease-in"
+        autoplay
+        muted
+        playsinline
+        preload="auto"
+        id="hero-video"
+        aria-label="Cronenberger Marktplatz mit Fachwerkhaus und Reformierter Kirche"
+      ></video>
+    </div>
+    <!-- Blauer Textlesbarkeits-Gradient — über die gesamte Section, sodass auch der weiße Seitenrand-Bereich blau bleibt -->
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/60 to-transparent" aria-hidden="true"></div>
+
+    <!-- Inhalt — kein mx-auto, damit Text linksbündig am Viewport-Rand startet und die blaue Fläche ausfüllt -->
+    <div class="relative h-full flex items-center">
+      <div class="w-full px-5 md:px-10 lg:px-16 xl:px-24">
+        <div class="w-full md:w-[52%] lg:w-[50%] max-w-2xl">
+          <!-- Eyebrow mit Gold-Akzent und Pin-Icon -->
+          <div class="flex items-center gap-2 mb-5">
+            <svg class="w-5 h-5 text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+            </svg>
+            <p class="text-xs-label uppercase tracking-[0.18em] text-accent font-bold">
+              Cronenberg · Küllenhahn · Sudberg · Ronsdorf
+            </p>
+          </div>
+
+          <!-- Großer, mutiger Hero-Titel mit Gold-Highlight -->
+          <h1 class="font-heading font-bold text-white mb-6 leading-[1.05] text-[2.25rem] sm:text-5xl md:text-[3.5rem] lg:text-[4.25rem] xl:text-[5rem]">
+            Pflege zu Hause.<br/>
+            <span class="text-accent">In Ihrer Nachbarschaft.</span>
+          </h1>
+
+          <p class="text-white/90 mb-8 max-w-prose-comfort text-lg md:text-xl lg:text-2xl leading-snug">
+            Seit {site.foundedYear} begleiten wir Familien aus Wuppertal-Cronenberg
+            und Umgebung — persönlich, verlässlich, immer in Ihrer Nähe.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-3 mb-10">
+            <a href="/kontakt/" class="btn btn-lg bg-accent text-primary-dark hover:bg-accent-hover hover:text-white shadow-lg font-bold">
+              Kostenlose Erstberatung
+            </a>
+            <a href="/pflegegradrechner/" class="btn btn-lg bg-white/10 text-white border-2 border-white/40 hover:bg-white/20 backdrop-blur-sm whitespace-nowrap">
+              Pflegegrad berechnen
+            </a>
+          </div>
+
+          <!-- Kennzahlen -->
+          <div class="flex items-center gap-6 md:gap-8">
+            <div>
+              <div class="text-3xl md:text-4xl font-heading font-bold text-white">40<span class="text-accent">+</span></div>
+              <div class="text-xs-label text-white/70 mt-0.5 uppercase tracking-wider">Jahre Erfahrung</div>
+            </div>
+            <div class="h-10 w-px bg-white/30" aria-hidden="true"></div>
+            <div>
+              <div class="text-3xl md:text-4xl font-heading font-bold text-white">24<span class="text-accent">/</span>7</div>
+              <div class="text-xs-label text-white/70 mt-0.5 uppercase tracking-wider">Bereitschaft</div>
+            </div>
+            <div class="h-10 w-px bg-white/30" aria-hidden="true"></div>
+            <div>
+              <div class="text-3xl md:text-4xl font-heading font-bold text-white">Alle<span class="text-accent">.</span></div>
+              <div class="text-xs-label text-white/70 mt-0.5 uppercase tracking-wider">Pflegekassen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cronenberg-Reveal-Badge: erscheint zum Video-Ende -->
+    <div
+      id="cronenberg-badge"
+      class="absolute bottom-8 right-8 md:bottom-12 md:right-12 opacity-0 translate-y-4 transition-all duration-1000 ease-out"
+      aria-hidden="true"
+    >
+      <div class="bg-white/95 backdrop-blur-sm rounded-lg shadow-xl px-5 py-4 flex items-center gap-3 max-w-xs">
+        <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+          <svg class="w-6 h-6 text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="text-small font-bold text-primary leading-tight">Hier zu Hause.</div>
+          <div class="text-xs-label text-ink-muted mt-0.5 leading-snug">
+            Cronenberger Straße 383<br />
+            42349 Wuppertal-Cronenberg
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Sanftes Cross-Fade Video → Standbild + Reveal-Badge
+    const heroVideo = document.getElementById('hero-video');
+    const heroEndImage = document.getElementById('hero-end-image');
+    const cronenbergBadge = document.getElementById('cronenberg-badge');
+
+    if (heroVideo && heroEndImage && cronenbergBadge) {
+      let faded = false;
+
+      heroVideo.addEventListener('timeupdate', () => {
+        if (faded) return;
+        // 1,5 Sek vor Ende: Video ausblenden, Bild + Badge einblenden
+        if (heroVideo.duration && heroVideo.duration - heroVideo.currentTime < 1.5) {
+          faded = true;
+          heroVideo.style.opacity = '0';
+          heroEndImage.style.opacity = '1';
+          // Badge mit kleiner Verzögerung für Staffelung
+          setTimeout(() => {
+            cronenbergBadge.style.opacity = '1';
+            cronenbergBadge.style.transform = 'translateY(0)';
+          }, 700);
+        }
+      });
+    }
+  </script>
+
+  <TrustStrip />
+
+  <ServicesSection />
+
+  <section class="section bg-[#F0F4FB]">
+    <div class="container-content">
+      <!-- Header-Zeile: Icon + Titel -->
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-14 h-14 rounded-full bg-white/70 flex items-center justify-center flex-shrink-0 shadow-sm" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#021e64" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+            <path d="m9 14 2 2 4-4"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-h2-mobile md:text-h2 font-heading text-ink mb-1">
+            Pflegegradrechner
+          </h2>
+          <p class="text-lead text-ink-muted">
+            Finden Sie Ihren Pflegegrad und informieren Sie sich über
+            Leistungen und finanzielle Unterstützung.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pflegegrade im Überblick -->
+      <h3 class="text-h4 font-heading text-ink mb-4">Pflegegrade im Überblick</h3>
+      <PflegegradeOverview />
+
+      <!-- CTA-Zeile -->
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-8">
+        <a href="/pflegegradrechner/" class="btn btn-lg bg-primary text-white hover:bg-primary-hover font-bold shadow-md">
+          Jetzt Pflegegrad berechnen
+        </a>
+        <div class="flex items-center gap-2 text-small text-ink-muted">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="text-care flex-shrink-0">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Kostenlos, unverbindlich und ohne Anmeldung
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-surface">
+    <div class="container-content grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+      <div class="aspect-[5/4] rounded-card overflow-hidden shadow-md order-2 md:order-1">
+        <img
+          src="/images/mitarbeiter.png"
+          alt="Das Team von Pflegedienst Pieper vor dem Büro in Cronenberg"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+      <div class="order-1 md:order-2">
+        <p class="eyebrow mb-3">Über uns</p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-ink mb-4">
+          Ein Team, das Sie kennt.
+        </h2>
+        <p class="text-lead text-ink-muted mb-4">
+          Seit {site.foundedYear} ist der Name Pieper in Cronenberg ein
+          Versprechen: Armin Pieper hat diesen Betrieb mit aufgebaut,
+          Timo Pieper führt ihn weiter. Vater und Sohn — kein Konzern,
+          sondern Familie.
+        </p>
+        <p class="text-body text-ink-muted mb-6">
+          Wir sind die Pflegekräfte, die Ihre Nachbarin seit Jahren kennt.
+          Persönlich, verlässlich, immer erreichbar.
+        </p>
+        <a href="/ueber-uns/" class="btn-secondary btn-md">
+          Lernen Sie uns kennen
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-primary text-white">
+    <div class="container-content grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="eyebrow text-white/70 mb-3">Karriere</p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-white mb-4">
+          Werden Sie Teil unseres Teams.
+        </h2>
+        <p class="text-lead text-white/90 mb-6 max-w-prose-comfort">
+          Faire Vergütung in Anlehnung an TVöD-Pflege, planbare Schichten,
+          ein familiäres Team — und 24-Stunden-Bereitschaft, in der niemand allein steht.
+        </p>
+        <a href="/karriere/" class="btn btn-lg bg-white text-primary hover:bg-white/95">
+          Offene Stellen ansehen
+        </a>
+      </div>
+      <div class="hidden md:block aspect-[5/4] rounded-card overflow-hidden">
+        <img
+          src="/images/mitarbeiterakquise.png"
+          alt="Pflegekraft von Pieper Häusliche Krankenpflege im Einsatz"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-content">
+      <div class="max-w-prose-comfort mb-10">
+        <p class="eyebrow mb-3">Einzugsgebiet</p>
+        <h2 class="text-h2-mobile md:text-h2 font-heading text-ink mb-4">
+          Wir pflegen in Ihrer Nachbarschaft.
+        </h2>
+        <p class="text-lead text-ink-muted">
+          Cronenberg und die umliegenden Stadtteile im Süden Wuppertals.
+        </p>
+      </div>
+      <ul class="flex flex-wrap gap-2 md:gap-3">
+        {site.serviceArea.map((district) => (
+          <li class="px-4 py-2 rounded-full bg-primary-soft text-primary font-semibold text-small">
+            {district}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Base>

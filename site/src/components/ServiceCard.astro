@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  iconPath: string;
+}
+
+const { title, description, href, iconPath } = Astro.props;
+---
+
+<a href={href} class="card-hover group flex flex-col h-full">
+  <div class="w-12 h-12 rounded-btn bg-primary-soft text-primary flex items-center justify-center mb-4">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={iconPath} />
+  </div>
+  <h3 class="text-h3 font-heading mb-2 text-ink group-hover:text-primary transition-colors">
+    {title}
+  </h3>
+  <p class="text-body text-ink-muted flex-grow">
+    {description}
+  </p>
+  <span class="mt-4 text-primary font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+    Mehr erfahren
+    <span aria-hidden="true">→</span>
+  </span>
+</a>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pflegedienst-pieper.de/sitemap-index.xml

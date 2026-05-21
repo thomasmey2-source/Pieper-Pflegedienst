@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-surface-alt text-ink font-body antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-ink;
+  }
+
+  a {
+    @apply text-primary;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-primary;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply max-w-content mx-auto px-5 md:px-8 lg:px-16;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-btn font-semibold transition-all duration-150 active:scale-[0.98] focus-visible:outline-2;
+  }
+
+  .btn-lg {
+    @apply h-14 px-7 text-lead;
+  }
+
+  .btn-md {
+    @apply h-12 px-6 text-body;
+  }
+
+  .btn-sm {
+    @apply h-10 px-5 text-small;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-white shadow-sm hover:bg-primary-hover hover:shadow-md hover:-translate-y-px;
+  }
+
+  .btn-care {
+    @apply btn bg-care text-white shadow-sm hover:bg-care-hover hover:shadow-md hover:-translate-y-px;
+  }
+
+  .btn-secondary {
+    @apply btn bg-transparent text-primary border-2 border-primary hover:bg-primary-soft;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-primary hover:bg-primary-soft;
+  }
+
+  .card {
+    @apply bg-surface rounded-card shadow-sm p-6 md:p-8 transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-md hover:-translate-y-1;
+  }
+
+  .section {
+    @apply py-section-mobile md:py-section;
+  }
+
+  .eyebrow {
+    @apply text-xs-label uppercase tracking-wider text-primary font-semibold;
+  }
+
+  .form-label {
+    @apply block text-small font-semibold text-ink mb-2;
+  }
+
+  .form-input {
+    @apply w-full h-12 px-4 rounded-btn bg-surface border-2 border-line text-body text-ink placeholder:text-ink-muted/60 transition-colors focus:border-primary focus:outline-none;
+  }
+
+  .form-textarea {
+    @apply w-full px-4 py-3 rounded-btn bg-surface border-2 border-line text-body text-ink placeholder:text-ink-muted/60 transition-colors focus:border-primary focus:outline-none min-h-[140px];
+  }
+
+  .form-select {
+    @apply w-full h-12 px-4 rounded-btn bg-surface border-2 border-line text-body text-ink transition-colors focus:border-primary focus:outline-none;
+  }
+
+  .form-hint {
+    @apply text-xs-label text-ink-muted mt-1;
+  }
+
+  .form-required {
+    @apply text-danger;
+  }
+
+  .prose-legal {
+    @apply max-w-prose-comfort text-body text-ink leading-relaxed;
+  }
+
+  .prose-legal h2 {
+    @apply text-h3 font-heading text-ink mt-10 mb-4;
+  }
+
+  .prose-legal h3 {
+    @apply text-h4 font-heading text-ink mt-6 mb-3;
+  }
+
+  .prose-legal p {
+    @apply mb-4 text-ink-muted;
+  }
+
+  .prose-legal ul {
+    @apply list-disc pl-6 mb-4 text-ink-muted space-y-2;
+  }
+
+  .prose-legal a {
+    @apply text-primary underline underline-offset-2 hover:text-primary-hover;
+  }
+
+  .prose-legal strong {
+    @apply text-ink font-semibold;
+  }
+}

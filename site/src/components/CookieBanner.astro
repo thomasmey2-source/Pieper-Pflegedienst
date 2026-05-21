@@ -1,0 +1,235 @@
+---
+/*
+ * Cookie-Banner mit DSGVO-Consent-Management
+ * - Notwendig: immer aktiv (technische Cookies, Consent-Speicher selbst)
+ * - Karten: Google Maps Einbindung
+ * - Analyse: Webanalyse (z. B. Plausible/Matomo)
+ *
+ * Speicherort: localStorage 'cookie-consent'
+ * Struktur: { necessary: true, maps: bool, analytics: bool, timestamp: number, version: 1 }
+ */
+---
+
+<div
+  id="cookie-banner"
+  class="hidden fixed inset-x-0 bottom-0 z-50 p-3 sm:p-5 md:p-6"
+  role="dialog"
+  aria-modal="false"
+  aria-labelledby="cookie-banner-title"
+  data-cookie-banner
+>
+  <div class="max-w-4xl mx-auto bg-white rounded-card shadow-xl border border-line overflow-hidden">
+    <!-- Hauptansicht -->
+    <div data-banner-main class="p-5 sm:p-6 md:p-8">
+      <div class="flex items-start gap-4 mb-4">
+        <div class="w-12 h-12 rounded-btn bg-primary-soft text-primary flex items-center justify-center flex-shrink-0" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
+            <path d="M8.5 8.5v.01"/>
+            <path d="M16 15.5v.01"/>
+            <path d="M12 12v.01"/>
+            <path d="M11 17v.01"/>
+            <path d="M7 14v.01"/>
+          </svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <h2 id="cookie-banner-title" class="text-h4 font-heading text-ink mb-2">
+            Wir respektieren Ihre Privatsphäre
+          </h2>
+          <p class="text-body text-ink-muted">
+            Diese Webseite nutzt nur technisch notwendige Cookies. Zusätzlich können Sie der
+            Einbindung von <strong>Google Maps</strong> (Anfahrtskarte) und einer
+            anonymen <strong>Webanalyse</strong> zustimmen. Details in unserer
+            <a href="/datenschutz/" class="text-primary underline underline-offset-2">Datenschutzerklärung</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-end">
+        <button type="button" class="btn-ghost btn-md text-small order-3 sm:order-1" data-banner-show-settings>
+          Einstellungen
+        </button>
+        <button type="button" class="btn-secondary btn-md order-2" data-banner-only-necessary>
+          Nur notwendige
+        </button>
+        <button type="button" class="btn-primary btn-md order-1 sm:order-3" data-banner-accept-all>
+          Alle akzeptieren
+        </button>
+      </div>
+    </div>
+
+    <!-- Einstellungen (ausklappbar) -->
+    <div data-banner-settings class="hidden border-t border-line p-5 sm:p-6 md:p-8 bg-surface">
+      <h3 class="text-h4 font-heading text-ink mb-4">Datenschutz-Einstellungen</h3>
+
+      <div class="space-y-4 mb-6">
+        <!-- Notwendig -->
+        <label class="flex items-start gap-3 p-3 rounded-btn bg-white border border-line cursor-not-allowed opacity-90">
+          <input type="checkbox" checked disabled class="mt-1 w-5 h-5 rounded border-2 border-line text-primary" />
+          <div class="flex-1">
+            <span class="font-semibold text-ink block mb-1">Notwendig (immer aktiv)</span>
+            <span class="text-small text-ink-muted">
+              Erforderlich für den Betrieb der Webseite — speichert Ihre Cookie-Einstellungen.
+            </span>
+          </div>
+        </label>
+
+        <!-- Maps -->
+        <label class="flex items-start gap-3 p-3 rounded-btn bg-white border border-line cursor-pointer hover:border-primary/40 transition-colors">
+          <input type="checkbox" data-consent-maps class="mt-1 w-5 h-5 rounded border-2 border-line text-primary focus:ring-primary cursor-pointer" />
+          <div class="flex-1">
+            <span class="font-semibold text-ink block mb-1">Karten (Google Maps)</span>
+            <span class="text-small text-ink-muted">
+              Einbindung der Anfahrtskarte. Beim Aktivieren werden Daten (u. a. IP-Adresse)
+              an Google in den USA übertragen.
+            </span>
+          </div>
+        </label>
+
+        <!-- Analytics -->
+        <label class="flex items-start gap-3 p-3 rounded-btn bg-white border border-line cursor-pointer hover:border-primary/40 transition-colors">
+          <input type="checkbox" data-consent-analytics class="mt-1 w-5 h-5 rounded border-2 border-line text-primary focus:ring-primary cursor-pointer" />
+          <div class="flex-1">
+            <span class="font-semibold text-ink block mb-1">Webanalyse</span>
+            <span class="text-small text-ink-muted">
+              Anonyme Nutzungsstatistik, um die Webseite zu verbessern. Keine Weitergabe an Dritte.
+            </span>
+          </div>
+        </label>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3 sm:justify-end">
+        <button type="button" class="btn-secondary btn-md" data-banner-hide-settings>
+          Zurück
+        </button>
+        <button type="button" class="btn-primary btn-md" data-banner-save-settings>
+          Auswahl speichern
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Re-Open-Button im Footer / dezent unten links wenn Banner geschlossen -->
+<button
+  type="button"
+  id="cookie-settings-trigger"
+  class="hidden fixed bottom-6 left-6 z-30 w-11 h-11 rounded-full bg-white border border-line shadow-md text-ink-muted hover:text-primary hover:border-primary/40 transition-colors items-center justify-center"
+  aria-label="Datenschutz-Einstellungen öffnen"
+  title="Datenschutz-Einstellungen"
+  data-cookie-settings-trigger
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
+    <path d="M8.5 8.5v.01"/>
+    <path d="M16 15.5v.01"/>
+    <path d="M12 12v.01"/>
+    <path d="M11 17v.01"/>
+    <path d="M7 14v.01"/>
+  </svg>
+</button>
+
+<script is:inline>
+  (function () {
+    const CONSENT_KEY = 'cookie-consent';
+    const CONSENT_VERSION = 1;
+
+    const banner = document.querySelector('[data-cookie-banner]');
+    const trigger = document.querySelector('[data-cookie-settings-trigger]');
+    if (!banner) return;
+
+    const mainView = banner.querySelector('[data-banner-main]');
+    const settingsView = banner.querySelector('[data-banner-settings]');
+    const cbMaps = banner.querySelector('[data-consent-maps]');
+    const cbAnalytics = banner.querySelector('[data-consent-analytics]');
+
+    function getConsent() {
+      try {
+        const raw = localStorage.getItem(CONSENT_KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        if (parsed.version !== CONSENT_VERSION) return null;
+        return parsed;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function saveConsent(maps, analytics) {
+      const consent = {
+        necessary: true,
+        maps: !!maps,
+        analytics: !!analytics,
+        timestamp: Date.now(),
+        version: CONSENT_VERSION,
+      };
+      try {
+        localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
+      } catch (e) {}
+      window.dispatchEvent(new CustomEvent('cookie-consent-changed', { detail: consent }));
+    }
+
+    function showBanner() {
+      banner.classList.remove('hidden');
+      banner.classList.add('flex');
+      trigger.classList.add('hidden');
+      trigger.classList.remove('flex');
+    }
+
+    function hideBanner() {
+      banner.classList.add('hidden');
+      banner.classList.remove('flex');
+      trigger.classList.remove('hidden');
+      trigger.classList.add('flex');
+    }
+
+    function showSettings() {
+      settingsView.classList.remove('hidden');
+      mainView.classList.add('hidden');
+      const current = getConsent();
+      if (current) {
+        cbMaps.checked = !!current.maps;
+        cbAnalytics.checked = !!current.analytics;
+      }
+    }
+
+    function hideSettings() {
+      settingsView.classList.add('hidden');
+      mainView.classList.remove('hidden');
+    }
+
+    // Initial: prüfen ob Consent bereits gegeben
+    const existing = getConsent();
+    if (!existing) {
+      showBanner();
+    } else {
+      trigger.classList.remove('hidden');
+      trigger.classList.add('flex');
+    }
+
+    // Event Handler
+    banner.querySelector('[data-banner-accept-all]')?.addEventListener('click', () => {
+      saveConsent(true, true);
+      hideBanner();
+    });
+
+    banner.querySelector('[data-banner-only-necessary]')?.addEventListener('click', () => {
+      saveConsent(false, false);
+      hideBanner();
+    });
+
+    banner.querySelector('[data-banner-show-settings]')?.addEventListener('click', showSettings);
+    banner.querySelector('[data-banner-hide-settings]')?.addEventListener('click', hideSettings);
+
+    banner.querySelector('[data-banner-save-settings]')?.addEventListener('click', () => {
+      saveConsent(cbMaps.checked, cbAnalytics.checked);
+      hideSettings();
+      hideBanner();
+    });
+
+    trigger?.addEventListener('click', () => {
+      showBanner();
+      showSettings();
+    });
+  })();
+</script>

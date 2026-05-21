@@ -1,0 +1,148 @@
+---
+import Base from '@/layouts/Base.astro';
+import { site } from '@/config/site';
+
+const description = `Impressum des Pflegedienst Pieper in Wuppertal-Cronenberg. Anbieterkennzeichnung nach §5 TMG, berufsrechtliche Angaben und Pflegekassen-Zulassung.`;
+---
+
+<Base title="Impressum" description={description}>
+  <section class="bg-surface-alt py-12 md:py-16 border-b border-line">
+    <div class="container-content">
+      <p class="eyebrow mb-3">Pflichtangaben</p>
+      <h1 class="text-h1-mobile md:text-h2 font-heading text-ink">Impressum</h1>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16">
+    <div class="container-content">
+      <div class="prose-legal">
+        <h2>Anbieter</h2>
+        <p>
+          <strong>{site.legalName} – {site.legalSuffix}</strong><br />
+          {site.address.street}<br />
+          {site.address.zip} {site.address.city}-{site.address.district}<br />
+          Deutschland
+        </p>
+
+        <h2>Vertretungsberechtigte Gesellschafter</h2>
+        <p>
+          Armin Pieper<br />
+          Timo Pieper
+        </p>
+
+        <h2>Kontakt</h2>
+        <p>
+          <strong>Telefon:</strong> {site.contact.phone}<br />
+          <strong>Bürozeiten:</strong> {site.officeHours.weekdays} {site.officeHours.note}<br />
+          <strong>E-Mail:</strong> info<span aria-hidden="true">[at]</span><span class="hidden">noreply</span>pflegedienst-pieper<span aria-hidden="true">[punkt]</span>de
+          <br />
+          <span class="text-small text-ink-muted">
+            (E-Mail-Adresse aus Spam-Schutz-Gründen obfuskiert dargestellt.)
+          </span>
+        </p>
+
+        <h2>Umsatzsteuer-Identifikationsnummer</h2>
+        <p>
+          Umsatzsteuer-ID gemäß §27 a Umsatzsteuergesetz: <strong>[TODO: USt-IdNr.]</strong>
+        </p>
+
+        <h2>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
+        <p>
+          <strong>Berufsbezeichnungen:</strong> Examinierte Gesundheits- und
+          Krankenpfleger / Examinierte Altenpfleger — verliehen in der
+          Bundesrepublik Deutschland.
+        </p>
+        <p>
+          <strong>Berufsrechtliche Regelungen:</strong>
+        </p>
+        <ul>
+          <li>Sozialgesetzbuch Fünftes Buch (SGB V) — Gesetzliche Krankenversicherung</li>
+          <li>Sozialgesetzbuch Elftes Buch (SGB XI) — Soziale Pflegeversicherung</li>
+          <li>Pflegeberufegesetz (PflBG) sowie das frühere Krankenpflegegesetz (KrPflG) und Altenpflegegesetz (AltPflG)</li>
+        </ul>
+        <p>
+          Die maßgeblichen Vorschriften können unter <a href="https://www.gesetze-im-internet.de" rel="noopener noreferrer">gesetze-im-internet.de</a> eingesehen werden.
+        </p>
+
+        <h2>Pflegekassen-Zulassung</h2>
+        <p>
+          Versorgungsvertrag nach §72 SGB XI mit allen gesetzlichen Pflegekassen.<br />
+          <strong>Institutionskennzeichen (IK-Nummer):</strong> [TODO: IK-Nummer eintragen]
+        </p>
+
+        <h2>Verbandsmitgliedschaft</h2>
+        <p>
+          Mitglied der <strong>{site.membership}</strong>.
+        </p>
+
+        <h2>Zuständige Aufsichtsbehörde</h2>
+        <p>
+          [TODO: Aufsichtsbehörde benennen — voraussichtlich Stadt Wuppertal
+          (Heimaufsicht / WTG-Behörde) für die Einhaltung von Vorgaben nach
+          dem Wohn- und Teilhabegesetz NRW (WTG), sowie die zuständige
+          Pflegekasse für die Qualitätssicherung nach SGB XI.]
+        </p>
+
+        <h2>Streitschlichtung</h2>
+        <p>
+          Die Europäische Kommission stellt eine Plattform zur Online-
+          Streitbeilegung (OS) bereit:
+          <a href="https://ec.europa.eu/consumers/odr" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr</a>.
+        </p>
+        <p>
+          Wir sind nicht bereit und nicht verpflichtet, an
+          Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
+          teilzunehmen.
+        </p>
+
+        <h2>Haftung für Inhalte</h2>
+        <p>
+          Als Diensteanbieter sind wir gemäß §7 Abs. 1 TMG für eigene Inhalte
+          auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach
+          §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht
+          verpflichtet, übermittelte oder gespeicherte fremde Informationen zu
+          überwachen oder nach Umständen zu forschen, die auf eine
+          rechtswidrige Tätigkeit hinweisen.
+        </p>
+        <p>
+          Verpflichtungen zur Entfernung oder Sperrung der Nutzung von
+          Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.
+          Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der
+          Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden
+          entsprechender Rechtsverletzungen werden wir diese Inhalte umgehend
+          entfernen.
+        </p>
+
+        <h2>Haftung für Links</h2>
+        <p>
+          Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren
+          Inhalte wir keinen Einfluss haben. Deshalb können wir für diese
+          fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
+          verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber
+          der Seiten verantwortlich.
+        </p>
+
+        <h2>Urheberrecht</h2>
+        <p>
+          Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen
+          Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
+          Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
+          Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des
+          jeweiligen Autors bzw. Erstellers.
+        </p>
+        <p>
+          Downloads und Kopien dieser Seite sind nur für den privaten, nicht
+          kommerziellen Gebrauch gestattet.
+        </p>
+
+        <h2>Konzept &amp; Umsetzung</h2>
+        <p>
+          Konzeption, Design und technische Umsetzung dieser Webseite:
+          <a href="https://pixelschmied.de" target="_blank" rel="noopener noreferrer">
+            <strong>pixelschmied.de</strong>
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

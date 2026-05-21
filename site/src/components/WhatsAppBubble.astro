@@ -1,0 +1,15 @@
+---
+import { site } from '@/config/site';
+const waNumber = site.contact.whatsapp.replace(/\s|\+/g, '');
+---
+
+<a
+  href={`https://wa.me/${waNumber}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="fixed bottom-6 right-6 z-30 w-14 h-14 md:w-15 md:h-15 rounded-full overflow-hidden shadow-lg flex items-center justify-center hover:scale-105 transition-transform"
+  aria-label="Schreiben Sie uns auf WhatsApp"
+  title="Schreiben Sie uns auf WhatsApp"
+>
+  <img src="/images/whatsapp-logo.png" alt="" class="w-full h-full object-cover" />
+</a>
