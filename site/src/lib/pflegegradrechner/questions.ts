@@ -50,6 +50,16 @@ const FAEHIGKEIT_VORHANDEN_OPTIONS: AnswerOption[] = [
   { label: 'Nicht vorhanden', value: 3 },
 ];
 
+// Medizinische Maßnahmen: zusätzlich "Nicht erforderlich" (= Person braucht
+// diese Maßnahme nicht). Wird wie "selbstständig" mit 0 gewertet.
+const MEDIZINISCH_OPTIONS: AnswerOption[] = [
+  { label: 'Nicht erforderlich', helper: 'Diese Maßnahme ist im Alltag nicht nötig.', value: 0 },
+  { label: 'Selbstständig', helper: 'Erledigt die Person ohne Hilfe.', value: 0 },
+  { label: 'Überwiegend selbstständig', helper: 'Kleine Erinnerungen oder Anstöße reichen.', value: 1 },
+  { label: 'Überwiegend unselbstständig', helper: 'Braucht regelmäßig spürbare Hilfe.', value: 2 },
+  { label: 'Unselbstständig', helper: 'Geht ohne fremde Hilfe nicht.', value: 3 },
+];
+
 // -----------------------------------------------------------------------------
 // Quick-Check
 // -----------------------------------------------------------------------------
@@ -165,11 +175,11 @@ export const MODULES: ModuleDefinition[] = [
     shortTitle: 'Medizinisch',
     description: 'Wie viel Hilfe ist bei medizinischen Maßnahmen nötig?',
     items: [
-      { id: 'm5_medikamente', text: 'Medikamente einnehmen', options: SELBSTSTAENDIGKEIT_OPTIONS },
-      { id: 'm5_injektionen', text: 'Injektionen (z. B. Insulin) durchführen', options: SELBSTSTAENDIGKEIT_OPTIONS },
-      { id: 'm5_messungen', text: 'Werte messen (Blutdruck, Blutzucker)', options: SELBSTSTAENDIGKEIT_OPTIONS },
-      { id: 'm5_verbaende', text: 'Verbandswechsel oder Wundversorgung', options: SELBSTSTAENDIGKEIT_OPTIONS },
-      { id: 'm5_therapien', text: 'Therapien zu Hause durchführen (z. B. Inhalation)', options: SELBSTSTAENDIGKEIT_OPTIONS },
+      { id: 'm5_medikamente', text: 'Medikamente einnehmen', options: MEDIZINISCH_OPTIONS },
+      { id: 'm5_injektionen', text: 'Injektionen (z. B. Insulin) durchführen', options: MEDIZINISCH_OPTIONS },
+      { id: 'm5_messungen', text: 'Werte messen (Blutdruck, Blutzucker)', options: MEDIZINISCH_OPTIONS },
+      { id: 'm5_verbaende', text: 'Verbandswechsel oder Wundversorgung', options: MEDIZINISCH_OPTIONS },
+      { id: 'm5_therapien', text: 'Therapien zu Hause durchführen (z. B. Inhalation)', options: MEDIZINISCH_OPTIONS },
       { id: 'm5_arzt', text: 'Arztbesuche organisieren und durchführen', options: SELBSTSTAENDIGKEIT_OPTIONS },
     ],
   },

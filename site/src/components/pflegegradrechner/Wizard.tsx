@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, CheckCircle2, ClipboardCheck, ClipboardList } from 'lucide-react';
 import {
   MODULES,
@@ -42,6 +42,19 @@ export function Wizard() {
   const [moduleIndex, setModuleIndex] = useState(0);
   const [itemIndex, setItemIndex] = useState(0);
   const [nbaAnswers, setNbaAnswers] = useState<AllAnswers>(EMPTY_ANSWERS);
+
+  // Ref auf den Frage-Container, damit wir bei jeder neuen Frage nach oben scrollen
+  const questionRef = useRef<HTMLDivElement | null>(null);
+  // Auto-scroll: wenn sich Phase/Index ändert → Frage in den sichtbaren Bereich
+  useEffect(() => {
+    if (phase === 'quick' || phase === 'nba') {
+      // kleine Verzögerung, damit DOM gerendert ist
+      const id = window.setTimeout(() => {
+        questionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+      return () => window.clearTimeout(id);
+    }
+  }, [phase, quickIndex, moduleIndex, itemIndex]);
 
   // Gesamtscore (für Ergebnis-Phase)
   const totalScore = useMemo(() => {
@@ -164,12 +177,14 @@ export function Wizard() {
     }
 
     return (
-      <div>
-        <ProgressBar
-          current={quickIndex + 1}
-          total={QUICK_QUESTIONS.length}
-          label={`Schnelle Einschätzung · Frage ${quickIndex + 1} von ${QUICK_QUESTIONS.length}`}
-        />
+      <div ref={questionRef} className="scroll-mt-2">
+        <div className="sticky top-2 z-20 -mx-4 bg-surface/95 px-4 py-3 shadow-sm backdrop-blur md:relative md:top-0 md:mx-0 md:bg-transparent md:px-0 md:py-0 md:shadow-none md:backdrop-blur-none">
+          <ProgressBar
+            current={quickIndex + 1}
+            total={QUICK_QUESTIONS.length}
+            label={`Schnelle Einschätzung · Frage ${quickIndex + 1} von ${QUICK_QUESTIONS.length}`}
+          />
+        </div>
         <div className="card mt-6 md:p-10">
           <h2 className="font-heading text-h3 md:text-h2-mobile">{question.text}</h2>
           {question.helper && (
@@ -300,8 +315,14 @@ export function Wizard() {
     }
 
     return (
-      <div>
-        <ModuleProgress current={moduleIndex} />
+      <div ref={questionRef} className="scroll-mt-2">
+        <div className="sticky top-2 z-20 -mx-4 bg-surface/95 px-4 py-3 shadow-sm backdrop-blur md:relative md:top-0 md:mx-0 md:bg-transparent md:px-0 md:py-0 md:shadow-none md:backdrop-blur-none">
+          <ModuleProgress
+            current={moduleIndex}
+            itemIndex={itemIndex}
+            itemTotal={currentModule.items.length}
+          />
+        </div>
         <div className="card mt-6 md:p-10">
           <p className="eyebrow">
             Modul {currentModule.id.replace('M', '')} von 6 · {currentModule.title}
@@ -440,14 +461,21 @@ function ProgressBar({ current, total, label }: ProgressBarProps) {
 
 interface ModuleProgressProps {
   current: number;
+  itemIndex: number;
+  itemTotal: number;
 }
 
-function ModuleProgress({ current }: ModuleProgressProps) {
+function ModuleProgress({ current, itemIndex, itemTotal }: ModuleProgressProps) {
+  const itemPct = Math.round(((itemIndex + 1) / itemTotal) * 100);
   return (
     <div>
-      <p className="text-xs-label uppercase tracking-wider text-ink-muted">
-        Vollständige Berechnung · Modul {current + 1} von {MODULES.length}
-      </p>
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-xs-label uppercase tracking-wider text-ink-muted">
+          Modul {current + 1} / {MODULES.length} · Frage {itemIndex + 1} / {itemTotal}
+        </p>
+        <p className="text-xs-label text-ink-muted">{itemPct} %</p>
+      </div>
+      {/* Modul-Segmente */}
       <div className="mt-2 flex gap-1.5">
         {MODULES.map((mod, idx) => (
           <div
@@ -483,16 +511,21 @@ function NavButtons({
   forwardLabel,
 }: NavButtonsProps) {
   return (
-    <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-between">
-      <button type="button" onClick={onBack} className="btn-ghost btn-md">
+    <div className="mt-6 flex flex-row gap-3 sm:justify-between">
+      <button
+        type="button"
+        onClick={onBack}
+        className="inline-flex items-center justify-center gap-2 rounded-btn border-2 border-primary/30 bg-white px-4 py-2.5 text-small font-semibold text-primary hover:border-primary hover:bg-primary-soft transition-colors"
+      >
         <ArrowLeft className="h-5 w-5" aria-hidden="true" />
-        {backLabel}
+        <span className="hidden sm:inline">{backLabel}</span>
+        <span className="sm:hidden">Zurück</span>
       </button>
       <button
         type="button"
         onClick={onForward}
         disabled={forwardDisabled}
-        className="btn-primary btn-md disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-sm"
+        className="btn-primary btn-md flex-1 sm:flex-initial disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-sm"
       >
         {forwardLabel}
         <ArrowRight className="h-5 w-5" aria-hidden="true" />

@@ -78,16 +78,26 @@ export function Result({ pflegegrad, totalScore, onRestart }: ResultProps) {
           </p>
         </div>
 
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a href="/kontakt/" className="btn-care btn-lg">
-            Wir helfen bei der Antragstellung — Termin vereinbaren
-            <ArrowRight className="h-5 w-5" aria-hidden="true" />
+        <div className="mt-8 flex w-full flex-col gap-3 sm:flex-row sm:justify-center">
+          <a
+            href="/kontakt/"
+            className="inline-flex items-center justify-center gap-2 rounded-btn bg-care px-5 py-3 text-center text-base font-semibold leading-tight text-white shadow-md hover:bg-care-hover transition-colors sm:text-lg"
+          >
+            <span>Termin vereinbaren</span>
+            <ArrowRight className="h-5 w-5 shrink-0" aria-hidden="true" />
           </a>
-          <button type="button" onClick={onRestart} className="btn-secondary btn-lg">
-            <RotateCcw className="h-5 w-5" aria-hidden="true" />
-            Von vorne beginnen
+          <button
+            type="button"
+            onClick={onRestart}
+            className="inline-flex items-center justify-center gap-2 rounded-btn border-2 border-primary/30 bg-white px-5 py-3 text-base font-semibold text-primary hover:border-primary hover:bg-primary-soft transition-colors sm:text-lg"
+          >
+            <RotateCcw className="h-5 w-5 shrink-0" aria-hidden="true" />
+            <span>Von vorne beginnen</span>
           </button>
         </div>
+        <p className="mt-3 text-small text-ink-muted">
+          Wir helfen bei der Antragstellung — kostenlos und unverbindlich.
+        </p>
       </div>
     </div>
   );
