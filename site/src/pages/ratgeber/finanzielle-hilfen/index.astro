@@ -1,0 +1,264 @@
+---
+import Base from '@/layouts/Base.astro';
+import { site } from '@/config/site';
+
+const title = 'Finanzielle Hilfen in der Pflege — der Überblick';
+const description = 'Pflegegeld, Pflegesachleistungen, Entlastungsbetrag, Verhinderungspflege & mehr: Welche Geldleistungen gibt es ab Pflegegrad 1 und wie lassen sie sich kombinieren? Vom Pflegedienst Pieper Wuppertal.';
+const published = '2026-05-16';
+const publishedDisplay = '16. Mai 2026';
+---
+
+<Base title={title} description={description}>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    datePublished: published,
+    author: { '@type': 'Organization', name: `${site.legalName} – ${site.legalSuffix}` },
+    publisher: { '@type': 'Organization', name: site.legalName, url: site.url },
+    mainEntityOfPage: `${site.url}/ratgeber/finanzielle-hilfen/`,
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Startseite', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Ratgeber', item: `${site.url}/ratgeber/` },
+      { '@type': 'ListItem', position: 3, name: 'Finanzielle Hilfen', item: `${site.url}/ratgeber/finanzielle-hilfen/` },
+    ],
+  })} />
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-10" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="dots-fh" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="white" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#dots-fh)" />
+      </svg>
+    </div>
+    <div class="container-content relative py-14 md:py-20">
+      <nav aria-label="Brotkrümel" class="mb-5 text-small text-white/70">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="/" class="hover:text-white">Startseite</a></li>
+          <li aria-hidden="true">›</li>
+          <li><a href="/ratgeber/" class="hover:text-white">Ratgeber</a></li>
+          <li aria-hidden="true">›</li>
+          <li class="text-white" aria-current="page">Finanzielle Hilfen</li>
+        </ol>
+      </nav>
+      <p class="eyebrow text-care-soft mb-4">Themenwelt · Finanzen</p>
+      <h1 class="text-h1-mobile md:text-h1 font-heading text-white mb-5 max-w-3xl">
+        Finanzielle Hilfen — was Ihnen zusteht.
+      </h1>
+      <p class="text-lead text-white/90 max-w-prose-comfort">
+        Pflegegeld, Sachleistungen, Entlastungsbetrag, Verhinderungspflege & Co. —
+        ein Überblick über die wichtigsten Leistungen der Pflegekasse und wie Sie das
+        Beste aus den verschiedenen Töpfen herausholen.
+      </p>
+      <p class="mt-4 text-small text-white/60">Aktualisiert am {publishedDisplay} · Pflegedienst Pieper, Wuppertal-Cronenberg</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-content grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+
+      <article class="lg:col-span-8 prose-legal">
+
+        <h2>Drei Säulen der Pflegeleistungen</h2>
+        <p>
+          Die Pflegeversicherung (SGB&nbsp;XI) kennt drei große Bereiche, aus denen sich
+          finanzielle Hilfen speisen:
+        </p>
+        <ol>
+          <li><strong>Geldleistungen</strong> — Pflegegeld, Entlastungsbetrag, Pflegehilfsmittel-Pauschale</li>
+          <li><strong>Sachleistungen</strong> — Pflegesachleistungen für ambulante Dienste, Verhinderungs-/Kurzzeitpflege</li>
+          <li><strong>Zuschüsse</strong> — Wohnumfeld-Verbesserung, Wohngruppen-Zuschlag, Hausnotruf</li>
+        </ol>
+        <p>
+          Hinzu kommt die <strong>Behandlungspflege</strong> (Medikamentengabe, Injektionen,
+          Wundversorgung) — die läuft jedoch nicht über die Pflegekasse, sondern über die
+          <strong>Krankenkasse</strong> (SGB&nbsp;V) auf ärztliche Verordnung.
+        </p>
+
+        <h2>Pflegegeld — wenn Angehörige pflegen</h2>
+        <p>
+          Das <strong>Pflegegeld</strong> ist eine monatliche Auszahlung an den Pflegebedürftigen,
+          wenn die Pflege überwiegend durch Angehörige zu Hause geleistet wird. Es ist kein Lohn —
+          es ist eine Anerkennung und steht zur freien Verfügung.
+        </p>
+        <p>
+          Die Höhe richtet sich nach dem Pflegegrad: ab Pflegegrad 2 zwischen rund
+          330&nbsp;Euro und 990&nbsp;Euro monatlich. <strong>Pflegegrad 1 erhält kein Pflegegeld</strong>,
+          sondern stattdessen den Entlastungsbetrag.
+        </p>
+
+        <h2>Pflegesachleistungen — wenn ein Pflegedienst hilft</h2>
+        <p>
+          Wer einen ambulanten Pflegedienst wie Pieper beauftragt, bekommt
+          <strong>Pflegesachleistungen</strong>. Die Pflegekasse rechnet dann direkt mit dem
+          Pflegedienst ab — ohne dass die Familie etwas vorstrecken muss.
+        </p>
+        <p>
+          Die monatlichen Budgets liegen je nach Pflegegrad zwischen rund 760&nbsp;Euro
+          (Pflegegrad 2) und etwa 2.300&nbsp;Euro (Pflegegrad 5). Wenn das monatliche Budget nicht
+          ausgeschöpft wird, verfällt der Rest — er ist <strong>nicht ansparbar</strong>.
+        </p>
+
+        <h2>Kombinationsleistung — beides nutzen</h2>
+        <p>
+          Wer einen Teil der Pflege selbst übernimmt und einen Teil über einen Pflegedienst,
+          kann <strong>Pflegegeld und Sachleistungen kombinieren</strong>. Dabei wird das
+          Pflegegeld anteilig gekürzt — je nachdem, wieviel Prozent des Sachleistungsbudgets
+          ausgeschöpft sind. Beispiel: Werden 40&nbsp;% der Sachleistungen genutzt, gibt es noch
+          60&nbsp;% des Pflegegelds.
+        </p>
+
+        <h2>Entlastungsbetrag — auch ab Pflegegrad 1</h2>
+        <p>
+          Der <strong>Entlastungsbetrag von 125&nbsp;Euro monatlich</strong> nach §45b SGB XI ist die
+          einzige laufende Geldleistung bei Pflegegrad 1 und kommt bei den höheren Pflegegraden
+          zusätzlich obendrauf. Er ist zweckgebunden für Betreuungs- und Hauswirtschaftsleistungen.
+        </p>
+        <p>
+          Besonders praktisch: <strong>Hauswirtschaftliche Versorgung</strong> wie Einkaufen,
+          Kochen und Wohnungsreinigung ist über den Entlastungsbetrag abrechenbar — eine
+          große Unterstützung im Alltag.
+        </p>
+        <p>
+          <a href="/ratgeber/entlastungsbetrag/">Mehr zum Entlastungsbetrag lesen →</a>
+        </p>
+
+        <h2>Verhinderungspflege — Auszeit für pflegende Angehörige</h2>
+        <p>
+          Bis zu <strong>1.612&nbsp;Euro pro Jahr</strong> (ab Pflegegrad 2) zahlt die Pflegekasse,
+          wenn die pflegende Hauptperson ausfällt — durch Urlaub, Krankheit oder Termine. Wer noch
+          ungenutzte Kurzzeitpflege-Mittel hat, kann auf bis zu 2.418&nbsp;Euro aufstocken.
+        </p>
+        <p>
+          <a href="/ratgeber/verhinderungspflege-erklaert/">Mehr zur Verhinderungspflege →</a>
+        </p>
+
+        <h2>Kurzzeitpflege — stationär für 8 Wochen</h2>
+        <p>
+          Wenn häusliche Pflege vorübergehend nicht möglich ist (z. B. nach einem
+          Krankenhausaufenthalt oder bei einem Umbau zu Hause), übernimmt die
+          <strong>Kurzzeitpflege</strong> für bis zu 8&nbsp;Wochen pro Jahr die Versorgung in einer
+          stationären Einrichtung. Auch hier liegen aktuell rund 1.774&nbsp;Euro Jahresbudget bereit.
+        </p>
+
+        <h2>Pflegehilfsmittel — kostenfrei nach Hause geliefert</h2>
+        <p>
+          <strong>Pflegehilfsmittel zum Verbrauch</strong> (Einmalhandschuhe, Bettschutzeinlagen,
+          Mundschutz, Desinfektionsmittel) gibt es bis 40&nbsp;Euro monatlich — als Pauschale, ohne
+          ärztliche Verordnung. Ein einmaliger Antrag bei der Pflegekasse, dann liefert ein
+          Versanddienst regelmäßig nach Hause.
+        </p>
+
+        <h2>Wohnumfeld-Verbesserung — bis 4.000 Euro je Maßnahme</h2>
+        <p>
+          Treppenlift, Badumbau, Türverbreiterung, Rampe — viele bauliche Anpassungen werden
+          mit bis zu <strong>4.000&nbsp;Euro pro Maßnahme</strong> bezuschusst. <strong>Vor dem Auftrag
+          beantragen!</strong> Wer den Handwerker zuerst beauftragt, bekommt nachträglich nichts mehr.
+          Wenn mehrere Personen in einem Haushalt einen Pflegegrad haben, kann der Zuschuss
+          mehrfach gewährt werden.
+        </p>
+
+        <h2>Hausnotruf — pauschal 25,50 Euro monatlich</h2>
+        <p>
+          Bei jedem Pflegegrad besteht Anspruch auf einen Hausnotruf-Zuschuss von monatlich rund
+          25,50&nbsp;Euro für Anschluss und Bereitschaftsdienst. Anbieter gibt es in Wuppertal
+          mehrere — wir helfen gern bei der Auswahl.
+        </p>
+
+        <h2>Steuerliche Absetzbarkeit nicht vergessen</h2>
+        <p>
+          Pflegeleistungen, Pflegehilfsmittel und Fahrten zum Arzt können in der
+          <strong>Einkommensteuererklärung</strong> als außergewöhnliche Belastung geltend
+          gemacht werden. Auch Pflegende selbst können einen Pflege-Pauschbetrag (600 bis 1.800&nbsp;Euro
+          je Pflegegrad) absetzen. Bei Höchstbedarf lohnt sich der Gang zur Lohnsteuerhilfe oder
+          zum Steuerberater.
+        </p>
+
+      </article>
+
+      <aside class="lg:col-span-4 space-y-5">
+
+        <div class="bg-primary rounded-card p-6 text-white">
+          <h3 class="text-h4 font-heading text-white mb-3">Maximum aus den Töpfen holen</h3>
+          <p class="text-small text-white/90 mb-5">
+            Wir prüfen mit Ihnen kostenlos, welche Leistungen Sie kombinieren können — und übernehmen die Abrechnung.
+          </p>
+          <a href="/kontakt/" class="btn btn-md bg-accent text-primary-dark font-bold hover:bg-accent-hover w-full text-center block">
+            Beratungstermin
+          </a>
+          <a href={site.contact.phoneHref} class="mt-3 text-small text-white/80 hover:text-white text-center block">
+            {site.contact.phone}
+          </a>
+        </div>
+
+        <div class="bg-surface rounded-card p-6">
+          <h3 class="text-h4 font-heading text-ink mb-4">Leistungen im Schnellüberblick</h3>
+          <ul class="space-y-3 text-small text-ink-muted">
+            {[
+              'Pflegegeld: ab PG 2 — monatlich',
+              'Sachleistungen: ab PG 2 — monatlich, nicht ansparbar',
+              'Entlastungsbetrag: 125 € — schon ab PG 1',
+              'Verhinderungspflege: bis 1.612 €/Jahr',
+              'Kurzzeitpflege: bis 1.774 €/Jahr',
+              'Pflegehilfsmittel: bis 40 €/Monat',
+              'Wohnumfeld: bis 4.000 €/Maßnahme',
+            ].map((item) => (
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-care flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-care-soft rounded-card p-6 border border-care/20">
+          <h3 class="text-h4 font-heading text-ink mb-2">Pflegegrad noch unklar?</h3>
+          <p class="text-small text-ink-muted mb-4">
+            Online-Rechner: voraussichtlicher Pflegegrad in wenigen Minuten.
+          </p>
+          <a href="/pflegegradrechner/" class="btn-care btn-md w-full text-center block">
+            Zum Rechner
+          </a>
+        </div>
+
+      </aside>
+    </div>
+  </section>
+
+  <section class="section bg-surface">
+    <div class="container-content">
+      <h2 class="text-h3 font-heading text-ink mb-6">Weitere Themen</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <a href="/ratgeber/entlastungsbetrag/" class="card-hover block">
+          <p class="eyebrow mb-2">Detail-Artikel</p>
+          <h3 class="text-h4 font-heading text-ink mb-2">Entlastungsbetrag richtig nutzen</h3>
+          <p class="text-small text-ink-muted">125 € monatlich — für was alles einsetzbar und wie abrechnen?</p>
+        </a>
+        <a href="/ratgeber/verhinderungspflege-erklaert/" class="card-hover block">
+          <p class="eyebrow mb-2">Detail-Artikel</p>
+          <h3 class="text-h4 font-heading text-ink mb-2">Verhinderungspflege erklärt</h3>
+          <p class="text-small text-ink-muted">Bis 1.612 € pro Jahr — wann und wie nutzen?</p>
+        </a>
+        <a href="/ratgeber/pflegegrade/" class="card-hover block">
+          <p class="eyebrow mb-2">Übersicht</p>
+          <h3 class="text-h4 font-heading text-ink mb-2">Pflegegrade verstehen</h3>
+          <p class="text-small text-ink-muted">Welcher Pflegegrad bringt welche Leistungen?</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

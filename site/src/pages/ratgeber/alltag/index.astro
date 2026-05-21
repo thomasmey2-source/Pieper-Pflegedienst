@@ -1,0 +1,266 @@
+---
+import Base from '@/layouts/Base.astro';
+import { site } from '@/config/site';
+
+const title = 'Pflege im Alltag — praktische Tipps für Angehörige';
+const description = 'Hilfsmittel, Wohnraumanpassung, Rückenschonung, Lagerungstechniken — praktische Tipps für die häusliche Pflege aus über 40 Jahren Pflegepraxis in Wuppertal-Cronenberg.';
+const published = '2026-05-16';
+const publishedDisplay = '16. Mai 2026';
+---
+
+<Base title={title} description={description}>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    datePublished: published,
+    author: { '@type': 'Organization', name: `${site.legalName} – ${site.legalSuffix}` },
+    publisher: { '@type': 'Organization', name: site.legalName, url: site.url },
+    mainEntityOfPage: `${site.url}/ratgeber/alltag/`,
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Startseite', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Ratgeber', item: `${site.url}/ratgeber/` },
+      { '@type': 'ListItem', position: 3, name: 'Pflege im Alltag', item: `${site.url}/ratgeber/alltag/` },
+    ],
+  })} />
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-10" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="dots-al" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="white" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#dots-al)" />
+      </svg>
+    </div>
+    <div class="container-content relative py-14 md:py-20">
+      <nav aria-label="Brotkrümel" class="mb-5 text-small text-white/70">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="/" class="hover:text-white">Startseite</a></li>
+          <li aria-hidden="true">›</li>
+          <li><a href="/ratgeber/" class="hover:text-white">Ratgeber</a></li>
+          <li aria-hidden="true">›</li>
+          <li class="text-white" aria-current="page">Pflege im Alltag</li>
+        </ol>
+      </nav>
+      <p class="eyebrow text-care-soft mb-4">Themenwelt · Alltag</p>
+      <h1 class="text-h1-mobile md:text-h1 font-heading text-white mb-5 max-w-3xl">
+        Pflege im Alltag — was wirklich hilft.
+      </h1>
+      <p class="text-lead text-white/90 max-w-prose-comfort">
+        Hilfsmittel, die den Alltag spürbar erleichtern. Wohnungen, die mit der Pflege wachsen.
+        Und Handgriffe, die den eigenen Rücken schonen. Wissen aus über vier Jahrzehnten
+        Pflegepraxis in Wuppertal.
+      </p>
+      <p class="mt-4 text-small text-white/60">Aktualisiert am {publishedDisplay} · Pflegedienst Pieper, Wuppertal-Cronenberg</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-content grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+
+      <article class="lg:col-span-8 prose-legal">
+
+        <h2>Pflege zu Hause braucht eine wohnliche Grundlage</h2>
+        <p>
+          Ob die Pflege zu Hause langfristig gelingt, entscheidet sich oft an Kleinigkeiten:
+          eine zu hohe Türschwelle, eine fehlende Halterung im Bad, ein zu niedriges Bett. Wer
+          früh die richtigen Anpassungen vornimmt, spart sich später viel Stress — und bewahrt
+          Selbstständigkeit.
+        </p>
+
+        <h2>Die wichtigsten Hilfsmittel im Überblick</h2>
+        <p>
+          Es gibt zwei Kategorien:
+        </p>
+        <ul>
+          <li><strong>Pflegehilfsmittel zum Verbrauch</strong> (über Pflegekasse, 40 € monatlich): Einmalhandschuhe, Mundschutz, Bettschutzeinlagen, Desinfektionsmittel</li>
+          <li><strong>Technische Hilfsmittel</strong> (über Krankenkasse, ärztliche Verordnung): Pflegebett, Rollator, Toilettensitzerhöhung, Duschstuhl, Rollstuhl, Hausnotruf</li>
+        </ul>
+        <p>
+          Für technische Hilfsmittel ist meist eine ärztliche Verordnung nötig. Die Krankenkasse
+          stellt sie häufig leihweise — was Geld spart und Lagerprobleme vermeidet.
+        </p>
+
+        <h2>Das Pflegebett — meist die wichtigste Anschaffung</h2>
+        <p>
+          Ein höhenverstellbares Pflegebett ist oft das Hilfsmittel mit dem größten Effekt: Die
+          pflegebedürftige Person kommt allein in eine sitzende Position, das Aufstehen wird einfacher,
+          und für Sie als Pflegeperson wird die Arbeitshöhe ergonomisch. Verschreibt der Hausarzt
+          es per Rezept, übernimmt die Krankenkasse die Kosten — Sie zahlen nur 5 bis 10 Euro Eigenanteil
+          pro Monat.
+        </p>
+
+        <h2>Rückenschonung beim Heben und Lagern</h2>
+        <p>
+          Pflegende verletzen sich am häufigsten am Rücken. Dabei lässt sich das fast immer
+          vermeiden. Drei wichtige Regeln:
+        </p>
+        <ul>
+          <li><strong>Bett auf Arbeitshöhe</strong> bringen — Hüfthöhe der pflegenden Person</li>
+          <li><strong>Rücken gerade, Knie beugen</strong> — niemals aus dem Rücken heraus heben</li>
+          <li><strong>Mit, nicht gegen die pflegebedürftige Person arbeiten</strong> — Aufrichten durch Wiegen oder Drehen statt Ziehen</li>
+        </ul>
+        <p>
+          Wir zeigen Ihnen gern bei einem Hausbesuch die Kinästhetik-Grundlagen — kleine
+          Techniken mit großer Wirkung. Es gibt auch <strong>kostenlose Pflegekurse für
+          Angehörige</strong> bei den Pflegekassen — der nächste Termin in Wuppertal ist meist
+          schnell zu finden.
+        </p>
+
+        <h2>Bad sicher machen</h2>
+        <p>
+          Etwa 60 % aller Stürze im Alter passieren im Bad. Die wichtigsten Schritte:
+        </p>
+        <ul>
+          <li>Rutschfeste Matten oder Antirutsch-Streifen in Wanne und Dusche</li>
+          <li>Haltegriffe an Toilette und Dusche (kosten 20–40 €, große Wirkung)</li>
+          <li>Toilettensitzerhöhung um 5–15 cm — erleichtert das Aufstehen enorm</li>
+          <li>Bei Bedarf: ebenerdige Dusche statt Wanne (Wohnumfeld-Zuschuss bis 4.000 €)</li>
+        </ul>
+
+        <h2>Schlafzimmer und Wohnbereich anpassen</h2>
+        <p>
+          Wenige, gezielte Änderungen reichen oft aus:
+        </p>
+        <ul>
+          <li>Stolperfallen entfernen — Teppichkanten, lose Kabel, schwellige Türen</li>
+          <li>Mehr und gleichmäßiges Licht — vor allem zwischen Bett und WC</li>
+          <li>Nachtlicht mit Bewegungsmelder im Flur</li>
+          <li>Aufstehhilfe am Bett (Bettgalgen, Aufrichthilfe) — über Krankenkasse</li>
+          <li>Rutschfeste Hausschuhe statt Pantoffeln</li>
+        </ul>
+
+        <h2>Ernährung und Trinken im Blick behalten</h2>
+        <p>
+          Im Alter lässt das Durstgefühl nach — viele ältere Menschen trinken zu wenig, was zu
+          Schwindel, Verwirrtheit und Stürzen führt. Praktische Hilfen:
+        </p>
+        <ul>
+          <li><strong>Trink-Erinnerungsplan</strong> mit festen Zeiten (8:00, 10:00, 12:00, …)</li>
+          <li>Lieblings-Getränke griffbereit halten — auch süße Säfte oder Buttermilch</li>
+          <li>Bei Schluckbeschwerden Andick-Pulver oder Smoothies</li>
+          <li>Bei Demenz: bunte, kontrastreiche Tassen — fallen besser auf</li>
+        </ul>
+
+        <h2>Stürze vorbeugen — kleine Maßnahmen, große Wirkung</h2>
+        <p>
+          Jeder dritte über 65-Jährige stürzt mindestens einmal pro Jahr. Vermeidbar mit:
+        </p>
+        <ul>
+          <li>Sehkraft regelmäßig prüfen — die richtige Brille verhindert Stürze besser als ein Rollator</li>
+          <li>Hörgerät tragen — Orientierung im Raum wird besser</li>
+          <li>Medikamente regelmäßig prüfen lassen — manche machen schwindelig (vor allem Blutdrucksenker, Schlafmittel)</li>
+          <li>Beweglichkeit fördern — Spazieren, Sitzgymnastik, leichte Übungen vom Sofa aus</li>
+        </ul>
+
+        <h2>Pflegende Angehörige: sich selbst nicht vergessen</h2>
+        <p>
+          Niemand kann auf Dauer pflegen, ohne selbst aufzutanken. Die wichtigsten Werkzeuge:
+        </p>
+        <ul>
+          <li><strong>Verhinderungspflege</strong> nutzen — 1.612 € pro Jahr für Auszeiten</li>
+          <li><strong>Entlastungsbetrag</strong> einsetzen — 125 € monatlich für Hauswirtschaft oder Betreuung</li>
+          <li><strong>Pflegekurse</strong> besuchen — kostenlos, oft online möglich</li>
+          <li><strong>Angehörigengruppen</strong> — Austausch hilft enorm</li>
+          <li><strong>Eigene Gesundheit</strong> nicht vernachlässigen — Arzttermine bewusst einplanen</li>
+        </ul>
+
+        <h2>Wann professionelle Unterstützung sinnvoll wird</h2>
+        <p>
+          Spätestens wenn Sie merken, dass die Pflege Sie körperlich oder seelisch überfordert,
+          sollten Sie sich Unterstützung holen. Ein Pflegedienst muss nicht „alles oder nichts"
+          bedeuten — wir kommen auch nur stundenweise oder an einzelnen Wochentagen. So bleibt
+          die Pflege zu Hause möglich, ohne dass Sie sich aufopfern.
+        </p>
+        <p>
+          In Cronenberg, Küllenhahn, Sudberg und Ronsdorf sind wir gerade auch für diesen
+          flexiblen Einsatz bekannt — sprechen Sie uns an.
+        </p>
+
+      </article>
+
+      <aside class="lg:col-span-4 space-y-5">
+
+        <div class="bg-primary rounded-card p-6 text-white">
+          <h3 class="text-h4 font-heading text-white mb-3">Hausbesuch & Beratung</h3>
+          <p class="text-small text-white/90 mb-5">
+            Wir kommen vorbei, schauen uns die Situation an und beraten kostenlos — auch zu Hilfsmitteln und Anpassungen.
+          </p>
+          <a href="/kontakt/" class="btn btn-md bg-accent text-primary-dark font-bold hover:bg-accent-hover w-full text-center block">
+            Termin vereinbaren
+          </a>
+          <a href={site.contact.phoneHref} class="mt-3 text-small text-white/80 hover:text-white text-center block">
+            {site.contact.phone}
+          </a>
+        </div>
+
+        <div class="bg-surface rounded-card p-6">
+          <h3 class="text-h4 font-heading text-ink mb-4">Schnell-Checkliste Wohnung</h3>
+          <ul class="space-y-3 text-small text-ink-muted">
+            {[
+              'Türschwellen entfernen / Rampen',
+              'Haltegriffe Bad & WC',
+              'Rutschfeste Matten in der Dusche',
+              'Nachtlicht im Flur',
+              'Stolperkanten beseitigen',
+              'Pflegebett & Aufstehhilfe prüfen',
+              'Hausnotruf-Anschluss vorhanden',
+            ].map((item) => (
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-care flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-care-soft rounded-card p-6 border border-care/20">
+          <h3 class="text-h4 font-heading text-ink mb-2">Hauswirtschaft im Alltag</h3>
+          <p class="text-small text-ink-muted mb-4">
+            Einkauf, Kochen, Reinigung — abrechenbar über den Entlastungsbetrag.
+          </p>
+          <a href="/leistungen/hauswirtschaftliche-versorgung/" class="btn-care btn-md w-full text-center block">
+            Mehr erfahren
+          </a>
+        </div>
+
+      </aside>
+    </div>
+  </section>
+
+  <section class="section bg-surface">
+    <div class="container-content">
+      <h2 class="text-h3 font-heading text-ink mb-6">Weitere Themen</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <a href="/ratgeber/demenz/" class="card-hover block">
+          <p class="eyebrow mb-2">Demenz</p>
+          <h3 class="text-h4 font-heading text-ink mb-2">Demenz & Begleitung</h3>
+          <p class="text-small text-ink-muted">Umgang mit Demenz im Alltag — Kommunikation und Tagesstruktur.</p>
+        </a>
+        <a href="/ratgeber/finanzielle-hilfen/" class="card-hover block">
+          <p class="eyebrow mb-2">Finanzen</p>
+          <h3 class="text-h4 font-heading text-ink mb-2">Finanzielle Hilfen</h3>
+          <p class="text-small text-ink-muted">Pflegegeld, Sachleistungen, Entlastungsbetrag im Überblick.</p>
+        </a>
+        <a href="/ratgeber/verhinderungspflege/" class="card-hover block">
+          <p class="eyebrow mb-2">Auszeit</p>
+          <h3 class="text-h4 font-heading text-ink mb-2">Verhinderungs- & Kurzzeitpflege</h3>
+          <p class="text-small text-ink-muted">Auszeit für pflegende Angehörige — wann und wie nutzen.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

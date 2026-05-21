@@ -1,0 +1,256 @@
+---
+import Base from '@/layouts/Base.astro';
+import { site } from '@/config/site';
+
+const title = 'Verhinderungs- & Kurzzeitpflege — Auszeit für Angehörige';
+const description = 'Verhinderungspflege und Kurzzeitpflege im Vergleich: Wann nutzen Sie was, welche Beträge stehen Ihnen zu und wie organisieren Sie die Vertretung? Pflegedienst Pieper, Wuppertal-Cronenberg.';
+const published = '2026-05-16';
+const publishedDisplay = '16. Mai 2026';
+---
+
+<Base title={title} description={description}>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    datePublished: published,
+    author: { '@type': 'Organization', name: `${site.legalName} – ${site.legalSuffix}` },
+    publisher: { '@type': 'Organization', name: site.legalName, url: site.url },
+    mainEntityOfPage: `${site.url}/ratgeber/verhinderungspflege/`,
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Startseite', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Ratgeber', item: `${site.url}/ratgeber/` },
+      { '@type': 'ListItem', position: 3, name: 'Verhinderungs- & Kurzzeitpflege', item: `${site.url}/ratgeber/verhinderungspflege/` },
+    ],
+  })} />
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-10" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="dots-vk" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="white" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#dots-vk)" />
+      </svg>
+    </div>
+    <div class="container-content relative py-14 md:py-20">
+      <nav aria-label="Brotkrümel" class="mb-5 text-small text-white/70">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="/" class="hover:text-white">Startseite</a></li>
+          <li aria-hidden="true">›</li>
+          <li><a href="/ratgeber/" class="hover:text-white">Ratgeber</a></li>
+          <li aria-hidden="true">›</li>
+          <li class="text-white" aria-current="page">Verhinderungs- & Kurzzeitpflege</li>
+        </ol>
+      </nav>
+      <p class="eyebrow text-care-soft mb-4">Themenwelt · Auszeit & Vertretung</p>
+      <h1 class="text-h1-mobile md:text-h1 font-heading text-white mb-5 max-w-3xl">
+        Auszeit für pflegende Angehörige.
+      </h1>
+      <p class="text-lead text-white/90 max-w-prose-comfort">
+        Verhinderungspflege und Kurzzeitpflege — wenn Sie als pflegende Person krank werden,
+        Urlaub brauchen oder einfach eine Auszeit. Beide Leistungen sind kombinierbar und
+        bringen pro Jahr mehrere Tausend Euro Unterstützung.
+      </p>
+      <p class="mt-4 text-small text-white/60">Aktualisiert am {publishedDisplay} · Pflegedienst Pieper, Wuppertal-Cronenberg</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-content grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+
+      <article class="lg:col-span-8 prose-legal">
+
+        <h2>Worum geht's?</h2>
+        <p>
+          Wer einen Angehörigen zu Hause pflegt, leistet täglich viel — und braucht auch mal eine
+          Pause. Für genau diese Situation hat der Gesetzgeber zwei Leistungen vorgesehen:
+        </p>
+        <ul>
+          <li><strong>Verhinderungspflege</strong> nach §39 SGB XI — wenn die Pflegeperson <em>kurzzeitig</em> ausfällt, springt eine Ersatzpflege ein</li>
+          <li><strong>Kurzzeitpflege</strong> nach §42 SGB XI — wenn die häusliche Pflege <em>vorübergehend</em> nicht möglich ist, übernimmt eine stationäre Einrichtung</li>
+        </ul>
+        <p>
+          Beide Leistungen lassen sich kombinieren und übertragen — wer es klug nutzt, kommt
+          auf über 3.000 Euro pro Jahr für Vertretung und Entlastung.
+        </p>
+
+        <h2>Verhinderungspflege — ambulant zu Hause</h2>
+        <p>
+          Die Verhinderungspflege übernimmt die Pflegekasse, wenn die Hauptpflegeperson
+          „verhindert" ist — durch Urlaub, Krankheit, einen Behördentermin oder einfach
+          das Bedürfnis nach Auszeit. Es ist kein formeller Urlaubsbeleg nötig.
+        </p>
+        <p>
+          Voraussetzungen:
+        </p>
+        <ul>
+          <li>Pflegegrad 2 oder höher</li>
+          <li>Mindestens 6 Monate Pflege durch die Hauptpflegeperson vor erstem Antrag</li>
+          <li>Maximal 6 Wochen (42 Tage) pro Kalenderjahr</li>
+        </ul>
+        <p>
+          Bis zu <strong>1.612 Euro pro Jahr</strong> übernimmt die Pflegekasse — auch
+          stundenweise abrechenbar. Das Geld lässt sich für einen Pflegedienst wie uns einsetzen,
+          aber auch für nicht-verwandte Privatpersonen wie Nachbarn oder Bekannte.
+        </p>
+        <p>
+          <a href="/ratgeber/verhinderungspflege-erklaert/">Detail-Artikel zur Verhinderungspflege →</a>
+        </p>
+
+        <h2>Kurzzeitpflege — stationär in der Einrichtung</h2>
+        <p>
+          Wenn die Pflege zu Hause für einen längeren Zeitraum nicht möglich ist — etwa nach einem
+          Krankenhausaufenthalt mit erhöhtem Reha-Bedarf, beim Umbau der Wohnung oder bei einer
+          Krise der Pflegeperson — übernimmt eine stationäre <strong>Kurzzeitpflege-Einrichtung</strong>
+          die Versorgung.
+        </p>
+        <p>
+          Eckdaten:
+        </p>
+        <ul>
+          <li>Bis zu <strong>8 Wochen pro Kalenderjahr</strong> möglich</li>
+          <li>Pflegekasse zahlt rund <strong>1.774 Euro pro Jahr</strong> für die Pflegekosten</li>
+          <li>Hotelkosten (Unterkunft & Verpflegung) sind privat zu tragen — meist über das
+            Pflegegeld finanzierbar</li>
+          <li>In Wuppertal mehrere Anbieter — Plätze meist frühzeitig planen</li>
+        </ul>
+
+        <h2>Kombinierter Einsatz — das wahre Sparpotenzial</h2>
+        <p>
+          Wer beide Töpfe geschickt kombiniert, profitiert deutlich:
+        </p>
+        <ul>
+          <li>Ungenutzte <strong>Kurzzeitpflege-Mittel</strong> können zu <strong>50 %</strong> in die Verhinderungspflege übertragen werden — das wären zusätzliche 806 Euro</li>
+          <li>Zusammen: bis zu <strong>2.418 Euro pro Jahr</strong> für Verhinderungspflege</li>
+          <li>Umgekehrt: nicht genutzte Verhinderungspflege ist begrenzt auch in die Kurzzeitpflege übertragbar (Details prüfen!)</li>
+        </ul>
+        <p>
+          <em>Hinweis:</em> Die Verrechnung wurde durch die Pflegereform 2025 vereinfacht. Wir
+          empfehlen, den aktuellen Stand bei Ihrer Pflegekasse oder bei uns zu erfragen, da sich
+          die genauen Kombinations-Regeln ändern können.
+        </p>
+
+        <h2>Wann was nutzen?</h2>
+        <p>
+          Eine schnelle Faustregel:
+        </p>
+        <ul>
+          <li><strong>Verhinderungspflege</strong>: Wenn die pflegebedürftige Person zu Hause bleiben soll und nur die Pflegeperson kurz ausfällt (Friseur, Arzt, Urlaub, freier Nachmittag)</li>
+          <li><strong>Kurzzeitpflege</strong>: Wenn die häusliche Pflege grundsätzlich nicht möglich ist — z. B. nach Operationen, in akuten Krisen oder zur Pflegeperson-Erholung über mehrere Wochen</li>
+        </ul>
+
+        <h2>So organisieren wir das gemeinsam</h2>
+        <p>
+          Bei Pieper in Wuppertal-Cronenberg unterstützen wir Sie auf zwei Wegen:
+        </p>
+        <ol>
+          <li>Wir übernehmen die <strong>Verhinderungspflege ambulant</strong> — stundenweise,
+            tageweise oder über mehrere Wochen, je nach Ihrer Situation</li>
+          <li>Wir helfen Ihnen bei der <strong>Antragstellung & Abrechnung</strong> mit Ihrer
+            Pflegekasse — die Bürokratie übernehmen wir, Sie genießen die Auszeit</li>
+        </ol>
+        <p>
+          Wenn stationäre Kurzzeitpflege nötig ist, vermitteln wir Plätze in Einrichtungen in
+          Wuppertal und der Umgebung — und sorgen für nahtlose Übergaben.
+        </p>
+
+        <h2>Tipps zur Beantragung</h2>
+        <ul>
+          <li><strong>Vorab planen</strong> — bei Urlaub oder geplanten OPs frühzeitig Plätze sichern</li>
+          <li><strong>Belege sammeln</strong> — alle Quittungen aufbewahren, die Pflegekasse erstattet rückwirkend</li>
+          <li><strong>Abrechnung in einem Rutsch</strong> — z. B. nach einem Urlaub gesammelt einreichen</li>
+          <li><strong>Bis zu 4 Jahre nachträglich</strong> abrechenbar — verschenken Sie kein Geld!</li>
+          <li><strong>Auch ohne Begründung</strong> möglich — Sie müssen nichts „rechtfertigen"</li>
+        </ul>
+
+      </article>
+
+      <aside class="lg:col-span-4 space-y-5">
+
+        <div class="bg-primary rounded-card p-6 text-white">
+          <h3 class="text-h4 font-heading text-white mb-3">Vertretung organisieren</h3>
+          <p class="text-small text-white/90 mb-5">
+            Wir übernehmen Ihre Pflege-Schichten — kurz oder mehrere Wochen. Abrechnung direkt mit der Pflegekasse.
+          </p>
+          <a href="/kontakt/" class="btn btn-md bg-accent text-primary-dark font-bold hover:bg-accent-hover w-full text-center block">
+            Termin vereinbaren
+          </a>
+          <a href={site.contact.phoneHref} class="mt-3 text-small text-white/80 hover:text-white text-center block">
+            {site.contact.phone}
+          </a>
+        </div>
+
+        <div class="bg-surface rounded-card p-6">
+          <h3 class="text-h4 font-heading text-ink mb-4">Vergleich auf einen Blick</h3>
+          <ul class="space-y-3 text-small text-ink-muted">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-care flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span><strong>Verhinderungspflege:</strong> ambulant, bis 1.612 €/Jahr, max. 6 Wochen</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-care flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span><strong>Kurzzeitpflege:</strong> stationär, bis 1.774 €/Jahr, max. 8 Wochen</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-care flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span><strong>Kombination:</strong> bis 2.418 €/Jahr Verhinderungspflege bei Übertragung</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-care flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Ab Pflegegrad 2 — nach 6 Monaten Pflegezeit</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-care flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Bis 4 Jahre rückwirkend abrechenbar</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-care-soft rounded-card p-6 border border-care/20">
+          <h3 class="text-h4 font-heading text-ink mb-2">Detail-Artikel</h3>
+          <p class="text-small text-ink-muted mb-4">
+            Verhinderungspflege im Detail — mit Beispielen aus dem Cronenberger Alltag.
+          </p>
+          <a href="/ratgeber/verhinderungspflege-erklaert/" class="btn-care btn-md w-full text-center block">
+            Mehr lesen
+          </a>
+        </div>
+
+      </aside>
+    </div>
+  </section>
+
+  <section class="section bg-surface">
+    <div class="container-content">
+      <h2 class="text-h3 font-heading text-ink mb-6">Weitere Themen</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <a href="/ratgeber/verhinderungspflege-erklaert/" class="card-hover block">
+          <p class="eyebrow mb-2">Detail-Artikel</p>
+          <h3 class="text-h4 font-heading text-ink mb-2">Verhinderungspflege einfach erklärt</h3>
+          <p class="text-small text-ink-muted">Vertiefend: alle Fristen, Antragsschritte und Beispiel-Berechnungen.</p>
+        </a>
+        <a href="/ratgeber/finanzielle-hilfen/" class="card-hover block">
+          <p class="eyebrow mb-2">Übersicht</p>
+          <h3 class="text-h4 font-heading text-ink mb-2">Finanzielle Hilfen</h3>
+          <p class="text-small text-ink-muted">Alle Pflegekassen-Leistungen im Überblick und wie sie kombinierbar sind.</p>
+        </a>
+        <a href="/leistungen/verhinderungspflege/" class="card-hover block">
+          <p class="eyebrow mb-2">Leistung</p>
+          <h3 class="text-h4 font-heading text-ink mb-2">Unsere Verhinderungspflege</h3>
+          <p class="text-small text-ink-muted">Wie wir Sie konkret vertreten — stunden-, tage- oder wochenweise.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,261 @@
+---
+import Base from '@/layouts/Base.astro';
+import { site } from '@/config/site';
+
+const title = 'Demenz & Begleitung — Umgang im Alltag';
+const description = 'Demenz im Alltag: Umgang, Kommunikation, Tagesstruktur und Entlastungsangebote. Praktische Hinweise für Angehörige vom Pflegedienst Pieper aus Wuppertal-Cronenberg.';
+const published = '2026-05-16';
+const publishedDisplay = '16. Mai 2026';
+---
+
+<Base title={title} description={description}>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    datePublished: published,
+    author: { '@type': 'Organization', name: `${site.legalName} – ${site.legalSuffix}` },
+    publisher: { '@type': 'Organization', name: site.legalName, url: site.url },
+    mainEntityOfPage: `${site.url}/ratgeber/demenz/`,
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Startseite', item: `${site.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Ratgeber', item: `${site.url}/ratgeber/` },
+      { '@type': 'ListItem', position: 3, name: 'Demenz & Begleitung', item: `${site.url}/ratgeber/demenz/` },
+    ],
+  })} />
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-10" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="dots-de" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="white" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#dots-de)" />
+      </svg>
+    </div>
+    <div class="container-content relative py-14 md:py-20">
+      <nav aria-label="Brotkrümel" class="mb-5 text-small text-white/70">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="/" class="hover:text-white">Startseite</a></li>
+          <li aria-hidden="true">›</li>
+          <li><a href="/ratgeber/" class="hover:text-white">Ratgeber</a></li>
+          <li aria-hidden="true">›</li>
+          <li class="text-white" aria-current="page">Demenz & Begleitung</li>
+        </ol>
+      </nav>
+      <p class="eyebrow text-care-soft mb-4">Themenwelt · Demenz</p>
+      <h1 class="text-h1-mobile md:text-h1 font-heading text-white mb-5 max-w-3xl">
+        Demenz im Alltag — verstehen statt korrigieren.
+      </h1>
+      <p class="text-lead text-white/90 max-w-prose-comfort">
+        Wie Sie mit einem an Demenz erkrankten Menschen leichter kommunizieren, den Alltag
+        strukturieren und sich selbst dabei nicht aus den Augen verlieren.
+      </p>
+      <p class="mt-4 text-small text-white/60">Aktualisiert am {publishedDisplay} · Pflegedienst Pieper, Wuppertal-Cronenberg</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-content grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+
+      <article class="lg:col-span-8 prose-legal">
+
+        <h2>Was Demenz mit dem Alltag macht</h2>
+        <p>
+          Demenz ist mehr als „Vergesslichkeit". Sie verändert, wie ein Mensch die Welt
+          wahrnimmt, wie er sich erinnert, sich orientiert, mit Sprache umgeht. Vieles, was für
+          Pflegende selbstverständlich ist, wird für den Betroffenen anstrengend oder unbegreiflich.
+        </p>
+        <p>
+          Die wichtigste Erkenntnis vorweg: <strong>Sie können die Erkrankung nicht wegdiskutieren</strong>.
+          Korrigieren Sie nicht, was die Person sagt — auch wenn es objektiv falsch ist. Begegnen
+          Sie ihr in ihrer Welt, nicht in Ihrer.
+        </p>
+
+        <h2>Frühe Anzeichen ernst nehmen</h2>
+        <p>
+          Häufige erste Hinweise:
+        </p>
+        <ul>
+          <li>Wiederholtes Fragen nach denselben Dingen</li>
+          <li>Sucht häufig Schlüssel, Brille oder Geldbeutel</li>
+          <li>Verirrt sich in vertrauten Wegen</li>
+          <li>Verliert Interesse an Hobbys oder sozialen Kontakten</li>
+          <li>Rückzug, Misstrauen, plötzliche Stimmungswechsel</li>
+        </ul>
+        <p>
+          Wenn diese Zeichen mehrere Wochen lang zunehmen, ist ein Termin beim Hausarzt wichtig —
+          und von dort eine Überweisung in eine <strong>Gedächtnissprechstunde</strong>. In Wuppertal
+          gibt es spezialisierte Anlaufstellen, die eine differenzierte Diagnostik anbieten.
+        </p>
+
+        <h2>Kommunikation: vier einfache Regeln</h2>
+        <ol>
+          <li><strong>Kurze Sätze, klare Worte.</strong> Eine Aussage, eine Frage pro Satz. Keine Schachtelsätze.</li>
+          <li><strong>Augenkontakt suchen, freundlich lächeln.</strong> Tonfall zählt mehr als Inhalt.</li>
+          <li><strong>Nicht widersprechen, nicht korrigieren.</strong> Auch wenn die Person glaubt, der verstorbene Ehepartner käme gleich nach Hause — bestätigen Sie das Gefühl, nicht die Tatsache.</li>
+          <li><strong>Gefühle benennen.</strong> „Du wirkst traurig — möchtest du erzählen, was los ist?" hilft mehr als jede Erklärung.</li>
+        </ol>
+
+        <h2>Tagesstruktur gibt Sicherheit</h2>
+        <p>
+          Menschen mit Demenz fühlen sich in einer klaren, wiederkehrenden Tagesstruktur deutlich
+          wohler. Was hilft:
+        </p>
+        <ul>
+          <li><strong>Feste Zeiten</strong> für Mahlzeiten, Pflege und Ruhepausen</li>
+          <li><strong>Aktivitäten</strong>, die früher Freude gemacht haben — Singen, Spazieren, Backen, Garten</li>
+          <li><strong>Vertraute Gegenstände</strong> immer am gleichen Platz</li>
+          <li><strong>Ruhepausen</strong> einplanen — Reizüberflutung ist anstrengend</li>
+          <li><strong>Tageslicht</strong> und Bewegung — am besten täglich ein kurzer Spaziergang</li>
+        </ul>
+
+        <h2>Schwierige Situationen entschärfen</h2>
+        <p>
+          Wenn die Pflege beim Waschen oder Anziehen verweigert wird, hilft kein Druck — sondern
+          Geduld. Versuchen Sie es später noch einmal. Oft funktioniert eine Tätigkeit besser,
+          wenn Sie sie ankündigen und parallel etwas Vertrautes anbieten (Lieblingsmusik, ein
+          warmes Getränk).
+        </p>
+        <p>
+          Bei Unruhe oder „nächtlichem Wandern" können <strong>Bewegungsmelder oder
+          Hausnotruf-Systeme</strong> Sicherheit geben — ohne dass die Person ständig kontrolliert
+          wird. Auch das Aufkleben einer großen Uhr und eines Kalenders an gut sichtbarer Stelle
+          hilft bei der Orientierung.
+        </p>
+
+        <h2>Wohnung demenzgerecht anpassen</h2>
+        <p>
+          Wenige Anpassungen — große Wirkung:
+        </p>
+        <ul>
+          <li>Spiegel abdecken oder entfernen, wenn die Person sich selbst nicht mehr erkennt</li>
+          <li>Beschriftung an Schränken und Türen mit klarer Schrift</li>
+          <li>Bunte Kontraste auf wichtigen Gegenständen (Tasse, Teller, Toilette)</li>
+          <li>Türen, die nicht geöffnet werden sollen, mit gleichfarbigen Möbeln „verstecken"</li>
+          <li>Stolperfallen entfernen — Demenz erhöht das Sturzrisiko erheblich</li>
+        </ul>
+
+        <h2>Pflegegrad bei Demenz</h2>
+        <p>
+          Demenz wird im NBA besonders in <strong>Modul 2 (geistige & kommunikative
+          Fähigkeiten)</strong>, <strong>Modul 3 (Verhalten & psychische Problemlagen)</strong> und
+          <strong>Modul 6 (Alltagsgestaltung)</strong> abgebildet. Schon bei mittelgradigen
+          Beeinträchtigungen kommt häufig <strong>Pflegegrad 2 oder 3</strong> heraus — auch wenn
+          die körperliche Selbstversorgung noch funktioniert.
+        </p>
+        <p>
+          Wichtig: Beim MD-Termin alle <strong>kognitiven Auffälligkeiten</strong> klar schildern.
+          Pflegende Angehörige sollten dabei sein und die typischen Probleme aus dem Alltag
+          beschreiben (nicht nur den „guten Moment", in dem der Gutachter da ist).
+        </p>
+
+        <h2>Entlastungsangebote für Angehörige</h2>
+        <p>
+          Demenz pflegen ist langwierig und kräftezehrend. Diese Angebote helfen:
+        </p>
+        <ul>
+          <li><strong>Tagespflege</strong> — meist 1–5 Tage pro Woche, Betreuung tagsüber</li>
+          <li><strong>Betreuungsgruppen / Demenz-Cafés</strong> — in Wuppertal mehrere Anbieter</li>
+          <li><strong>Stundenweise Betreuung</strong> über den Entlastungsbetrag (125 € monatlich)</li>
+          <li><strong>Verhinderungspflege</strong> — bis 1.612 €/Jahr für längere Auszeiten</li>
+          <li><strong>Angehörigengruppen</strong> — der Austausch mit Gleichbetroffenen ist Gold wert</li>
+        </ul>
+
+        <h2>Wann professionelle Pflege sinnvoll ist</h2>
+        <p>
+          Spätestens wenn die nächtliche Unruhe Ihren eigenen Schlaf raubt, wenn Sie sich
+          ausgebrannt fühlen oder eigene Termine kaum noch wahrnehmen können, ist es Zeit für
+          Unterstützung. Wir kommen bei Pieper auf Wunsch auch nur stundenweise — etwa für eine
+          Auszeit am Nachmittag oder eine ruhige Stunde mit Spaziergang.
+        </p>
+        <p>
+          Unser Team in Cronenberg hat besondere Erfahrung in der Demenzbegleitung und nimmt
+          sich die Zeit, sich auf jeden Menschen einzulassen.
+        </p>
+
+      </article>
+
+      <aside class="lg:col-span-4 space-y-5">
+
+        <div class="bg-primary rounded-card p-6 text-white">
+          <h3 class="text-h4 font-heading text-white mb-3">Betreuung & Begleitung</h3>
+          <p class="text-small text-white/90 mb-5">
+            Stundenweise oder regelmäßig — wir entlasten Sie, ohne Ihren Alltag zu überschreiben.
+          </p>
+          <a href="/leistungen/betreuung/" class="btn btn-md bg-accent text-primary-dark font-bold hover:bg-accent-hover w-full text-center block">
+            Mehr zur Betreuung
+          </a>
+          <a href={site.contact.phoneHref} class="mt-3 text-small text-white/80 hover:text-white text-center block">
+            {site.contact.phone}
+          </a>
+        </div>
+
+        <div class="bg-surface rounded-card p-6">
+          <h3 class="text-h4 font-heading text-ink mb-4">Sofort-Tipps</h3>
+          <ul class="space-y-3 text-small text-ink-muted">
+            {[
+              'Kurze Sätze, freundlicher Tonfall',
+              'Nicht korrigieren — Gefühle ernst nehmen',
+              'Vertraute Tagesstruktur einhalten',
+              'Bewegung & Tageslicht täglich',
+              'Reizüberflutung vermeiden',
+              'Eigene Pausen einplanen',
+            ].map((item) => (
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-care flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-care-soft rounded-card p-6 border border-care/20">
+          <h3 class="text-h4 font-heading text-ink mb-2">Pflegegrad einschätzen</h3>
+          <p class="text-small text-ink-muted mb-4">
+            Bei Demenz oft schon Pflegegrad 2 oder 3 — unser Rechner zeigt es Ihnen.
+          </p>
+          <a href="/pflegegradrechner/" class="btn-care btn-md w-full text-center block">
+            Zum Rechner
+          </a>
+        </div>
+
+      </aside>
+    </div>
+  </section>
+
+  <section class="section bg-surface">
+    <div class="container-content">
+      <h2 class="text-h3 font-heading text-ink mb-6">Weitere Themen</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <a href="/ratgeber/alltag/" class="card-hover block">
+          <p class="eyebrow mb-2">Alltag</p>
+          <h3 class="text-h4 font-heading text-ink mb-2">Pflege im Alltag</h3>
+          <p class="text-small text-ink-muted">Hilfsmittel, Wohnungsanpassung, Rückenschonung — praktische Tipps.</p>
+        </a>
+        <a href="/ratgeber/verhinderungspflege/" class="card-hover block">
+          <p class="eyebrow mb-2">Auszeit</p>
+          <h3 class="text-h4 font-heading text-ink mb-2">Verhinderungs- & Kurzzeitpflege</h3>
+          <p class="text-small text-ink-muted">Wenn pflegende Angehörige eine Auszeit brauchen.</p>
+        </a>
+        <a href="/leistungen/betreuung/" class="card-hover block">
+          <p class="eyebrow mb-2">Leistung</p>
+          <h3 class="text-h4 font-heading text-ink mb-2">Betreuung</h3>
+          <p class="text-small text-ink-muted">Alltagsbegleitung, Gespräche, Spaziergänge — Zeit und Zuwendung.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>
