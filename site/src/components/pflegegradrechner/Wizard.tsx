@@ -208,11 +208,6 @@ export function Wizard() {
         <NavButtons
           onBack={backQuick}
           backLabel={quickIndex === 0 ? 'Zur Übersicht' : 'Zurück'}
-          forwardDisabled={currentAnswer === undefined}
-          onForward={() => advanceQuick(quickAnswers)}
-          forwardLabel={
-            quickIndex === QUICK_QUESTIONS.length - 1 ? 'Tendenz anzeigen' : 'Weiter'
-          }
         />
       </div>
     );
@@ -351,18 +346,7 @@ export function Wizard() {
             </div>
           </fieldset>
         </div>
-        <NavButtons
-          onBack={backNba}
-          backLabel="Zurück"
-          forwardDisabled={currentAnswer === undefined}
-          onForward={advanceNba}
-          forwardLabel={
-            moduleIndex === MODULES.length - 1 &&
-            itemIndex === currentModule.items.length - 1
-              ? 'Ergebnis anzeigen'
-              : 'Weiter'
-          }
-        />
+        <NavButtons onBack={backNba} backLabel="Zurück" />
       </div>
     );
   }
@@ -498,20 +482,11 @@ function ModuleProgress({ current, itemIndex, itemTotal }: ModuleProgressProps) 
 interface NavButtonsProps {
   onBack: () => void;
   backLabel: string;
-  forwardDisabled: boolean;
-  onForward: () => void;
-  forwardLabel: string;
 }
 
-function NavButtons({
-  onBack,
-  backLabel,
-  forwardDisabled,
-  onForward,
-  forwardLabel,
-}: NavButtonsProps) {
+function NavButtons({ onBack, backLabel }: NavButtonsProps) {
   return (
-    <div className="mt-6 flex flex-row gap-3 sm:justify-between">
+    <div className="mt-6 flex items-center justify-between gap-3">
       <button
         type="button"
         onClick={onBack}
@@ -521,15 +496,9 @@ function NavButtons({
         <span className="hidden sm:inline">{backLabel}</span>
         <span className="sm:hidden">Zurück</span>
       </button>
-      <button
-        type="button"
-        onClick={onForward}
-        disabled={forwardDisabled}
-        className="btn-primary btn-md flex-1 sm:flex-initial disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-sm"
-      >
-        {forwardLabel}
-        <ArrowRight className="h-5 w-5" aria-hidden="true" />
-      </button>
+      <p className="text-xs-label text-ink-muted">
+        Tippen Sie auf eine Antwort, um fortzufahren
+      </p>
     </div>
   );
 }

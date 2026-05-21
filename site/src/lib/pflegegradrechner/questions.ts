@@ -50,11 +50,14 @@ const FAEHIGKEIT_VORHANDEN_OPTIONS: AnswerOption[] = [
   { label: 'Nicht vorhanden', value: 3 },
 ];
 
-// Medizinische Maßnahmen: zusätzlich "Nicht erforderlich" (= Person braucht
-// diese Maßnahme nicht). Wird wie "selbstständig" mit 0 gewertet.
+// Medizinische Maßnahmen: erste Stufe deckt "nicht erforderlich" UND
+// "selbstständig" ab — beide bedeuten 0 Punkte (kein Pflegebedarf).
 const MEDIZINISCH_OPTIONS: AnswerOption[] = [
-  { label: 'Nicht erforderlich', helper: 'Diese Maßnahme ist im Alltag nicht nötig.', value: 0 },
-  { label: 'Selbstständig', helper: 'Erledigt die Person ohne Hilfe.', value: 0 },
+  {
+    label: 'Nicht erforderlich oder selbstständig',
+    helper: 'Die Maßnahme ist im Alltag nicht nötig oder die Person erledigt sie ohne Hilfe.',
+    value: 0,
+  },
   { label: 'Überwiegend selbstständig', helper: 'Kleine Erinnerungen oder Anstöße reichen.', value: 1 },
   { label: 'Überwiegend unselbstständig', helper: 'Braucht regelmäßig spürbare Hilfe.', value: 2 },
   { label: 'Unselbstständig', helper: 'Geht ohne fremde Hilfe nicht.', value: 3 },
