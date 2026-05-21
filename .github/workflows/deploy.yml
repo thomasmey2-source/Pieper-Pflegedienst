@@ -34,7 +34,7 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: site/dist/
-          server-dir: /pieperpflege.de/
+          server-dir: /pflegedienstpieper.de/
           exclude: |
             **/.git*
             **/.git*/**
