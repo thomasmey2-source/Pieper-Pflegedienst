@@ -9,7 +9,7 @@ const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${sit
 ---
 
 <Base title="Häusliche Krankenpflege in Wuppertal-Cronenberg" description={description}>
-  <section class="relative overflow-hidden h-[720px] sm:h-[860px] md:h-[980px] lg:h-[1080px] bg-primary">
+  <section class="relative overflow-hidden h-[720px] sm:h-[820px] md:h-[860px] lg:h-[clamp(720px,calc(100vh-184px),1080px)] bg-primary">
     <!-- Bild-Container: 16:9-Format — Höhe × 16/9 = natürliche Maximalbreite -->
     <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full max-w-[1280px] sm:max-w-[1530px] md:max-w-[1742px] lg:max-w-[1920px]">
       <!-- Endbild (Cronenberger Marktplatz) — startet unsichtbar, faded ein wenn das Video endet -->
