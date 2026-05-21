@@ -1,20 +1,27 @@
 ---
-const items = [
-  { label: 'Alle gesetzlichen Pflegekassen' },
-  { label: '24h erreichbar' },
-  { label: 'Examiniertes Team' },
-  { label: 'Persönliche Ansprechpartner' },
+import { site } from '@/config/site';
+
+const stats = [
+  { value: site.stats.yearsFamilyRun, label: 'Jahre Familienbetrieb' },
+  { value: site.stats.patients,        label: 'Patienten betreut' },
+  { value: site.stats.mdkNote,         label: 'MDK-Pflegenote' },
+  { value: site.stats.teamSize,        label: 'Mitarbeitende' },
 ];
 ---
 
 <div class="bg-surface border-y border-line">
-  <div class="container-content py-5 grid grid-cols-2 md:grid-cols-4 gap-4">
-    {items.map(({ label }) => (
-      <div class="flex items-center gap-2 text-small text-ink">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-care shrink-0" aria-hidden="true">
-          <polyline points="20 6 9 17 4 12" />
-        </svg>
-        <span>{label}</span>
+  <div class="container-content py-6 md:py-7 grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
+    {stats.map(({ value, label }, i) => (
+      <div class:list={[
+        'flex flex-col items-center text-center md:flex-row md:items-baseline md:gap-3',
+        i > 0 ? 'md:border-l md:border-line/60 md:pl-6' : '',
+      ]}>
+        <div class="text-2xl md:text-3xl font-heading font-bold text-primary leading-none">
+          {value}
+        </div>
+        <div class="text-xs-label text-ink-muted mt-1 md:mt-0 uppercase tracking-wider leading-tight">
+          {label}
+        </div>
       </div>
     ))}
   </div>

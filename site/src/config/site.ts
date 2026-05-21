@@ -6,6 +6,20 @@ export const site = {
   foundedYear: 1985,
   foundedYearsAgo: 41,
   membership: 'AG Freie Ambulante Krankenpflege e. V.',
+  // Harte Zahlen aus dem Pieper-Briefing
+  stats: {
+    yearsFamilyRun: '30+',          // Pieper-Familie seit ca. 1998
+    patients: '~100',                // aktuell betreute Patienten
+    mdkNote: '1',                    // MDK-Pflegenote
+    teamSize: '~15',                 // Mitarbeitende gesamt
+    examined: 6,                     // vollexaminierte Pflegefachkräfte
+  },
+  unique: [
+    'Ältester und größter ambulanter Pflegedienst in Cronenberg & Südstadt',
+    'Familiengeführt seit über 30 Jahren',
+    'MDK-Pflegenote 1',
+    'Alles aus einer Hand — keine Teilversorgung',
+  ],
   address: {
     street: 'Cronenberger Straße 383',
     zip: '42349',

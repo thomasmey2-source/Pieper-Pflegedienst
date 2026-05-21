@@ -27,20 +27,37 @@ const values = [
   },
 ];
 
-const team = [
-  { name: 'Armin Pieper', role: 'Inhaber & Gründer', lead: true, image: '/images/armin-pieper.webp' },
-  { name: 'Timo Pieper', role: 'Inhaber & Geschäftsführung', lead: true, image: '/images/timo-pieper.webp' },
-  { name: '[TODO: Name]', role: 'Pflegedienstleitung (PDL)', lead: false },
-  { name: 'Sabine M.', role: 'Examinierte Pflegefachkraft', lead: false },
-  { name: 'Markus K.', role: 'Examinierter Altenpfleger', lead: false },
-  { name: 'Elena R.', role: 'Wundtherapeutin', lead: false },
-  { name: 'Andrea L.', role: 'Pflegehilfskraft', lead: false },
+const team: Array<{ name: string; role: string; qualification?: string; image?: string }> = [
+  {
+    name: 'Armin Pieper',
+    role: 'Inhaber',
+    qualification: 'Exam. Gesundheits- & Krankenpfleger · PDL-Weiterbildung · Intensivpflege',
+    image: '/images/armin-pieper.webp',
+  },
+  {
+    name: 'Timo Pieper',
+    role: 'Inhaber & Geschäftsführung',
+    qualification: 'Exam. Gesundheits- & Krankenpfleger · PDL-Weiterbildung',
+    image: '/images/timo-pieper.webp',
+  },
+  {
+    name: 'Karla Pieper',
+    role: 'Pflegedienstleitung',
+    qualification: 'Exam. Kinderkrankenpflegerin · PDL-Weiterbildung · 50+ Jahre Pflegeerfahrung',
+    // Foto folgt noch
+  },
 ];
 
+const teamSummary = {
+  examined: 6,        // vollexaminierte Pflegefachkräfte
+  semiExamined: 5,    // teilexaminierte Kräfte
+  trained: 5,         // angelernte Kräfte
+};
+
 const trustItems = [
+  'MDK-Pflegenote 1 — höchste Pflegequalität bestätigt',
   'Versorgungsvertrag nach §72 SGB XI mit allen gesetzlichen Pflegekassen',
-  'MDK-Pflegenote: [TODO: aktuelle Note]',
-  'Examinierte Pflegefachkräfte und qualifizierte Hilfskräfte',
+  '6 vollexaminierte Pflegefachkräfte plus qualifizierte Hilfskräfte',
   'Regelmäßige Fortbildungen — Wundversorgung, Demenz, Palliativ-Begleitung',
   '24-Stunden-Bereitschaft, im Team verteilt',
   'Persönliche Bezugspflege — feste Ansprechpartner für Sie',
@@ -102,22 +119,27 @@ const trustItems = [
           </p>
           <p>
             1998 schlossen sich Petra Wagner und <strong>Armin Pieper</strong>
-            zu einer GbR zusammen. Was folgte, waren fast drei Jahrzehnte
-            gemeinsamen Wachstums: ein festes Team, rund 130 Patienten im
-            Bereich Cronenberg und der oberen Südstadt — und die Adresse
-            Cronenberger Straße 383, die bis heute gilt.
+            zu einer GbR zusammen. Was folgte, waren mehr als
+            <strong>drei Jahrzehnte als Familienbetrieb</strong>: ein festes Team,
+            rund {site.stats.patients} betreute Patienten im Bereich Cronenberg
+            und der oberen Südstadt — und die Adresse Cronenberger Straße 383,
+            die bis heute gilt.
           </p>
           <p>
-            Sohn <strong>Timo Pieper</strong> ist schon lange mit dabei:
-            zunächst als Pflegedienstleiter, heute als gleichberechtigter
-            Mitinhaber. Seit diesem Jahr führen Armin und Timo den Betrieb
-            als <strong>Armin & Timo Pieper GbR — Häusliche Krankenpflege</strong>
-            weiter.
+            <strong>Karla Pieper</strong> — examinierte Kinderkrankenpflegerin
+            mit über 50 Jahren Pflegeerfahrung — verstärkt das Team als
+            Pflegedienstleitung. Sohn <strong>Timo Pieper</strong> ist ebenfalls
+            schon lange mit dabei: zunächst als Pflegedienstleiter, heute als
+            gleichberechtigter Mitinhaber. Seit diesem Jahr führen Armin und
+            Timo den Betrieb als <strong>Armin & Timo Pieper GbR — Häusliche
+            Krankenpflege</strong> weiter.
           </p>
           <p>
-            Was sich in fast 40 Jahren nicht geändert hat: Wir sind kein Konzern,
-            kein anonymer Dienstleister. Wir sind die Pflegekräfte, die Ihre
-            Nachbarin seit Jahren kennt — und die auch morgen noch da sind.
+            Wir sind heute der <strong>älteste und größte ambulante Pflegedienst
+            in Cronenberg und der Südstadt</strong> — und doch kein Konzern, kein
+            anonymer Dienstleister. Wir sind die Pflegekräfte, die Ihre Nachbarin
+            seit Jahren kennt. Patienten finden uns fast ausschließlich auf
+            Empfehlung — das ist für uns das wichtigste Qualitätssiegel.
           </p>
         </div>
       </div>
@@ -180,33 +202,49 @@ const trustItems = [
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-8">
-        {team.filter((t) => t.lead).map((t) => (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-10">
+        {team.map((t) => (
           <div class="card-hover">
-            <div class="aspect-[4/5] rounded-btn overflow-hidden mb-4">
-              <img
-                src={t.image}
-                alt={t.name}
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
+            <div class="aspect-[4/5] rounded-btn overflow-hidden mb-4 bg-primary-soft flex items-center justify-center">
+              {t.image ? (
+                <img
+                  src={t.image}
+                  alt={t.name}
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              ) : (
+                <span class="text-primary/40 text-xs-label uppercase tracking-wider">Foto folgt</span>
+              )}
             </div>
             <h3 class="text-h3 font-heading text-ink mb-1">{t.name}</h3>
-            <p class="text-small text-primary font-semibold">{t.role}</p>
+            <p class="text-small text-primary font-semibold mb-2">{t.role}</p>
+            {t.qualification && (
+              <p class="text-xs-label text-ink-muted leading-snug">{t.qualification}</p>
+            )}
           </div>
         ))}
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
-        {team.filter((t) => !t.lead).map((t) => (
-          <div class="card">
-            <div aria-hidden="true" class="aspect-square rounded-full bg-surface-alt mb-3 flex items-center justify-center mx-auto w-24 h-24">
-              <span class="text-ink-muted/40 text-xs-label">Foto</span>
-            </div>
-            <h3 class="text-h4 font-heading text-ink text-center mb-1">{t.name}</h3>
-            <p class="text-small text-ink-muted text-center">{t.role}</p>
+      <!-- Team-Zusammenfassung -->
+      <div class="bg-white rounded-card p-6 md:p-8 shadow-sm border border-line/40">
+        <div class="grid grid-cols-3 gap-4 md:gap-8 text-center">
+          <div>
+            <div class="text-3xl md:text-4xl font-heading font-bold text-primary">{teamSummary.examined}</div>
+            <p class="text-small text-ink-muted mt-1 leading-tight">vollexaminierte<br/>Pflegefachkräfte</p>
           </div>
-        ))}
+          <div class="border-x border-line/40">
+            <div class="text-3xl md:text-4xl font-heading font-bold text-primary">{teamSummary.semiExamined}</div>
+            <p class="text-small text-ink-muted mt-1 leading-tight">teilexaminierte<br/>Kräfte</p>
+          </div>
+          <div>
+            <div class="text-3xl md:text-4xl font-heading font-bold text-primary">{teamSummary.trained}</div>
+            <p class="text-small text-ink-muted mt-1 leading-tight">angelernte<br/>Kräfte</p>
+          </div>
+        </div>
+        <p class="text-center text-small text-ink-muted mt-6 max-w-prose-comfort mx-auto">
+          Insgesamt {site.stats.teamSize} Mitarbeitende — examinierte Fachkräfte, qualifizierte Hilfskräfte und Hauswirtschaftshilfen, die sich ergänzen und füreinander einspringen.
+        </p>
       </div>
     </div>
   </section>
