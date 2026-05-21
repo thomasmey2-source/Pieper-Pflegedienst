@@ -45,7 +45,7 @@ $topicLabels = [
 ];
 $topicLabel = $topicLabels[$topic] ?? 'Sonstiges';
 
-$to      = 'info@pflegedienst-pieper.de'; // TODO: echte E-Mail-Adresse eintragen
+$to      = 'info@pflegedienstpieper.de'; // TODO: echte E-Mail-Adresse eintragen
 $subject = '=?UTF-8?B?' . base64_encode("Anfrage: $topicLabel – $name") . '?=';
 
 $body = "Name:     $name\n"
@@ -55,13 +55,13 @@ $body = "Name:     $name\n"
       . "\n"
       . "Nachricht:\n$message\n"
       . "\n---\n"
-      . "Gesendet über das Kontaktformular auf pflegedienst-pieper.de";
+      . "Gesendet über das Kontaktformular auf pflegedienstpieper.de";
 
 $fromName = '=?UTF-8?B?' . base64_encode('Pieper Pflegedienst Webseite') . '?=';
 $headers  = "MIME-Version: 1.0\r\n"
           . "Content-Type: text/plain; charset=UTF-8\r\n"
           . "Content-Transfer-Encoding: 8bit\r\n"
-          . "From: $fromName <no-reply@pflegedienst-pieper.de>\r\n"
+          . "From: $fromName <no-reply@pflegedienstpieper.de>\r\n"
           . "Reply-To: $name <$email>";
 
 if (mail($to, $subject, $body, $headers)) {

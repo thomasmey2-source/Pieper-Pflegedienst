@@ -4,7 +4,7 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://pflegedienst-pieper.de',
+  site: 'https://pflegedienstpieper.de',
   integrations: [
     tailwind({ applyBaseStyles: false }),
     react(),

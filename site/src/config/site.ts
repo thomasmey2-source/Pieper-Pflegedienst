@@ -13,9 +13,9 @@ export const site = {
     district: 'Cronenberg',
   },
   contact: {
-    phone: '0202 4099069',
-    phoneHref: 'tel:+4920240990690',
-    email: 'info@pflegedienst-pieper.de',
+    phone: '0202-40 25 59',
+    phoneHref: 'tel:+49202402559',
+    email: 'info@pflegedienstpieper.de',
     whatsapp: '+49 XXX XXXXXXX',
   },
   officeHours: {
@@ -31,7 +31,7 @@ export const site = {
     'Ronsdorf',
     'Lichtscheid',
   ],
-  url: 'https://pflegedienst-pieper.de',
+  url: 'https://pflegedienstpieper.de',
 } as const;
 
 type NavChild = { label: string; href: string };

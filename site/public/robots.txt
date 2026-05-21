@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pflegedienst-pieper.de/sitemap-index.xml
+Sitemap: https://pflegedienstpieper.de/sitemap-index.xml

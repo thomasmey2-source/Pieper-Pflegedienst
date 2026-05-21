@@ -105,7 +105,50 @@ const whatsappHref = `https://wa.me/${site.contact.whatsapp.replace(/[^0-9]/g, '
             Pflichtfelder sind mit <span class="form-required">*</span> markiert.
           </p>
 
-          <form action="/api/kontakt" method="POST" class="space-y-5" novalidate>
+          <!-- Success-Banner: erscheint nach erfolgreichem Versand -->
+          <div
+            id="kontakt-success"
+            class="hidden mb-6 rounded-card border-l-4 border-care bg-care-soft p-5"
+            role="status"
+            aria-live="polite"
+          >
+            <div class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-care flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              <div>
+                <p class="text-h4 font-heading text-ink mb-1">Vielen Dank!</p>
+                <p class="text-body text-ink">
+                  Ihre Nachricht ist bei uns angekommen — wir melden uns in der Regel
+                  innerhalb eines Werktags zurück.
+                </p>
+                <p class="text-small text-ink-muted mt-2" id="kontakt-redirect-msg">
+                  Sie werden in <span id="kontakt-countdown">8</span> Sekunden zur Startseite weitergeleitet …
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Error-Banner: erscheint bei Übertragungsfehler -->
+          <div
+            id="kontakt-error"
+            class="hidden mb-6 rounded-card border-l-4 border-danger bg-danger/10 p-5"
+            role="alert"
+          >
+            <div class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-danger flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+              </svg>
+              <div>
+                <p class="text-h4 font-heading text-ink mb-1">Da ist etwas schiefgelaufen.</p>
+                <p class="text-body text-ink" id="kontakt-error-msg">
+                  Bitte versuchen Sie es erneut oder rufen Sie uns direkt an: <strong>{site.contact.phone}</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <form id="kontakt-form" action="/kontakt-handler.php" method="POST" class="space-y-5" novalidate>
             <!-- Honeypot (Bot-Schutz) -->
             <div aria-hidden="true" class="absolute opacity-0 pointer-events-none" style="left:-9999px;height:0;overflow:hidden;">
               <label for="website">Website (bitte leer lassen)</label>
@@ -321,4 +364,51 @@ const whatsappHref = `https://wa.me/${site.contact.whatsapp.replace(/[^0-9]/g, '
       </div>
     </div>
   </section>
+
+  <!-- Formular-Feedback: Success/Error-Banner gemäß URL-Parameter -->
+  <script is:inline>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const success = params.get('success') === '1';
+      const fehler = params.get('fehler');
+
+      const form = document.getElementById('kontakt-form');
+      const successBox = document.getElementById('kontakt-success');
+      const errorBox = document.getElementById('kontakt-error');
+      const errorMsg = document.getElementById('kontakt-error-msg');
+      const countdownEl = document.getElementById('kontakt-countdown');
+
+      if (success && form && successBox) {
+        // Formular ausblenden, Success-Banner zeigen
+        form.classList.add('hidden');
+        successBox.classList.remove('hidden');
+        // Scroll zum Banner
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Countdown + Redirect zur Startseite
+        let seconds = 8;
+        const tick = window.setInterval(() => {
+          seconds -= 1;
+          if (countdownEl) countdownEl.textContent = String(seconds);
+          if (seconds <= 0) {
+            window.clearInterval(tick);
+            window.location.href = '/';
+          }
+        }, 1000);
+      } else if (fehler && errorBox && errorMsg) {
+        errorBox.classList.remove('hidden');
+        const msgMap = {
+          pflicht: 'Bitte füllen Sie alle Pflichtfelder aus (Name, E-Mail, Nachricht) und stimmen Sie der Datenschutzerklärung zu.',
+          email: 'Die eingegebene E-Mail-Adresse scheint ungültig zu sein. Bitte prüfen Sie sie kurz.',
+          server: 'Die Nachricht konnte aktuell nicht versendet werden. Bitte versuchen Sie es erneut oder rufen Sie uns direkt an.',
+        };
+        const msg = msgMap[fehler];
+        if (msg) {
+          errorMsg.innerHTML = msg + ' Rufen Sie uns direkt an: <strong>0202-40 25 59</strong>.';
+        }
+        // Scroll zum Banner
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    })();
+  </script>
 </Base>
