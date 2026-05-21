@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Geschützter Bereich"
+AuthUserFile /www/htdocs/w0219a91/pflegedienstpieper.de/.htpasswd
+Require valid-user
