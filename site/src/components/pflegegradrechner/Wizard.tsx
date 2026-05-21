@@ -177,7 +177,7 @@ export function Wizard() {
     }
 
     return (
-      <div ref={questionRef} className="scroll-mt-2">
+      <div ref={questionRef} className="scroll-mt-36 md:scroll-mt-44 lg:scroll-mt-52">
         <div className="sticky top-2 z-20 -mx-4 bg-surface/95 px-4 py-3 shadow-sm backdrop-blur md:relative md:top-0 md:mx-0 md:bg-transparent md:px-0 md:py-0 md:shadow-none md:backdrop-blur-none">
           <ProgressBar
             current={quickIndex + 1}
@@ -310,7 +310,7 @@ export function Wizard() {
     }
 
     return (
-      <div ref={questionRef} className="scroll-mt-2">
+      <div ref={questionRef} className="scroll-mt-36 md:scroll-mt-44 lg:scroll-mt-52">
         <div className="sticky top-2 z-20 -mx-4 bg-surface/95 px-4 py-3 shadow-sm backdrop-blur md:relative md:top-0 md:mx-0 md:bg-transparent md:px-0 md:py-0 md:shadow-none md:backdrop-blur-none">
           <ModuleProgress
             current={moduleIndex}
