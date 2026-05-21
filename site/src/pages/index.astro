@@ -12,23 +12,25 @@ const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${sit
   <section class="relative overflow-hidden h-[720px] sm:h-[820px] md:h-[860px] lg:h-[clamp(720px,calc(100vh-184px),1080px)] bg-primary">
     <!-- Bild-Container: 16:9-Format — Höhe × 16/9 = natürliche Maximalbreite -->
     <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full max-w-[1280px] sm:max-w-[1530px] md:max-w-[1742px] lg:max-w-[1920px]">
-      <!-- Endbild (Cronenberger Marktplatz) — startet unsichtbar, faded ein wenn das Video endet -->
+      <!-- Endbild (Cronenberger Marktplatz)
+           Mobile: sofort sichtbar — kein Video, spart 1 MB Bandbreite
+           Desktop: startet unsichtbar, faded ein wenn das Video endet -->
       <img
         src="/images/hero-end.webp"
         alt="Cronenberger Marktplatz mit Fachwerkhaus und Reformierter Kirche"
-        class="absolute inset-0 w-full h-full object-cover [object-position:70%_center] md:object-right md:blur-[1.5px] opacity-0 transition-opacity duration-[1500ms] ease-out"
+        class="absolute inset-0 w-full h-full object-cover [object-position:70%_center] md:object-right md:blur-[1.5px] opacity-100 md:opacity-0 transition-opacity duration-[1500ms] ease-out"
         style="transform: scale(1.02); transform-origin: center center;"
         id="hero-end-image"
       />
+      <!-- Video — nur auf md+ geladen & gerendert. preload=none + data-src verhindert den Fetch auf Mobile. -->
       <video
-        src="/images/hero.mp4"
         poster="/images/hero.webp"
-        class="relative w-full h-full object-cover [object-position:70%_center] md:object-right transition-opacity duration-[1500ms] ease-in"
-        autoplay
+        class="hidden md:block relative w-full h-full object-cover md:object-right transition-opacity duration-[1500ms] ease-in"
         muted
         playsinline
-        preload="auto"
+        preload="none"
         id="hero-video"
+        data-src="/images/hero.mp4"
         aria-label="Cronenberger Marktplatz mit Fachwerkhaus und Reformierter Kirche"
       ></video>
     </div>
@@ -114,14 +116,22 @@ const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${sit
   </section>
 
   <script>
-    // Sanftes Cross-Fade Video → Standbild + Reveal-Badge
-    const heroVideo = document.getElementById('hero-video');
+    // Sanftes Cross-Fade Video → Standbild + Reveal-Badge.
+    // Video startet nur auf md+ (>=768 px) — auf Mobile wird die mp4 gar nicht erst geladen.
+    const heroVideo = document.getElementById('hero-video') as HTMLVideoElement | null;
     const heroEndImage = document.getElementById('hero-end-image');
     const cronenbergBadge = document.getElementById('cronenberg-badge');
+    const isDesktop = window.matchMedia('(min-width: 768px)').matches;
 
-    if (heroVideo && heroEndImage && cronenbergBadge) {
+    if (isDesktop && heroVideo && heroEndImage && cronenbergBadge) {
+      const src = heroVideo.dataset.src;
+      if (src) {
+        heroVideo.src = src;
+        heroVideo.autoplay = true;
+        heroVideo.play().catch(() => {/* iOS/Restricted: ignorieren, Poster bleibt */});
+      }
+
       let faded = false;
-
       heroVideo.addEventListener('timeupdate', () => {
         if (faded) return;
         // 1,5 Sek vor Ende: Video ausblenden, Bild + Badge einblenden
