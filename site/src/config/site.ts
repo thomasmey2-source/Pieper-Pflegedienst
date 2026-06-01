@@ -12,7 +12,7 @@ export const site = {
     yearsFamilyRun: '25+',           // Pieper-Familie seit 1998 (intern, falls benötigt)
     patients: '~100',                // aktuell betreute Patienten
     mdkNote: '1',                    // MDK-Pflegenote
-    teamSize: '~15',                 // Mitarbeitende gesamt
+    teamSize: '20',                  // Mitarbeitende gesamt
     examined: 6,                     // vollexaminierte Pflegefachkräfte
   },
   unique: [
@@ -39,11 +39,11 @@ export const site = {
   },
   serviceArea: [
     'Cronenberg',
+    'Südstadt',
     'Küllenhahn',
     'Sudberg',
     'Kohlfurth',
     'Hahnerberg',
-    'Ronsdorf',
     'Lichtscheid',
   ],
   url: 'https://pflegedienstpieper.de',
@@ -61,7 +61,7 @@ export const nav: NavItem[] = [
       { label: 'Grundpflege',             href: '/leistungen/grundpflege/' },
       { label: 'Behandlungspflege',       href: '/leistungen/behandlungspflege/' },
       { label: 'Verhinderungspflege',     href: '/leistungen/verhinderungspflege/' },
-      { label: '24h-Pflege',              href: '/leistungen/24h-pflege/' },
+      { label: '24-Std.-Bereitschaft',    href: '/leistungen/24h-pflege/' },
       { label: 'Palliativpflege',         href: '/leistungen/palliativpflege/' },
       { label: 'Betreuung',               href: '/leistungen/betreuung/' },
       { label: 'Arztbegleitung',          href: '/leistungen/arztbegleitung/' },

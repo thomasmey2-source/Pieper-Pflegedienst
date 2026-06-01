@@ -65,20 +65,20 @@ export const services: Service[] = [
   },
   {
     slug: '24h-pflege',
-    title: '24h-Pflege',
-    short: 'Rund-um-die-Uhr-Versorgung zu Hause durch unser Team und Bereitschaftsdienst.',
+    title: '24-Std.-Bereitschaft',
+    short: 'Tagsüber geplante Einsätze — und rund um die Uhr erreichbar, wenn ein dringender Notfall eintritt.',
     iconPath: '<circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/>',
     description:
-      '24-Stunden-Bereitschaft heißt: Wir sind erreichbar, auch nachts und am Wochenende. Im Team verteilt — niemand muss allein Dauerdienst leisten, und Sie haben immer eine bekannte Stimme am Telefon.',
+      'Wir bieten keine durchgehende Rund-um-die-Uhr-Pflege — aber unsere Patientinnen und Patienten erreichen rund um die Uhr unseren Bereitschaftsdienst. Bei dringenden pflegerischen Notfällen ist sofort jemand erreichbar, der die Lage einschätzt und hilft.',
     includes: [
-      'Tägliche Pflegeeinsätze nach Bedarf',
-      'Abend- und Nachtdienste',
-      'Telefonische 24h-Bereitschaft für unsere Patienten',
-      'Schnelle Hilfe bei Notfällen',
-      'Koordination mit Hausärzten und Notdienst',
+      'Geplante Pflegeeinsätze nach Bedarf — meist mehrmals täglich',
+      'Telefonische Bereitschaft rund um die Uhr für unsere Patienten',
+      'Schnelle Einschätzung und Hilfe bei dringenden Notfällen',
+      'Koordination mit Hausärzten, Not- und Rettungsdienst',
+      'Feste Bezugspersonen, die Ihre Situation kennen',
     ],
-    paidBy: 'Kombination aus Pflegekasse, Krankenkasse & Selbstzahler',
-    forWhom: 'Schwerstpflegebedürftige (meist PG 4 – 5)',
+    paidBy: 'Bestandteil unserer Pflegeleistungen (SGB XI / SGB V)',
+    forWhom: 'Unsere Pflegepatienten, die auch außerhalb der Einsätze Sicherheit möchten',
   },
   {
     slug: 'palliativpflege',
@@ -103,7 +103,7 @@ export const services: Service[] = [
     short: 'Zeit für Gespräche, Spaziergänge und Aktivitäten — gegen Einsamkeit und für Lebensqualität.',
     iconPath: '<circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.85"/>',
     description:
-      'Manchmal braucht es keine Pflege im engen Sinn, sondern jemanden, der da ist — vorliest, spazieren geht, gemeinsam kocht. Betreuungsleistungen sind über den Entlastungsbetrag (125 €/Monat ab PG 1) abrechenbar.',
+      'Manchmal braucht es keine Pflege im engen Sinn, sondern jemanden, der da ist — vorliest, spazieren geht, gemeinsam kocht. Betreuungsleistungen sind über den Entlastungsbetrag (131 €/Monat ab PG 1) abrechenbar.',
     includes: [
       'Spaziergänge und Begleitung außer Haus',
       'Vorlesen, Spiele, Gespräche',
@@ -111,7 +111,7 @@ export const services: Service[] = [
       'Begleitung zum Friseur, Einkauf, Café',
       'Entlastung pflegender Angehöriger',
     ],
-    paidBy: 'Entlastungsbetrag 125 €/Monat (ab PG 1) — Pflegekasse',
+    paidBy: 'Entlastungsbetrag 131 €/Monat (ab PG 1) — Pflegekasse',
     forWhom: 'Alle mit Pflegegrad (ab PG 1) — auch Demenz ohne PG',
   },
   {

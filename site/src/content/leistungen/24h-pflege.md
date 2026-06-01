@@ -1,45 +1,47 @@
 ---
-title: 24h-Pflege
-excerpt: Rund-um-die-Uhr-Versorgung zu Hause durch unser Team aus mehreren Pflegekräften und unseren Bereitschaftsdienst.
+title: 24-Std.-Bereitschaft
+excerpt: Tagsüber geplante Pflegeeinsätze — und rund um die Uhr erreichbar, wenn bei unseren Patienten ein dringender Notfall eintritt.
 pflegekasse:
   sgb: Gemischt
-  note: Kombination aus SGB-XI-Pflegesachleistungen, ggf. SGB-V-Behandlungspflege und privatem Eigenanteil. Wir erstellen Ihnen einen transparenten Kostenplan.
+  note: Die Bereitschaft ist Bestandteil unserer regulären Pflegeleistungen (SGB XI / SGB V). Es entstehen keine gesonderten Kosten für die telefonische Erreichbarkeit.
 included:
-  - Mehrere geplante Pflegeeinsätze pro Tag
-  - Nachtdienst und Bereitschaft rund um die Uhr
-  - Behandlungspflege auf ärztliche Verordnung
-  - Abstimmung mit Hausärzten und Fachärzten
-  - Übergaben und gemeinsame Pflegedokumentation
+  - Geplante Pflegeeinsätze nach Bedarf — meist mehrmals täglich
+  - Telefonische Bereitschaft rund um die Uhr für unsere Patienten
+  - Schnelle Einschätzung und Hilfe bei dringenden Notfällen
+  - Koordination mit Hausärzten, Not- und Rettungsdienst
+  - Feste Bezugspersonen, die Ihre Situation kennen
   - Beratung der Angehörigen
-forWhom: Menschen mit hohem Pflegebedarf, die zu Hause bleiben möchten — auch nachts und am Wochenende. Familien, die einen sicheren Rahmen brauchen, ohne dass eine einzelne Pflegekraft permanent im Haus wohnt.
+forWhom: Unsere Pflegepatientinnen und -patienten, die sich auch außerhalb der geplanten Einsätze Sicherheit wünschen — und Angehörige, die wissen möchten, dass im Notfall jemand erreichbar ist.
 iconPath: '<circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/>'
 order: 4
 publishedAt: 2026-05-01
-seoDescription: "24h-Pflege zu Hause in Wuppertal: ambulante Versorgung mit mehreren Einsätzen täglich plus 24-Stunden-Bereitschaft. Ehrlich, professionell, gesetzeskonform."
+seoDescription: "24-Stunden-Bereitschaft bei Pflegedienst Pieper in Wuppertal: geplante Pflegeeinsätze am Tag und ein Bereitschaftsdienst, der bei dringenden Notfällen rund um die Uhr erreichbar ist."
 ---
 
-## Was ist 24h-Pflege bei Pieper?
+## Was bedeutet 24-Std.-Bereitschaft bei Pieper?
 
-„24h-Pflege" wird oft missverstanden. Anbieter aus Osteuropa werben damit, eine einzelne Betreuungskraft 24 Stunden ins Haus zu stellen — das ist arbeitsrechtlich heikel und keine medizinische Pflege. Bei uns bedeutet 24h-Pflege etwas anderes: Wir organisieren mehrere kurze Pflegeeinsätze über den Tag und die Nacht verteilt und sind außerhalb dieser Zeiten über unseren Bereitschaftsdienst sofort erreichbar.
+Eines vorweg, weil der Begriff „24-Stunden-Pflege" oft missverstanden wird: **Wir bieten keine durchgehende Rund-um-die-Uhr-Pflege an** und stellen auch keine Betreuungskraft, die bei Ihnen einzieht. Das ist nicht unser Modell.
 
-Das ist die ehrliche, gesetzlich saubere und medizinisch sinnvolle Variante. Sie haben professionelle Pflegekräfte da, wann immer Sie sie brauchen — ohne dass jemand bei Ihnen einziehen muss.
+Was wir bieten: Wir versorgen Sie mit **geplanten Pflegeeinsätzen** über den Tag — so oft, wie es nötig ist. Und darüber hinaus erreichen unsere Patientinnen und Patienten **rund um die Uhr unseren Bereitschaftsdienst**. Wenn außerhalb der geplanten Zeiten ein dringender pflegerischer Notfall eintritt, ist sofort jemand am Telefon, der die Lage einschätzt, Sie beruhigt und das Richtige veranlasst.
+
+Das ist die ehrliche, gesetzlich saubere Variante: professionelle Pflege, wenn sie geplant ist — und eine verlässliche Stimme, wenn unvorhergesehen etwas passiert.
 
 ## Wer übernimmt die Kosten?
 
-Die 24h-Pflege ist meist eine Kombination aus mehreren Leistungen: Pflegesachleistungen nach SGB XI (richten sich nach dem Pflegegrad), Behandlungspflege nach SGB V (Krankenkasse, auf ärztliche Verordnung) und ggf. dem Entlastungsbetrag in Höhe von 125 Euro monatlich. Je nach Situation deckt das einen großen Teil der Kosten ab. Bei sehr hohem Bedarf bleibt ein privater Eigenanteil.
+Die geplanten Pflegeeinsätze rechnen wir wie gewohnt ab: Pflegesachleistungen nach SGB XI (richten sich nach dem Pflegegrad) und, auf ärztliche Verordnung, Behandlungspflege nach SGB V über die Krankenkasse. Die **telefonische Bereitschaft ist Teil unserer Versorgung** — dafür entstehen Ihnen keine gesonderten Kosten.
 
 Wir setzen uns mit Ihnen zusammen, schauen genau auf den Bedarf und erstellen einen transparenten Kostenplan — bevor Sie sich entscheiden müssen.
 
 ## Was leisten wir konkret?
 
-Ein typischer Tag könnte so aussehen: Morgens kommt eine Pflegekraft für die Grundpflege und das Frühstück. Mittags ein kurzer Besuch zur Medikamentengabe und für eine Mahlzeit. Nachmittags Betreuung und Mobilisation. Abends die Versorgung fürs Bett. Nachts gegebenenfalls eine Lagerung oder Toilettengang — und außerhalb der geplanten Einsätze sind wir über die Notrufnummer immer erreichbar.
+Ein typischer Tag könnte so aussehen: Morgens kommt eine Pflegekraft für die Grundpflege und das Frühstück. Mittags ein kurzer Besuch zur Medikamentengabe und für eine Mahlzeit. Abends die Versorgung fürs Bett. Sollte zwischen oder nach den Einsätzen etwas Dringendes passieren, erreichen Sie unseren Bereitschaftsdienst über die Notrufnummer — und wir entscheiden gemeinsam, was zu tun ist.
 
 Welcher Rhythmus zu Ihnen passt, hängt von Ihrer Situation ab. Wir planen das mit Ihnen gemeinsam.
 
 ## Für wen geeignet?
 
-24h-Pflege ist für Menschen mit hohem Pflegebedarf, die nicht in ein Pflegeheim wollen oder müssen. Schwerstpflegebedürftige, Demenzkranke in fortgeschrittenem Stadium, Menschen in der Palliativsituation. Und für Angehörige, die wissen wollen: Wenn etwas ist, ist jemand da.
+Die Bereitschaft gehört für unsere Pflegepatienten einfach dazu — besonders für Menschen mit höherem Pflegebedarf, für Demenzbetroffene und für Familien, die wissen wollen: Wenn nachts etwas ist, sind wir erreichbar. Eine durchgehende Anwesenheit rund um die Uhr ist damit ausdrücklich nicht gemeint.
 
 ## Wie geht es weiter?
 
-24h-Versorgung ist ein großes Thema und braucht ein ausführliches Gespräch. Lassen Sie uns reden — kostenlos und unverbindlich, gern bei Ihnen zu Hause. Wir nehmen uns Zeit, die Situation in Ruhe zu besprechen.
+Sie sind unsicher, welche Versorgung zu Ihrer Situation passt? Lassen Sie uns reden — kostenlos und unverbindlich, gern bei Ihnen zu Hause. Wir nehmen uns Zeit, die Situation in Ruhe zu besprechen.

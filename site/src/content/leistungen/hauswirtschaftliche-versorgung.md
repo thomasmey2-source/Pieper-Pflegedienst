@@ -3,7 +3,7 @@ title: Hauswirtschaftliche Versorgung
 excerpt: Einkaufen, Kochen, Wäsche und Wohnungsreinigung — damit das eigene Zuhause weiter ein Zuhause bleibt.
 pflegekasse:
   sgb: SGB XI
-  note: Wird ab Pflegegrad 2 über Pflegesachleistungen oder über den Entlastungsbetrag (125 Euro monatlich, ab Pflegegrad 1) finanziert.
+  note: Wird ab Pflegegrad 2 über Pflegesachleistungen oder über den Entlastungsbetrag (131 Euro monatlich, ab Pflegegrad 1) finanziert.
 included:
   - Einkäufe und Besorgungen
   - Kochen oder Aufwärmen warmer Mahlzeiten
@@ -28,7 +28,7 @@ Wenn der Haushalt zur Belastung wird, kommen wir und übernehmen. Damit Sie zu H
 
 ## Wer übernimmt die Kosten?
 
-Es gibt zwei Wege. Der eine: ab Pflegegrad 2 ist die hauswirtschaftliche Versorgung Teil der Pflegesachleistungen nach SGB XI — die Kosten trägt die Pflegekasse im Rahmen Ihres monatlichen Budgets. Der andere: über den Entlastungsbetrag in Höhe von 125 Euro monatlich, den jeder Mensch mit Pflegegrad 1 oder höher bekommt.
+Es gibt zwei Wege. Der eine: ab Pflegegrad 2 ist die hauswirtschaftliche Versorgung Teil der Pflegesachleistungen nach SGB XI — die Kosten trägt die Pflegekasse im Rahmen Ihres monatlichen Budgets. Der andere: über den Entlastungsbetrag in Höhe von 131 Euro monatlich, den jeder Mensch mit Pflegegrad 1 oder höher bekommt.
 
 Bei höherem Bedarf lassen sich beide Töpfe kombinieren. Wir schauen mit Ihnen gemeinsam, wie sich der Bedarf am besten decken lässt — und übernehmen die Abrechnung mit der Pflegekasse.
 

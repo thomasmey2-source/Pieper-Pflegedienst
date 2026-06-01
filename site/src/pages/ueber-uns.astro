@@ -101,14 +101,19 @@ const trustItems = [
       <!-- Bild links, Text rechts — beide auf gleicher Höhe -->
       <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
         <div class="md:col-span-5">
-          <div class="hidden md:block rounded-card overflow-hidden shadow-md">
-            <img
-              src="/images/familie-pieper.webp"
-              alt="Familie Pieper — drei Generationen hinter dem Pflegedienst in Wuppertal-Cronenberg"
-              class="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
+          <figure class="hidden md:block">
+            <div class="rounded-card overflow-hidden shadow-md">
+              <img
+                src="/images/familie-pieper.webp"
+                alt="Armin und Timo Pieper mit Firmengründerin Petra Wagner (Mitte)"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <figcaption class="text-small text-ink-muted mt-3">
+              Armin und Timo Pieper mit Firmengründerin Petra Wagner (Mitte).
+            </figcaption>
+          </figure>
         </div>
         <div class="md:col-span-7 prose-legal">
           <p>
@@ -146,21 +151,19 @@ const trustItems = [
     </div>
   </section>
 
-  <!-- Team-Foto-Banner -->
+  <!-- Team-Foto-Banner — Platzhalter, Teamfoto folgt -->
   <section class="py-12 md:py-16 bg-white">
     <div class="container-content">
       <figure>
-        <div class="aspect-[4/3] sm:aspect-[16/9] rounded-card overflow-hidden shadow-lg">
-          <img
-            src="/images/mitarbeiter.webp"
-            alt="Das Team von Pflegedienst Pieper vor dem Büro an der Cronenberger Straße 383"
-            class="w-full h-full object-cover"
-            loading="lazy"
-          />
+        <div class="aspect-[4/3] sm:aspect-[16/9] rounded-card overflow-hidden bg-primary-soft border border-line flex flex-col items-center justify-center text-center px-6">
+          <svg class="w-12 h-12 text-primary/40 mb-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="9" cy="9" r="2"/>
+            <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+          </svg>
+          <p class="text-body font-medium text-primary/70">Unser Teamfoto folgt in Kürze.</p>
+          <p class="text-small text-ink-muted mt-1">Aufgenommen vor dem Büro an der Cronenberger Straße 383.</p>
         </div>
-        <figcaption class="text-center text-small text-ink-muted mt-4">
-          Unser Team — vor dem Büro an der Cronenberger Straße 383
-        </figcaption>
       </figure>
     </div>
   </section>

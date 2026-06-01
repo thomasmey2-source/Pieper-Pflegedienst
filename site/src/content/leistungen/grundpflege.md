@@ -1,6 +1,6 @@
 ---
 title: Grundpflege
-excerpt: Unterstützung bei der täglichen Körperpflege, beim An- und Auskleiden und bei der Mobilität — mit Würde und im eigenen Tempo.
+excerpt: Unterstützung bei der täglichen Körperpflege, beim An- und Auskleiden und bei der Mobilität — mit Würde und ohne Hektik.
 pflegekasse:
   sgb: SGB XI
   note: Wird ab Pflegegrad 2 von der Pflegekasse als Sachleistung übernommen. Höhe richtet sich nach dem Pflegegrad.
@@ -8,6 +8,7 @@ included:
   - Körperpflege (Waschen, Duschen, Baden)
   - An- und Auskleiden
   - Mund- und Zahnpflege
+  - Hilfe bei der Zubereitung oder Gabe von Nahrung
   - Hilfe bei Toilettengängen, Inkontinenzversorgung
   - Transfer und Lagerung im Bett
   - Mobilisation und Hilfe beim Gehen

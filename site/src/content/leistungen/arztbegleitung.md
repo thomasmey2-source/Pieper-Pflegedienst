@@ -3,7 +3,7 @@ title: Arztbegleitung
 excerpt: Begleitung zu Arzt-, Facharzt- und Krankenhausterminen — sicher hin und zurück, mit Hilfe beim Verstehen der Anweisungen.
 pflegekasse:
   sgb: Entlastungsbetrag
-  note: Über den Entlastungsbetrag nach §45b SGB XI (125 Euro monatlich) und ergänzend über Pflegesachleistungen ab Pflegegrad 2 abrechenbar.
+  note: Über den Entlastungsbetrag nach §45b SGB XI (131 Euro monatlich) und ergänzend über Pflegesachleistungen ab Pflegegrad 2 abrechenbar.
 included:
   - Abholung zu Hause
   - Begleitung im Taxi, eigenen Pkw oder zu Fuß
@@ -27,7 +27,7 @@ Mit unserer Arztbegleitung machen wir genau diese Schritte mit Ihnen — und sor
 
 ## Wer übernimmt die Kosten?
 
-Arztbegleitung lässt sich gut über den Entlastungsbetrag finanzieren. Das sind 125 Euro pro Monat, die jeder Mensch mit Pflegegrad 1 oder höher von der Pflegekasse bekommt (§45b SGB XI). Diese Mittel sind genau für solche Begleit- und Entlastungsleistungen gedacht.
+Arztbegleitung lässt sich gut über den Entlastungsbetrag finanzieren. Das sind 131 Euro pro Monat, die jeder Mensch mit Pflegegrad 1 oder höher von der Pflegekasse bekommt (§45b SGB XI). Diese Mittel sind genau für solche Begleit- und Entlastungsleistungen gedacht.
 
 Ab Pflegegrad 2 kann die Arztbegleitung zusätzlich über die regulären Pflegesachleistungen abgerechnet werden, wenn der Termin im Zusammenhang mit der pflegerischen Versorgung steht. Wir klären das vorab mit Ihrer Pflegekasse.
 
