@@ -119,7 +119,7 @@ const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${sit
     const isDesktop = window.matchMedia('(min-width: 768px)').matches;
 
     if (isDesktop && heroVideo) {
-      const FADE_DURATION = 0.6; // Sekunden Überblende am Loop-Punkt
+      const FADE_DURATION = 1.5; // Sekunden Überblende am Loop-Punkt
 
       const src = heroVideo.dataset.src;
       if (src) {
@@ -128,6 +128,7 @@ const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${sit
         heroVideo.autoplay = true;
         heroVideo.style.opacity = '1';
         heroVideo.style.transition = `opacity ${FADE_DURATION}s ease-in-out`;
+        heroVideo.style.willChange = 'opacity';
         heroVideo.play().catch(() => {/* Autoplay blockiert → Poster bleibt sichtbar */});
       }
 
