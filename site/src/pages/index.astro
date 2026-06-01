@@ -133,22 +133,22 @@ const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${sit
         heroVideo.play().catch(() => {/* Autoplay blockiert → Poster bleibt */});
       }
 
-      heroVideo.addEventListener('timeupdate', () => {
-        if (!heroVideo.duration) return;
-        const t = heroVideo.currentTime;
-        const timeLeft = heroVideo.duration - t;
-
-        let darkness = 0;
-        if (timeLeft < FADE_DURATION) {
-          // Ende: Overlay dunkel einblenden (0 → 1)
-          darkness = 1 - (timeLeft / FADE_DURATION);
-        } else if (t < FADE_DURATION) {
-          // Anfang: Overlay hell ausblenden (1 → 0)
-          darkness = 1 - (t / FADE_DURATION);
+      // requestAnimationFrame statt timeupdate → 60fps, kein Stocken
+      function updateOverlay() {
+        if (heroVideo.duration) {
+          const t = heroVideo.currentTime;
+          const timeLeft = heroVideo.duration - t;
+          let darkness = 0;
+          if (timeLeft < FADE_DURATION) {
+            darkness = 1 - (timeLeft / FADE_DURATION);
+          } else if (t < FADE_DURATION) {
+            darkness = 1 - (t / FADE_DURATION);
+          }
+          fadeOverlay.style.opacity = String(Math.min(1, Math.max(0, darkness)));
         }
-
-        fadeOverlay.style.opacity = String(Math.min(1, Math.max(0, darkness)));
-      });
+        requestAnimationFrame(updateOverlay);
+      }
+      requestAnimationFrame(updateOverlay);
     }
   </script>
 
