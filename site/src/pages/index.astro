@@ -18,7 +18,7 @@ const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${sit
         alt="Cronenberger Marktplatz mit Fachwerkhaus und Reformierter Kirche"
         class="absolute inset-0 w-full h-full object-cover [object-position:70%_center] md:hidden"
       />
-      <!-- Video — nur auf md+ geladen. Loop mit weichem Fade am Übergang. -->
+      <!-- Video — nur auf md+ geladen. Loop mit Fade-to-Black am Übergang. -->
       <video
         poster="/images/hero.webp"
         class="hidden md:block absolute inset-0 w-full h-full object-cover md:object-right"
@@ -29,6 +29,8 @@ const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${sit
         data-src="/images/hero.mp4"
         aria-label="Cronenberger Marktplatz mit Fachwerkhaus und Reformierter Kirche"
       ></video>
+      <!-- Schwarze Überblende für Loop-Transition (Fade to/from Black) -->
+      <div id="hero-fade-overlay" class="hidden md:block absolute inset-0 bg-black opacity-0 pointer-events-none" aria-hidden="true"></div>
     </div>
     <!-- Blauer Textlesbarkeits-Gradient — über die gesamte Section, sodass auch der weiße Seitenrand-Bereich blau bleibt -->
     <div class="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/60 to-transparent" aria-hidden="true"></div>
@@ -113,13 +115,14 @@ const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${sit
   </section>
 
   <script>
-    // Hero-Video: Dauerschleife mit weichem Fade-Übergang am Loop-Punkt.
+    // Hero-Video: Dauerschleife mit Fade-to-Black / Fade-from-Black am Loop-Punkt.
     // Nur auf md+ (>=768px) — Mobile lädt das Video nicht.
     const heroVideo = document.getElementById('hero-video') as HTMLVideoElement | null;
+    const fadeOverlay = document.getElementById('hero-fade-overlay') as HTMLElement | null;
     const isDesktop = window.matchMedia('(min-width: 768px)').matches;
 
-    if (isDesktop && heroVideo) {
-      const FADE_DURATION = 1.5; // Sekunden Überblende am Loop-Punkt
+    if (isDesktop && heroVideo && fadeOverlay) {
+      const FADE_DURATION = 1.5; // Sekunden für Fade-to-Black und Fade-from-Black
 
       const src = heroVideo.dataset.src;
       if (src) {
@@ -127,25 +130,24 @@ const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${sit
         heroVideo.loop = true;
         heroVideo.autoplay = true;
         heroVideo.playbackRate = 0.65;
-        heroVideo.style.opacity = '1';
-        heroVideo.style.transition = `opacity ${FADE_DURATION}s ease-in-out`;
-        heroVideo.style.willChange = 'opacity';
-        heroVideo.play().catch(() => {/* Autoplay blockiert → Poster bleibt sichtbar */});
+        heroVideo.play().catch(() => {/* Autoplay blockiert → Poster bleibt */});
       }
 
       heroVideo.addEventListener('timeupdate', () => {
         if (!heroVideo.duration) return;
-        const timeLeft = heroVideo.duration - heroVideo.currentTime;
+        const t = heroVideo.currentTime;
+        const timeLeft = heroVideo.duration - t;
 
+        let darkness = 0;
         if (timeLeft < FADE_DURATION) {
-          // Ausblenden: sanft gegen Ende
-          heroVideo.style.opacity = String(Math.max(0, timeLeft / FADE_DURATION));
-        } else if (heroVideo.currentTime < FADE_DURATION) {
-          // Einblenden: sanft nach dem Loop-Sprung
-          heroVideo.style.opacity = String(Math.min(1, heroVideo.currentTime / FADE_DURATION));
-        } else {
-          heroVideo.style.opacity = '1';
+          // Ende: Overlay dunkel einblenden (0 → 1)
+          darkness = 1 - (timeLeft / FADE_DURATION);
+        } else if (t < FADE_DURATION) {
+          // Anfang: Overlay hell ausblenden (1 → 0)
+          darkness = 1 - (t / FADE_DURATION);
         }
+
+        fadeOverlay.style.opacity = String(Math.min(1, Math.max(0, darkness)));
       });
     }
   </script>
