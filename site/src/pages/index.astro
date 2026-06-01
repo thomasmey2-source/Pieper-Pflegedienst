@@ -12,20 +12,16 @@ const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${sit
   <section class="relative overflow-hidden h-[720px] sm:h-[820px] md:h-[860px] lg:h-[clamp(720px,calc(100vh-184px),1080px)] bg-primary">
     <!-- Bild-Container: 16:9-Format — Höhe × 16/9 = natürliche Maximalbreite -->
     <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-full max-w-[1280px] sm:max-w-[1530px] md:max-w-[1742px] lg:max-w-[1920px]">
-      <!-- Endbild (Cronenberger Marktplatz)
-           Mobile: sofort sichtbar — kein Video, spart 1 MB Bandbreite
-           Desktop: startet unsichtbar, faded ein wenn das Video endet -->
+      <!-- Mobile: Standbild als Fallback (kein Video-Download) -->
       <img
         src="/images/hero-end.webp"
         alt="Cronenberger Marktplatz mit Fachwerkhaus und Reformierter Kirche"
-        class="absolute inset-0 w-full h-full object-cover [object-position:70%_center] md:object-right md:blur-[1.5px] opacity-100 md:opacity-0 transition-opacity duration-[1500ms] ease-out"
-        style="transform: scale(1.02); transform-origin: center center;"
-        id="hero-end-image"
+        class="absolute inset-0 w-full h-full object-cover [object-position:70%_center] md:hidden"
       />
-      <!-- Video — nur auf md+ geladen & gerendert. preload=none + data-src verhindert den Fetch auf Mobile. -->
+      <!-- Video — nur auf md+ geladen. Loop mit weichem Fade am Übergang. -->
       <video
         poster="/images/hero.webp"
-        class="hidden md:block relative w-full h-full object-cover md:object-right transition-opacity duration-[1500ms] ease-in"
+        class="hidden md:block absolute inset-0 w-full h-full object-cover md:object-right"
         muted
         playsinline
         preload="none"
@@ -117,34 +113,36 @@ const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${sit
   </section>
 
   <script>
-    // Sanftes Cross-Fade Video → Standbild + Reveal-Badge.
-    // Video startet nur auf md+ (>=768 px) — auf Mobile wird die mp4 gar nicht erst geladen.
+    // Hero-Video: Dauerschleife mit weichem Fade-Übergang am Loop-Punkt.
+    // Nur auf md+ (>=768px) — Mobile lädt das Video nicht.
     const heroVideo = document.getElementById('hero-video') as HTMLVideoElement | null;
-    const heroEndImage = document.getElementById('hero-end-image');
-    const cronenbergBadge = document.getElementById('cronenberg-badge');
     const isDesktop = window.matchMedia('(min-width: 768px)').matches;
 
-    if (isDesktop && heroVideo && heroEndImage && cronenbergBadge) {
+    if (isDesktop && heroVideo) {
+      const FADE_DURATION = 0.6; // Sekunden Überblende am Loop-Punkt
+
       const src = heroVideo.dataset.src;
       if (src) {
         heroVideo.src = src;
+        heroVideo.loop = true;
         heroVideo.autoplay = true;
-        heroVideo.play().catch(() => {/* iOS/Restricted: ignorieren, Poster bleibt */});
+        heroVideo.style.opacity = '1';
+        heroVideo.style.transition = `opacity ${FADE_DURATION}s ease-in-out`;
+        heroVideo.play().catch(() => {/* Autoplay blockiert → Poster bleibt sichtbar */});
       }
 
-      let faded = false;
       heroVideo.addEventListener('timeupdate', () => {
-        if (faded) return;
-        // 1,5 Sek vor Ende: Video ausblenden, Bild + Badge einblenden
-        if (heroVideo.duration && heroVideo.duration - heroVideo.currentTime < 1.5) {
-          faded = true;
-          heroVideo.style.opacity = '0';
-          heroEndImage.style.opacity = '1';
-          // Badge mit kleiner Verzögerung für Staffelung
-          setTimeout(() => {
-            cronenbergBadge.style.opacity = '1';
-            cronenbergBadge.style.transform = 'translateY(0)';
-          }, 700);
+        if (!heroVideo.duration) return;
+        const timeLeft = heroVideo.duration - heroVideo.currentTime;
+
+        if (timeLeft < FADE_DURATION) {
+          // Ausblenden: sanft gegen Ende
+          heroVideo.style.opacity = String(Math.max(0, timeLeft / FADE_DURATION));
+        } else if (heroVideo.currentTime < FADE_DURATION) {
+          // Einblenden: sanft nach dem Loop-Sprung
+          heroVideo.style.opacity = String(Math.min(1, heroVideo.currentTime / FADE_DURATION));
+        } else {
+          heroVideo.style.opacity = '1';
         }
       });
     }
