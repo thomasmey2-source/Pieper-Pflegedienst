@@ -254,13 +254,19 @@ const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${sit
           Offene Stellen ansehen
         </a>
       </div>
-      <div class="hidden md:block aspect-[5/4] rounded-card overflow-hidden">
-        <img
-          src="/images/familie-pieper.webp"
-          alt="Armin und Timo Pieper mit Firmengründerin Petra Wagner"
-          class="w-full h-full object-cover"
-          loading="lazy"
-        />
+      <div class="grid sm:grid-cols-2 gap-4">
+        {[
+          { title: 'Faire Vergütung', text: 'Angelehnt an TVöD-Pflege — auch für Hilfskräfte und Aushilfen.', icon: 'M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' },
+          { title: 'Planbare Schichten', text: 'Klare Dienstpläne im Voraus, Wünsche werden gehört.', icon: 'M12 6v6l4 2M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20z' },
+          { title: 'Familiäres Team', text: 'Kein Personalsatz — wir kennen uns mit Namen.', icon: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.85M16 3.13a4 4 0 0 1 0 7.75' },
+          { title: 'Rückhalt im Notfall', text: 'Die Bereitschaft rotiert im Team — niemand steht allein.', icon: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' },
+        ].map((b) => (
+          <div class="bg-white/10 rounded-card p-5 backdrop-blur-sm">
+            <svg class="w-7 h-7 text-accent mb-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={b.icon.split('M').filter(Boolean).map((d) => `<path d="M${d}"/>`).join('')}></svg>
+            <h3 class="font-heading font-semibold text-white mb-1">{b.title}</h3>
+            <p class="text-small text-white/80 leading-snug">{b.text}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
