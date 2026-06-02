@@ -95,14 +95,14 @@ const trustItems = [
       <!-- Bild links, Text rechts — beide auf gleicher Höhe -->
       <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
         <div class="md:col-span-5">
-          <div class="hidden md:flex flex-col gap-4">
+          <div class="hidden md:flex flex-col gap-4 h-full">
             {[
               { src: '/images/armin-pieper-hemd.webp', name: 'Armin Pieper', sub: 'Inhaber' },
               { src: '/images/timo-pieper.webp',     name: 'Timo Pieper',  sub: 'Inhaber' },
               { src: '/images/petra-wagner.webp',    name: 'Petra Wagner', sub: 'Gründerin' },
             ].map(({ src, name, sub }) => (
-              <div class="flex items-center gap-4">
-                <div class="w-24 h-28 shrink-0 rounded-card overflow-hidden shadow-md">
+              <div class="flex items-center gap-4 flex-1">
+                <div class="w-32 self-stretch shrink-0 rounded-card overflow-hidden shadow-md">
                   <img src={src} alt={name} class="w-full h-full object-cover object-top" loading="lazy" />
                 </div>
                 <div>
