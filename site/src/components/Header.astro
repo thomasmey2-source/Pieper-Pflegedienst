@@ -130,13 +130,13 @@ const { pathname } = Astro.url;
       })}
     </nav>
 
-    <!-- Rechts: 24h-Notruf + CTA + Burger -->
+    <!-- Rechts: 24h-Bereitschaft + CTA + Burger -->
     <div class="ml-auto lg:ml-0 flex items-center gap-3 md:gap-4 shrink-0">
-      <!-- 24h-Notruf — Volle Variante (lg+): Eyebrow + Nummer; auf Mobile als Floating-Button neben WhatsApp -->
+      <!-- 24h-Bereitschaft — Volle Variante (lg+): Eyebrow + Nummer; auf Mobile als Floating-Button neben WhatsApp -->
       <a
         href={site.contact.phoneHref}
         class="hidden lg:inline-flex items-center gap-3 pl-2 pr-3.5 py-1.5 rounded-btn border border-accent/40 bg-accent/10 hover:bg-accent/20 hover:border-accent/60 transition-colors group"
-        aria-label={`24-Std.-Notrufnummer: ${site.contact.phone} anrufen`}
+        aria-label={`24-Std.-Bereitschaft: ${site.contact.phone} anrufen`}
       >
         <span class="flex items-center justify-center w-9 h-9 rounded-full bg-accent text-primary-dark flex-shrink-0">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -144,7 +144,7 @@ const { pathname } = Astro.url;
           </svg>
         </span>
         <span class="flex flex-col leading-tight">
-          <span class="text-[10px] font-bold tracking-[0.12em] uppercase text-accent-hover">24-Std.-Notruf</span>
+          <span class="text-[10px] font-bold tracking-[0.12em] uppercase text-accent-hover">24-Std.-Bereitschaft</span>
           <span class="text-body font-bold text-ink group-hover:text-accent-hover transition-colors whitespace-nowrap">{site.contact.phone}</span>
         </span>
       </a>
@@ -268,11 +268,11 @@ const { pathname } = Astro.url;
         </a>
       </div>
 
-      <!-- 24h-Notruf — hervorgehoben, ganz unten im Burger-Menü -->
+      <!-- 24h-Bereitschaft — hervorgehoben, ganz unten im Burger-Menü -->
       <a
         href={site.contact.phoneHref}
         class="flex items-center gap-3 mt-3 px-4 py-3.5 rounded-card bg-accent text-primary-dark font-semibold shadow-sm active:scale-[0.98] transition-transform"
-        aria-label={`24-Stunden-Notruf: ${site.contact.phone} anrufen`}
+        aria-label={`24-Std.-Bereitschaft: ${site.contact.phone} anrufen`}
       >
         <span class="flex items-center justify-center w-10 h-10 rounded-full bg-primary-dark/10 flex-shrink-0">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -280,7 +280,7 @@ const { pathname } = Astro.url;
           </svg>
         </span>
         <span class="flex flex-col leading-tight">
-          <span class="text-[10px] font-bold tracking-[0.14em] uppercase opacity-70">24-Std.-Notruf</span>
+          <span class="text-[10px] font-bold tracking-[0.14em] uppercase opacity-70">24-Std.-Bereitschaft</span>
           <span class="text-body font-bold">{site.contact.phone}</span>
         </span>
         <svg class="ml-auto w-4 h-4 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

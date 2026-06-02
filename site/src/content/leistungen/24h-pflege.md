@@ -34,7 +34,7 @@ Wir setzen uns mit Ihnen zusammen, schauen genau auf den Bedarf und erstellen ei
 
 ## Was leisten wir konkret?
 
-Ein typischer Tag könnte so aussehen: Morgens kommt eine Pflegekraft für die Grundpflege und das Frühstück. Mittags ein kurzer Besuch zur Medikamentengabe und für eine Mahlzeit. Abends die Versorgung fürs Bett. Sollte zwischen oder nach den Einsätzen etwas Dringendes passieren, erreichen Sie unseren Bereitschaftsdienst über die Notrufnummer — und wir entscheiden gemeinsam, was zu tun ist.
+Ein typischer Tag könnte so aussehen: Morgens kommt eine Pflegekraft für die Grundpflege und das Frühstück. Mittags ein kurzer Besuch zur Medikamentengabe und für eine Mahlzeit. Abends die Versorgung fürs Bett. Sollte zwischen oder nach den Einsätzen etwas Dringendes passieren, erreichen Sie unseren Bereitschaftsdienst telefonisch — und wir entscheiden gemeinsam, was zu tun ist.
 
 Welcher Rhythmus zu Ihnen passt, hängt von Ihrer Situation ab. Wir planen das mit Ihnen gemeinsam.
 
