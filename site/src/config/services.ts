@@ -13,7 +13,7 @@ export const services: Service[] = [
   {
     slug: 'grundpflege',
     title: 'Grundpflege',
-    short: 'Hilfe beim Waschen, Anziehen und Bewegen — täglich und mit Würde.',
+    short: 'Hilfe beim Waschen, Anziehen und Bewegen. So oft wie nötig, von Menschen, die Sie kennen.',
     iconPath: '<path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/>',
     description:
       'Die Grundpflege umfasst alle Hilfen bei den täglichen Verrichtungen der Körperpflege, Ernährung und Mobilität. Wir kommen so oft, wie es nötig ist — meist ein- bis dreimal täglich, immer mit festen Bezugspersonen.',
