@@ -93,27 +93,27 @@ const trustItems = [
         </h2>
       </div>
       <!-- Bild links, Text rechts — beide auf gleicher Höhe -->
-      <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-stretch">
-        <div class="md:col-span-5 flex">
-          <div class="hidden md:flex flex-col gap-4 w-full">
-            {[
-              { src: '/images/armin-pieper-hemd.webp', name: 'Armin Pieper', sub: 'Inhaber' },
-              { src: '/images/timo-pieper.webp',     name: 'Timo Pieper',  sub: 'Inhaber' },
-              { src: '/images/petra-wagner.webp',    name: 'Petra Wagner', sub: 'Gründerin' },
-            ].map(({ src, name, sub }) => (
-              <div class="flex items-center gap-4 flex-1">
-                <div class="w-44 self-stretch shrink-0 rounded-card overflow-hidden shadow-md">
-                  <img src={src} alt={name} class="w-full h-full object-cover object-top" loading="lazy" />
-                </div>
-                <div>
-                  <p class="font-heading font-semibold text-ink leading-tight">{name}</p>
-                  <p class="text-small text-ink-muted">{sub}</p>
-                </div>
+      <div class="md:flex md:gap-16 md:items-stretch">
+        <!-- Bilder-Spalte: Höhe richtet sich nach dem Text rechts -->
+        <div class="hidden md:flex flex-col justify-between shrink-0 w-[260px]">
+          {[
+            { src: '/images/armin-pieper-hemd.webp', name: 'Armin Pieper', sub: 'Inhaber' },
+            { src: '/images/timo-pieper.webp',       name: 'Timo Pieper',  sub: 'Inhaber' },
+            { src: '/images/petra-wagner.webp',      name: 'Petra Wagner', sub: 'Gründerin' },
+          ].map(({ src, name, sub }) => (
+            <div class="flex items-center gap-4 flex-1 min-h-0 py-1">
+              <div class="w-36 shrink-0 self-stretch rounded-card overflow-hidden shadow-md">
+                <img src={src} alt={name} class="w-full h-full object-cover object-top" loading="lazy" />
               </div>
-            ))}
-          </div>
+              <div>
+                <p class="font-heading font-semibold text-ink leading-tight">{name}</p>
+                <p class="text-small text-ink-muted">{sub}</p>
+              </div>
+            </div>
+          ))}
         </div>
-        <div class="md:col-span-7 prose-legal">
+        <!-- Text-Spalte: bestimmt die Gesamthöhe -->
+        <div class="flex-1 prose-legal">
           <p>
             Im September 1985 gründete <strong>Petra Wagner</strong> als eine der
             ersten in Wuppertal einen privaten Pflegedienst — damals noch in
