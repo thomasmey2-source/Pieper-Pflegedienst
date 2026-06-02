@@ -16,7 +16,7 @@ const stats: Stat[] = [
   <div class="container-content py-6 md:py-7 grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
     {stats.map(({ value, label, reverse }, i) => (
       <div class:list={[
-        'flex items-center text-center md:items-baseline md:gap-3',
+        'flex items-center text-center md:items-center md:gap-3',
         reverse
           ? 'flex-col-reverse md:flex-row-reverse md:justify-end'
           : 'flex-col md:flex-row',
