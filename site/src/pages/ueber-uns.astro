@@ -95,26 +95,23 @@ const trustItems = [
       <!-- Bild links, Text rechts — beide auf gleicher Höhe -->
       <div class="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
         <div class="md:col-span-5">
-          <figure class="hidden md:block">
-            <div class="grid grid-cols-3 gap-3">
-              {[
-                { src: '/images/petra-wagner.webp',    name: 'Petra Wagner',  sub: 'Gründerin' },
-                { src: '/images/armin-pieper-hemd.webp', name: 'Armin Pieper', sub: 'Inhaber' },
-                { src: '/images/timo-pieper.webp',     name: 'Timo Pieper',  sub: 'Inhaber' },
-              ].map(({ src, name, sub }) => (
-                <div class="text-center">
-                  <div class="aspect-[3/4] rounded-card overflow-hidden shadow-md mb-2">
-                    <img src={src} alt={name} class="w-full h-full object-cover object-top" loading="lazy" />
-                  </div>
-                  <p class="text-xs-label font-semibold text-ink leading-tight">{name}</p>
-                  <p class="text-xs-label text-ink-muted">{sub}</p>
+          <div class="hidden md:flex flex-col gap-4">
+            {[
+              { src: '/images/armin-pieper-hemd.webp', name: 'Armin Pieper', sub: 'Inhaber' },
+              { src: '/images/timo-pieper.webp',     name: 'Timo Pieper',  sub: 'Inhaber' },
+              { src: '/images/petra-wagner.webp',    name: 'Petra Wagner', sub: 'Gründerin' },
+            ].map(({ src, name, sub }) => (
+              <div class="flex items-center gap-4">
+                <div class="w-24 h-28 shrink-0 rounded-card overflow-hidden shadow-md">
+                  <img src={src} alt={name} class="w-full h-full object-cover object-top" loading="lazy" />
                 </div>
-              ))}
-            </div>
-            <figcaption class="text-small text-ink-muted mt-3">
-              Firmengründerin Petra Wagner mit Armin und Timo Pieper.
-            </figcaption>
-          </figure>
+                <div>
+                  <p class="font-heading font-semibold text-ink leading-tight">{name}</p>
+                  <p class="text-small text-ink-muted">{sub}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         <div class="md:col-span-7 prose-legal">
           <p>
