@@ -2,11 +2,10 @@
 import Base from '@/layouts/Base.astro';
 import { site } from '@/config/site';
 
-const description = `Kontakt zum Pflegedienst Pieper in Wuppertal-Cronenberg: Telefon, WhatsApp, E-Mail oder Kontaktformular. 24-Stunden-Bereitschaft, persönliche Erstberatung kostenlos.`;
+const description = `Kontakt zum Pflegedienst Pieper in Wuppertal-Cronenberg: Telefon, E-Mail oder Kontaktformular. 24-Stunden-Bereitschaft, persönliche Erstberatung kostenlos.`;
 
 // Obfuskierte E-Mail-Anzeige
 const email = site.contact.email;
-const whatsappHref = `https://wa.me/${site.contact.whatsapp.replace(/[^0-9]/g, '')}`;
 ---
 
 <Base title="Kontakt" description={description}>
@@ -27,7 +26,7 @@ const whatsappHref = `https://wa.me/${site.contact.whatsapp.replace(/[^0-9]/g, '
         So erreichen Sie uns.
       </h1>
       <p class="text-lead text-white/90 max-w-prose-comfort">
-        Rufen Sie an, schreiben Sie uns auf WhatsApp oder per E-Mail —
+        Rufen Sie an, schreiben Sie uns per E-Mail —
         oder nutzen Sie das Formular. Wir melden uns in der Regel
         am selben Werktag zurück.
       </p>
@@ -48,17 +47,6 @@ const whatsappHref = `https://wa.me/${site.contact.whatsapp.replace(/[^0-9]/g, '
             <p class="eyebrow mb-1 text-small">Telefon (am schnellsten)</p>
             <p class="text-h3 font-heading text-ink group-hover:text-primary-hover transition-colors">{site.contact.phone}</p>
             <p class="text-body text-ink-muted mt-1">{site.officeHours.weekdays} · {site.officeHours.note}</p>
-          </div>
-        </a>
-
-        <a href={whatsappHref} class="card-hover flex items-center gap-5 group flex-1">
-          <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0" aria-hidden="true">
-            <img src="/images/whatsapp-logo.webp" alt="" class="w-full h-full object-cover" />
-          </div>
-          <div class="flex-1 min-w-0">
-            <p class="eyebrow mb-1 text-small">WhatsApp</p>
-            <p class="text-h3 font-heading text-ink group-hover:text-[#25D366] transition-colors">Chat starten</p>
-            <p class="text-body text-ink-muted mt-1">Praktisch für kurze Rückfragen oder Foto-Senden</p>
           </div>
         </a>
 
