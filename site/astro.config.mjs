@@ -8,7 +8,7 @@ export default defineConfig({
   integrations: [
     tailwind({ applyBaseStyles: false }),
     react(),
-    // sitemap(), // reaktivieren sobald mehrere Routen existieren — crasht bei nur 1 Seite
+    sitemap(),
   ],
   build: {
     inlineStylesheets: 'auto',
