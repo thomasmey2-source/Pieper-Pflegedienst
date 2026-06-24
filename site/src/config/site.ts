@@ -66,6 +66,7 @@ export const nav: NavItem[] = [
       { label: 'Betreuung',               href: '/leistungen/betreuung/' },
       { label: 'Arztbegleitung',          href: '/leistungen/arztbegleitung/' },
       { label: 'Hauswirtschaft',          href: '/leistungen/hauswirtschaftliche-versorgung/' },
+      { label: 'Beratungseinsatz § 37.3', href: '/beratungseinsatz/' },
     ],
   },
   { label: 'Pflegegradrechner', href: '/pflegegradrechner/' },

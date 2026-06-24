@@ -1,0 +1,279 @@
+---
+import Base from '@/layouts/Base.astro';
+import { site } from '@/config/site';
+
+const description = `Beratungseinsatz nach § 37 Abs. 3 SGB XI in Wuppertal-Cronenberg: Pflichtberatung für Bezieher von Pflegegeld. Termin direkt online anfragen — durchgeführt vom zugelassenen Pflegedienst Pieper.`;
+---
+
+<Base title="Beratungseinsatz § 37 Abs. 3 SGB XI" description={description}>
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-primary to-primary-dark text-white overflow-hidden">
+    <div class="absolute inset-0 opacity-10" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="dots-beratung" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="white" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#dots-beratung)" />
+      </svg>
+    </div>
+    <div class="container-content relative py-14 md:py-20">
+      <p class="eyebrow text-care-soft mb-4">Beratungseinsatz · § 37 Abs. 3 SGB XI</p>
+      <h1 class="text-h1-mobile md:text-h1 font-heading text-white mb-5 max-w-3xl">
+        Ihre Pflichtberatung — wir kommen zu Ihnen.
+      </h1>
+      <p class="text-lead text-white/90 max-w-prose-comfort">
+        Wer Pflegegeld bezieht, muss regelmäßig einen Beratungseinsatz nachweisen.
+        Wir übernehmen das für Sie — wohnortnah, in Ruhe und vom zugelassenen
+        Pflegedienst. Fragen Sie hier unkompliziert einen Termin an.
+      </p>
+    </div>
+  </section>
+
+  <!-- Inhalt + Formular -->
+  <section class="section">
+    <div class="container-content grid lg:grid-cols-12 gap-10 md:gap-12 items-start">
+
+      <!-- Linke Spalte: Erklärung -->
+      <div class="lg:col-span-5">
+        <p class="eyebrow mb-3">Worum geht es?</p>
+        <h2 class="text-h2-mobile md:text-h3 font-heading text-ink mb-4">
+          Was ist der Beratungseinsatz nach § 37 Abs. 3?
+        </h2>
+        <p class="text-body text-ink-muted mb-8">
+          Pflegebedürftige, die Pflegegeld beziehen und sich zu Hause von Angehörigen
+          pflegen lassen, sind gesetzlich verpflichtet, regelmäßig einen
+          Beratungseinsatz abzurufen. Eine Pflegefachkraft schaut vorbei, gibt
+          praktische Tipps, beantwortet Fragen und bestätigt der Pflegekasse, dass
+          die Versorgung gut läuft. Das sichert die Pflegequalität — und entlastet
+          die Angehörigen.
+        </p>
+
+        <div class="space-y-4">
+          <div class="card flex items-start gap-4">
+            <div class="w-12 h-12 rounded-btn bg-primary-soft text-primary flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-semibold text-ink mb-1">Wie oft ist der Einsatz nötig?</h3>
+              <p class="text-body text-ink-muted">
+                Pflegegrad 2 und 3: <strong>halbjährlich</strong>. Pflegegrad 4 und 5:
+                <strong>vierteljährlich</strong>. Bei Pflegegrad 1 ist die Beratung
+                freiwillig und kann halbjährlich abgerufen werden.
+              </p>
+            </div>
+          </div>
+
+          <div class="card flex items-start gap-4">
+            <div class="w-12 h-12 rounded-btn bg-care-soft text-care flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-semibold text-ink mb-1">Was kostet das?</h3>
+              <p class="text-body text-ink-muted">
+                Für Sie nichts. Die Kosten trägt die <strong>Pflegekasse</strong> —
+                der Beratungseinsatz ist für Pflegebedürftige und Angehörige kostenlos.
+              </p>
+            </div>
+          </div>
+
+          <div class="card flex items-start gap-4">
+            <div class="w-12 h-12 rounded-btn bg-accent-soft text-accent flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-semibold text-ink mb-1">Was, wenn ich ihn nicht abrufe?</h3>
+              <p class="text-body text-ink-muted">
+                Wird der vorgeschriebene Beratungseinsatz nicht durchgeführt, kann die
+                Pflegekasse das <strong>Pflegegeld kürzen oder ganz streichen</strong>.
+                Wir erinnern Sie gern rechtzeitig an den nächsten Termin.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rechte Spalte: Terminanfrage-Formular -->
+      <div class="lg:col-span-7">
+        <div class="bg-surface rounded-card shadow-md p-6 md:p-10">
+          <p class="eyebrow mb-3">Terminanfrage</p>
+          <h2 class="text-h2-mobile md:text-h3 font-heading text-ink mb-2">
+            Beratungseinsatz anfragen.
+          </h2>
+          <p class="text-body text-ink-muted mb-8">
+            Pflichtfelder sind mit <span class="form-required">*</span> markiert.
+            Wir melden uns in der Regel am selben Werktag bei Ihnen.
+          </p>
+
+          <!-- Success-Banner -->
+          <div
+            id="beratung-success"
+            class="hidden mb-6 rounded-card border-l-4 border-care bg-care-soft p-5"
+            role="status"
+            aria-live="polite"
+          >
+            <div class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-care flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              <div>
+                <p class="text-h4 font-heading text-ink mb-1">Vielen Dank!</p>
+                <p class="text-body text-ink">
+                  Ihre Terminanfrage ist bei uns angekommen — wir melden uns in der Regel
+                  innerhalb eines Werktags, um einen passenden Termin abzustimmen.
+                </p>
+                <p class="text-small text-ink-muted mt-2">
+                  Sie werden in <span id="beratung-countdown">8</span> Sekunden zur Startseite weitergeleitet …
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Error-Banner -->
+          <div
+            id="beratung-error"
+            class="hidden mb-6 rounded-card border-l-4 border-danger bg-danger/10 p-5"
+            role="alert"
+          >
+            <div class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-danger flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+              </svg>
+              <div>
+                <p class="text-h4 font-heading text-ink mb-1">Da ist etwas schiefgelaufen.</p>
+                <p class="text-body text-ink" id="beratung-error-msg">
+                  Bitte versuchen Sie es erneut oder rufen Sie uns direkt an: <strong>{site.contact.phone}</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <form id="beratung-form" action="/kontakt-handler.php" method="POST" class="space-y-5" novalidate>
+            <!-- Honeypot -->
+            <div aria-hidden="true" class="absolute opacity-0 pointer-events-none" style="left:-9999px;height:0;overflow:hidden;">
+              <label for="website">Website (bitte leer lassen)</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <!-- Steuerfelder -->
+            <input type="hidden" name="topic" value="beratungseinsatz" />
+            <input type="hidden" name="ziel" value="/beratungseinsatz/" />
+
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label class="form-label" for="name">Name <span class="form-required">*</span></label>
+                <input class="form-input" type="text" id="name" name="name" required autocomplete="name" />
+              </div>
+              <div>
+                <label class="form-label" for="phone">Telefon</label>
+                <input class="form-input" type="tel" id="phone" name="phone" autocomplete="tel" />
+              </div>
+            </div>
+
+            <div>
+              <label class="form-label" for="email">E-Mail <span class="form-required">*</span></label>
+              <input class="form-input" type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label class="form-label" for="pflegegrad">Pflegegrad</label>
+                <select class="form-select" id="pflegegrad" name="pflegegrad">
+                  <option value="">Bitte wählen</option>
+                  <option value="Pflegegrad 1">Pflegegrad 1</option>
+                  <option value="Pflegegrad 2">Pflegegrad 2</option>
+                  <option value="Pflegegrad 3">Pflegegrad 3</option>
+                  <option value="Pflegegrad 4">Pflegegrad 4</option>
+                  <option value="Pflegegrad 5">Pflegegrad 5</option>
+                  <option value="noch nicht eingestuft">Noch nicht eingestuft</option>
+                </select>
+              </div>
+              <div>
+                <label class="form-label" for="wunschtermin">Wunschzeitraum</label>
+                <input class="form-input" type="text" id="wunschtermin" name="wunschtermin" placeholder="z. B. nächste Woche vormittags" />
+              </div>
+            </div>
+
+            <div>
+              <label class="form-label" for="message">Nachricht (optional)</label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="Gibt es etwas, das wir vorab wissen sollten?"></textarea>
+              <p class="form-hint">
+                Bitte übermitteln Sie hier keine sensiblen Gesundheitsdaten.
+                Details besprechen wir gern persönlich.
+              </p>
+            </div>
+
+            <div class="flex items-start gap-3 pt-2">
+              <input type="checkbox" id="consent" name="consent" required class="mt-1 w-5 h-5 rounded border-2 border-line text-primary focus:ring-primary" />
+              <label for="consent" class="text-small text-ink-muted">
+                Ich habe die <a href="/datenschutz/" class="text-primary underline underline-offset-2">Datenschutzerklärung</a>
+                gelesen und willige in die Verarbeitung meiner Daten zur Bearbeitung dieser Anfrage ein. <span class="form-required">*</span>
+              </label>
+            </div>
+
+            <div class="pt-2">
+              <button type="submit" class="btn-primary btn-lg w-full sm:w-auto">
+                Termin anfragen
+              </button>
+            </div>
+          </form>
+
+          <p class="text-small text-ink-muted mt-6">
+            Lieber telefonisch? Rufen Sie uns an:
+            <a href={site.contact.phoneHref} class="text-primary font-semibold hover:text-primary-hover">{site.contact.phone}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formular-Feedback gemäß URL-Parameter -->
+  <script is:inline>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const success = params.get('success') === '1';
+      const fehler = params.get('fehler');
+
+      const form = document.getElementById('beratung-form');
+      const successBox = document.getElementById('beratung-success');
+      const errorBox = document.getElementById('beratung-error');
+      const errorMsg = document.getElementById('beratung-error-msg');
+      const countdownEl = document.getElementById('beratung-countdown');
+
+      if (success && form && successBox) {
+        form.classList.add('hidden');
+        successBox.classList.remove('hidden');
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        let seconds = 8;
+        const tick = window.setInterval(() => {
+          seconds -= 1;
+          if (countdownEl) countdownEl.textContent = String(seconds);
+          if (seconds <= 0) {
+            window.clearInterval(tick);
+            window.location.href = '/';
+          }
+        }, 1000);
+      } else if (fehler && errorBox && errorMsg) {
+        errorBox.classList.remove('hidden');
+        const msgMap = {
+          pflicht: 'Bitte füllen Sie Name und E-Mail aus und stimmen Sie der Datenschutzerklärung zu.',
+          email: 'Die eingegebene E-Mail-Adresse scheint ungültig zu sein. Bitte prüfen Sie sie kurz.',
+          server: 'Die Anfrage konnte aktuell nicht versendet werden. Bitte versuchen Sie es erneut oder rufen Sie uns direkt an.',
+        };
+        const msg = msgMap[fehler];
+        if (msg) {
+          errorMsg.innerHTML = msg + ' Rufen Sie uns direkt an: <strong>0202-40 25 59</strong>.';
+        }
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    })();
+  </script>
+</Base>

@@ -52,7 +52,7 @@ export const services: Service[] = [
     short: 'Wenn pflegende Angehörige Urlaub brauchen oder krank sind — wir übernehmen.',
     iconPath: '<path d="M8 7V3m8 4V3M3 11h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/>',
     description:
-      'Pflegende Angehörige brauchen Pausen — wir springen ein. Stundenweise oder mehrere Wochen am Stück. Bis zu 1.612 € pro Jahr übernimmt die Pflegekasse, ohne dass Sie nachweisen müssen, wofür das Geld ausgegeben wird.',
+      'Pflegende Angehörige brauchen Pausen — wir springen ein. Stundenweise oder bis zu acht Wochen am Stück. Verhinderungs- und Kurzzeitpflege bilden seit Juli 2025 einen gemeinsamen Jahresbetrag von bis zu 3.539 € — flexibel einsetzbar, ohne lange Vorpflegezeit.',
     includes: [
       'Stundenweise Entlastung (ab 1 Stunde)',
       'Tage- oder wochenweise Komplettübernahme',
@@ -60,7 +60,7 @@ export const services: Service[] = [
       'Vertretung bei Krankheit oder eigenem Arzttermin',
       'Wir kennen Ihre Routine — kein Pflegebruch',
     ],
-    paidBy: 'Pflegekasse — bis 1.612 €/Jahr (ab PG 2)',
+    paidBy: 'Pflegekasse — gemeinsamer Jahresbetrag bis 3.539 €/Jahr (ab PG 2)',
     forWhom: 'Pflegebedürftige ab PG 2, die zu Hause gepflegt werden',
   },
   {

@@ -3,7 +3,7 @@ title: Verhinderungspflege
 excerpt: Wenn pflegende Angehörige Urlaub brauchen oder krank werden — wir übernehmen die Pflege stunden-, tage- oder wochenweise.
 pflegekasse:
   sgb: Verhinderungspflege
-  note: §39 SGB XI, ab Pflegegrad 2. Bis zu 1.612 Euro pro Jahr (Stand 2026), kombinierbar mit der Kurzzeitpflege.
+  note: §39 SGB XI, ab Pflegegrad 2. Verhinderungs- und Kurzzeitpflege bilden seit Juli 2025 einen gemeinsamen Jahresbetrag von bis zu 3.539 Euro pro Jahr (Stand 2026) — flexibel einsetzbar.
 included:
   - Stundenweise Vertretung an einzelnen Tagen
   - Tageweise Vertretung bei Terminen oder Erholung
@@ -16,7 +16,7 @@ forWhom: Pflegende Angehörige, die eine Auszeit brauchen — sei es ein Urlaub,
 iconPath: '<path d="M8 7V3m8 4V3M3 11h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/>'
 order: 3
 publishedAt: 2026-05-01
-seoDescription: "Verhinderungspflege in Wuppertal: Wir übernehmen, wenn pflegende Angehörige Urlaub oder eine Pause brauchen. Bis 1.612 € jährlich über §39 SGB XI."
+seoDescription: "Verhinderungspflege in Wuppertal: Wir übernehmen, wenn pflegende Angehörige Urlaub oder eine Pause brauchen. Gemeinsamer Jahresbetrag bis 3.539 € (mit Kurzzeitpflege) über §39 SGB XI."
 ---
 
 ## Was ist Verhinderungspflege?
@@ -27,7 +27,7 @@ Der Name klingt sperrig. Gemeint ist schlicht: Vertretungspflege, wenn die Haupt
 
 ## Wer übernimmt die Kosten?
 
-Die Verhinderungspflege ist im §39 SGB XI geregelt (also in der Pflegeversicherung). Voraussetzung ist Pflegegrad 2 oder höher und dass die pflegende Person zuvor mindestens sechs Monate gepflegt hat. Die Pflegekasse zahlt bis zu 1.612 Euro pro Kalenderjahr (Stand 2026). Wenn Sie zusätzlich noch nicht genutzte Mittel aus der Kurzzeitpflege haben, lässt sich das Budget auf bis zu 2.418 Euro aufstocken.
+Die Verhinderungspflege ist im §39 SGB XI geregelt (also in der Pflegeversicherung). Voraussetzung ist mindestens Pflegegrad 2 — die früher nötige sechsmonatige Vorpflegezeit ist seit Juli 2025 entfallen. Verhinderungs- und Kurzzeitpflege bilden seither einen gemeinsamen Jahresbetrag von bis zu 3.539 Euro pro Kalenderjahr (Stand 2026), den Sie flexibel für beide Leistungen einsetzen können. Die Verhinderungspflege ist dabei auf bis zu acht Wochen im Jahr möglich.
 
 Wir helfen Ihnen, das Maximum aus den vorhandenen Töpfen herauszuholen — und übernehmen die Abrechnung mit der Pflegekasse.
 

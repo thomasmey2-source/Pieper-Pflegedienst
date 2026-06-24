@@ -3,7 +3,7 @@ import Base from '@/layouts/Base.astro';
 import { site } from '@/config/site';
 
 const title = 'Verhinderungspflege einfach erklärt';
-const description = 'Verhinderungspflege in Wuppertal: Bis zu 1.612 Euro pro Jahr für pflegende Angehörige, die eine Auszeit brauchen. Wer hat Anspruch, wie viel steht zu, wie beantragen? Erklärt von Pflegedienst Pieper Cronenberg.';
+const description = 'Verhinderungspflege in Wuppertal: Bis zu 3.539 Euro pro Jahr (gemeinsam mit der Kurzzeitpflege) für pflegende Angehörige, die eine Auszeit brauchen. Wer hat Anspruch, wie viel steht zu, wie beantragen? Erklärt von Pflegedienst Pieper Cronenberg.';
 const published = '2026-04-28';
 const publishedDisplay = '28. April 2026';
 ---
@@ -50,7 +50,7 @@ const publishedDisplay = '28. April 2026';
       </h1>
       <p class="text-lead text-white/90 max-w-prose-comfort">
         Sie pflegen einen Angehörigen und brauchen eine Auszeit? Die Verhinderungspflege
-        sichert Ihnen bis zu 1.612 Euro pro Jahr — und niemand muss auf Pflege verzichten.
+        sichert Ihnen bis zu 3.539 Euro pro Jahr (gemeinsam mit der Kurzzeitpflege) — und niemand muss auf Pflege verzichten.
       </p>
       <p class="mt-4 text-small text-white/60">Veröffentlicht am {publishedDisplay} · Pflegedienst Pieper, Wuppertal-Cronenberg</p>
     </div>
@@ -83,9 +83,12 @@ const publishedDisplay = '28. April 2026';
         </p>
         <ul>
           <li>Die pflegebedürftige Person hat mindestens <strong>Pflegegrad 2</strong></li>
-          <li>Die häusliche Pflege wurde mindestens <strong>6 Monate</strong> von einer Pflegeperson erbracht</li>
           <li>Die Pflegeperson ist vorübergehend verhindert</li>
         </ul>
+        <p>
+          Die früher geforderte sechsmonatige Vorpflegezeit ist seit Juli 2025 <strong>entfallen</strong> —
+          der Anspruch besteht ab dem ersten Tag mit Pflegegrad 2.
+        </p>
         <p>
           Personen mit Pflegegrad 1 haben keinen Anspruch auf Verhinderungspflege im klassischen Sinne —
           können aber den <a href="/ratgeber/entlastungsbetrag/" class="text-primary underline underline-offset-2">Entlastungsbetrag</a> nutzen.
@@ -93,10 +96,10 @@ const publishedDisplay = '28. April 2026';
 
         <h2>Wie viel zahlt die Pflegekasse?</h2>
         <p>
-          Die Pflegekasse übernimmt bis zu <strong>1.612 Euro pro Kalenderjahr</strong> für Verhinderungspflege.
-          Zusätzlich können bis zu <strong>50 Prozent des Kurzzeitpflege-Budgets</strong> (also weitere 806 Euro)
-          auf die Verhinderungspflege übertragen werden — damit erhöht sich der Gesamtbetrag auf bis zu
-          <strong>2.418 Euro pro Jahr</strong>.
+          Seit Juli 2025 bilden Verhinderungs- und Kurzzeitpflege einen <strong>gemeinsamen Jahresbetrag
+          von bis zu 3.539 Euro pro Kalenderjahr</strong>. Dieses Budget können Sie flexibel für beide
+          Leistungen einsetzen — ganz für die Verhinderungspflege, ganz für die Kurzzeitpflege oder
+          aufgeteilt, wie es zu Ihrer Situation passt.
         </p>
         <p>
           Wichtig: Das Budget gilt pro Kalenderjahr und ist nicht auf das Folgejahr übertragbar.
@@ -166,9 +169,9 @@ const publishedDisplay = '28. April 2026';
           <h3 class="text-h4 font-heading text-ink mb-4">Das Wichtigste</h3>
           <ul class="space-y-3 text-small text-ink-muted">
             {[
-              'Ab Pflegegrad 2, nach 6 Monaten Pflege zu Hause',
-              'Bis zu 1.612 € pro Jahr (+ 806 € aus Kurzzeitpflege)',
-              'Bis zu 6 Wochen / 42 Tage jährlich nutzbar',
+              'Ab Pflegegrad 2 — keine Vorpflegezeit mehr nötig',
+              'Gemeinsamer Jahresbetrag bis 3.539 € (mit Kurzzeitpflege)',
+              'Bis zu 8 Wochen / 56 Tage jährlich nutzbar',
               'Stunden- oder tageweise einsetzbar',
               'Kein Antrag vorab nötig — Belege nachreichen',
             ].map((item) => (
