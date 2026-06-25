@@ -8,7 +8,7 @@ export const site = {
   membership: 'AG Freie Ambulante Krankenpflege e. V.',
   // Harte Zahlen aus dem Pieper-Briefing
   stats: {
-    yearsInBusiness: '40+',          // gegründet 1985 — autoritative Zahl nach außen
+    yearsInBusiness: '30+',          // Pieper-Ära (Erfahrungsanspruch nach außen); Gründung 1985 siehe Geschichte
     yearsFamilyRun: '25+',           // Pieper-Familie seit 1998 (intern, falls benötigt)
     patients: '~100',                // aktuell betreute Patienten
     mdkNote: '1',                    // MDK-Pflegenote

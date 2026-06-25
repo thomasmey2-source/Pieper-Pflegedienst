@@ -54,9 +54,7 @@ $topicLabels = [
 ];
 $topicLabel = $topicLabels[$topic] ?? 'Sonstiges';
 
-// TEST: vorübergehend an die Entwickler-Adresse, um den Formularversand zu prüfen.
-// Nach erfolgreichem Test wieder auf 'info@pflegedienstpieper.de' zurückstellen.
-$to      = 'hallo@pixelschmied.de';
+$to      = 'info@pflegedienstpieper.de';
 $subject = '=?UTF-8?B?' . base64_encode("Anfrage: $topicLabel – $name") . '?=';
 
 $body = "Name:     $name\n"
