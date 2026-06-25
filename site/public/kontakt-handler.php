@@ -23,8 +23,16 @@ $phone        = trim(strip_tags($_POST['phone']        ?? ''));
 $topic        = trim(strip_tags($_POST['topic']        ?? ''));
 $message      = trim(strip_tags($_POST['message']      ?? ''));
 $pflegegrad   = trim(strip_tags($_POST['pflegegrad']   ?? ''));
-$wunschtermin = trim(strip_tags($_POST['wunschtermin'] ?? ''));
+$wunschdatum  = trim(strip_tags($_POST['wunschdatum']  ?? ''));
+$wunschzeit   = trim(strip_tags($_POST['wunschzeit']   ?? ''));
+$kontaktweg   = trim(strip_tags($_POST['kontaktweg']   ?? ''));
 $consent      = !empty($_POST['consent']);
+
+// Datum von YYYY-MM-DD nach DD.MM.YYYY für die Mail aufbereiten
+if (preg_match('/^(\d{4})-(\d{2})-(\d{2})$/', $wunschdatum, $dm)) {
+    $wunschdatum = $dm[3] . '.' . $dm[2] . '.' . $dm[1];
+}
+$wunschtermin = trim($wunschdatum . ($wunschzeit !== '' ? ' · ' . $wunschzeit : ''));
 
 // Pflichtfelder — Nachricht nur im allgemeinen Kontaktformular zwingend
 $messagePflicht = ($ziel === '/kontakt/');
@@ -63,6 +71,7 @@ $body = "Name:     $name\n"
       . "Anliegen: $topicLabel\n";
 if ($pflegegrad !== '')   { $body .= "Pflegegrad:   $pflegegrad\n"; }
 if ($wunschtermin !== '') { $body .= "Wunschtermin: $wunschtermin\n"; }
+if ($kontaktweg !== '')   { $body .= "Kontaktweg:   $kontaktweg\n"; }
 $body .= "\n"
       . "Nachricht:\n" . ($message ?: '–') . "\n"
       . "\n---\n"

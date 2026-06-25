@@ -196,10 +196,37 @@ const description = `Beratungseinsatz nach § 37 Abs. 3 SGB XI in Wuppertal-Cron
                 </select>
               </div>
               <div>
-                <label class="form-label" for="wunschtermin">Wunschzeitraum</label>
-                <input class="form-input" type="text" id="wunschtermin" name="wunschtermin" placeholder="z. B. nächste Woche vormittags" />
+                <label class="form-label" for="kontaktweg">Bevorzugter Kontaktweg</label>
+                <select class="form-select" id="kontaktweg" name="kontaktweg">
+                  <option value="">Keine Präferenz</option>
+                  <option value="Telefon">Telefon</option>
+                  <option value="E-Mail">E-Mail</option>
+                </select>
               </div>
             </div>
+
+            <fieldset class="border-0 p-0 m-0">
+              <legend class="form-label mb-3">Wunschtermin für den Beratungseinsatz</legend>
+              <div class="grid md:grid-cols-2 gap-5">
+                <div>
+                  <label class="form-label" for="wunschdatum">Datum</label>
+                  <input class="form-input" type="date" id="wunschdatum" name="wunschdatum" />
+                </div>
+                <div>
+                  <label class="form-label" for="wunschzeit">Uhrzeit</label>
+                  <select class="form-select" id="wunschzeit" name="wunschzeit">
+                    <option value="">Bitte wählen</option>
+                    <option value="Vormittags (08–12 Uhr)">Vormittags (08–12 Uhr)</option>
+                    <option value="Mittags (12–14 Uhr)">Mittags (12–14 Uhr)</option>
+                    <option value="Nachmittags (14–17 Uhr)">Nachmittags (14–17 Uhr)</option>
+                    <option value="Ganztags flexibel">Ganztags flexibel</option>
+                  </select>
+                </div>
+              </div>
+              <p class="form-hint">
+                Das ist Ihr Wunschtermin — wir bestätigen ihn telefonisch. Beratungseinsätze sind in der Regel Mo–Fr möglich.
+              </p>
+            </fieldset>
 
             <div>
               <label class="form-label" for="message">Nachricht (optional)</label>
@@ -237,6 +264,15 @@ const description = `Beratungseinsatz nach § 37 Abs. 3 SGB XI in Wuppertal-Cron
   <!-- Formular-Feedback gemäß URL-Parameter -->
   <script is:inline>
     (function () {
+      // Wunschdatum: keine Vergangenheit wählbar
+      const dateEl = document.getElementById('wunschdatum');
+      if (dateEl) {
+        const t = new Date();
+        dateEl.min = t.getFullYear() + '-' +
+          String(t.getMonth() + 1).padStart(2, '0') + '-' +
+          String(t.getDate()).padStart(2, '0');
+      }
+
       const params = new URLSearchParams(window.location.search);
       const success = params.get('success') === '1';
       const fehler = params.get('fehler');
