@@ -40,7 +40,7 @@ const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${sit
       <div class="w-full px-5 md:px-10 lg:px-16 xl:px-24">
         <div class="w-full md:w-[52%] lg:w-[50%] max-w-2xl">
           <!-- Eyebrow mit Gold-Akzent und Pin-Icon -->
-          <div class="flex items-center gap-2 mb-5">
+          <div class="flex items-start gap-2 mb-5">
             <svg class="w-5 h-5 text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
             </svg>
@@ -55,20 +55,22 @@ const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${sit
             <span class="text-accent">bis zuletzt.</span>
           </h1>
 
-          <p class="text-accent font-heading font-semibold mb-6 text-lg md:text-xl lg:text-2xl">
+          <p class="text-white/80 font-heading font-semibold mb-8 text-lg md:text-xl lg:text-2xl">
             Kompetent und zuverlässig seit 1996.
           </p>
 
-          <p class="text-white/90 mb-8 max-w-prose-comfort text-lg md:text-xl lg:text-2xl leading-snug">
-            Der <strong class="text-white">älteste und größte</strong> ambulante
-            Pflegedienst in Cronenberg & Südstadt — familiengeführt, mit
-            <strong class="text-white">MDK-Pflegenote 1</strong>.
-          </p>
-
           <div class="flex flex-col sm:flex-row gap-3 mb-10">
-            <a href="/kontakt/" class="btn btn-lg bg-accent text-primary-dark hover:bg-accent-hover hover:text-white shadow-lg font-bold">
-              Kostenlose Erstberatung
-            </a>
+            <div class="inline-flex self-start sm:self-auto">
+              <a href="/beratungseinsatz/" class="btn btn-lg bg-accent text-primary-dark hover:bg-accent-hover hover:text-white font-bold text-center leading-tight shadow-[0_4px_20px_rgba(212,168,0,0.5)] hover:shadow-[0_6px_28px_rgba(212,168,0,0.7)] transition-shadow flex items-center gap-2.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="flex-shrink-0">
+                  <path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/>
+                </svg>
+                <span>
+                  <span class="block whitespace-nowrap">Beratungseinsatz</span>
+                  <span class="block whitespace-nowrap text-sm font-semibold opacity-85">§ 37 Abs. 3 SGB XI</span>
+                </span>
+              </a>
+            </div>
             <a href="/pflegegradrechner/" class="btn btn-lg bg-white/10 text-white border-2 border-white/40 hover:bg-white/20 backdrop-blur-sm whitespace-nowrap">
               Pflegegrad berechnen
             </a>
@@ -87,7 +89,7 @@ const description = `Häusliche Krankenpflege in Wuppertal-Cronenberg seit ${sit
             </div>
             <div class="h-8 w-px bg-white/30" aria-hidden="true"></div>
             <div>
-              <div class="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-white">Note<span class="text-accent"> 1</span></div>
+              <div class="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-white whitespace-nowrap">Note<span class="text-accent"> 1</span></div>
               <div class="text-[10px] sm:text-xs-label text-white/70 mt-0.5 uppercase tracking-wider leading-tight">MDK-<br class="sm:hidden"/>Pflegenote</div>
             </div>
           </div>
